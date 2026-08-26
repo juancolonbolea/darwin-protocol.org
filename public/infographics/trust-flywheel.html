@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Trust Flywheel — DARWIN Protocol</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0e17; color: #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+  h1 { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+  .sub { color: #94a3b8; text-align: center; margin-bottom: 3rem; font-size: 1.125rem; }
+  .flywheel { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; max-width: 700px; }
+  .step { position: relative; width: 220px; padding: 1.5rem; text-align: center; }
+  .step-num { font-size: 3rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; }
+  .step-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .step-desc { font-size: 0.8125rem; color: #94a3b8; line-height: 1.6; }
+  .arrow { font-size: 1.5rem; display: flex; align-items: center; color: #475569; padding: 0 0.25rem; }
+  .s1 .step-num, .s1 .step-label { color: #f59e0b; }
+  .s2 .step-num, .s2 .step-label { color: #f59e0b; }
+  .s3 .step-num, .s3 .step-label { color: #3b82f6; }
+  .s4 .step-num, .s4 .step-label { color: #3b82f6; }
+  .s5 .step-num, .s5 .step-label { color: #10b981; }
+  .s6 .step-num, .s6 .step-label { color: #10b981; }
+  .center-text { text-align: center; margin-top: 2rem; padding: 1.5rem 2rem; background: #111827; border: 1px solid #1e293b; border-radius: 12px; max-width: 500px; }
+  .center-text p { font-size: 1.125rem; font-weight: 600; line-height: 1.6; }
+  .center-text span { color: #f59e0b; }
+  .footer { margin-top: 3rem; color: #475569; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+  <h1>The Trust Flywheel</h1>
+  <p class="sub">Every cycle that produces more surplus than it consumes self-accelerates.</p>
+  <div class="flywheel">
+    <div class="step s1">
+      <div class="step-num">1</div>
+      <div class="step-label">Edge</div>
+      <div class="step-desc">Your skill. Risk-adjusted performance. The raw input.</div>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="step s2">
+      <div class="step-num">2</div>
+      <div class="step-label">Quote</div>
+      <div class="step-desc">Your reputation. Attested, unfalsifiable, public.</div>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="step s3">
+      <div class="step-num">3</div>
+      <div class="step-label">Credibility</div>
+      <div class="step-desc">Verified track record. The leaderboard sees you.</div>
+    </div>
+  </div>
+  <div class="flywheel" style="margin-top: 0;">
+    <div class="step s6">
+      <div class="step-num">6</div>
+      <div class="step-label">Surplus</div>
+      <div class="step-desc">Better rails, richer dataset. Reinvested into the system.</div>
+    </div>
+    <div class="arrow">&larr;</div>
+    <div class="step s5">
+      <div class="step-num">5</div>
+      <div class="step-label">Matching</div>
+      <div class="step-desc">Surplus created. Internal matching rescues value.</div>
+    </div>
+    <div class="arrow">&larr;</div>
+    <div class="step s4">
+      <div class="step-num">4</div>
+      <div class="step-label">Confidence</div>
+      <div class="step-desc">Capital flows in. Investors trust the proof.</div>
+    </div>
+  </div>
+  <div class="center-text">
+    <p>When collective edge <span>e</span> > 0, each cycle produces more surplus than it consumes. The flywheel self-accelerates.</p>
+  </div>
+  <p class="footer">darwin-protocol.org</p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+---
+title: "The Formal Specification"
+description: "Under the hood — the mathematical foundation that powers the DARWIN Economy."
+---
+
+## You do not need to read this section
+
+Just like you do not need to understand TCP/IP to use the internet.
+
+The [About](/about/) section explains what the DARWIN Economy is. The [Community](/community/) section explains how to participate. The [Membership](/membership/) section explains the deal. Those pages tell you everything you need as a member.
+
+But this section is here. Because transparency is not optional.
+
+---
+
+## What is in the specification
+
+The DARWIN Protocol is formally specified as:
+
+- **8 irreducible primitives** — the foundational terms that cannot be decomposed further
+- **13 foundational axioms** — the propositions the protocol assumes to be true (3 existential + 10 structural)
+- **28 derived theorems** — claims that follow logically from the axioms
+- **6 formal proofs** — rigorous derivations of key results
+
+The full logical chain is compiler-verified in **Lean 4** — a mathematical proof assistant used in academic mathematics and formal verification research. If an axiom changes, dependent theorems break, and the compiler catches it.
+
+No financial protocol in the world offers this level of formal verification.
+
+---
+
+## Why formal specification matters
+
+Most financial products are described in marketing documents and legal disclaimers. The claims are vague. The reasoning is hidden. The customer is asked to trust the institution.
+
+The DARWIN Protocol takes the opposite approach. Every claim is derived from stated axioms. Every derivation is verified by a compiler. Every assumption is public.
+
+This means:
+
+- **You can verify the claims yourself.** The axioms are stated. The derivations are shown. The Lean 4 code is available.
+- **Changes are traceable.** If an axiom is modified, every dependent theorem is automatically re-evaluated.
+- **Contradictions are impossible.** The compiler ensures logical consistency across the entire specification.
+
+---
+
+## How to navigate
+
+Use the sidebar to explore the hierarchy:
+
+### Primitives
+The 8 irreducible terms that form the vocabulary of the protocol. Each primitive has an irreducibility test — a demonstration that it cannot be expressed in terms of the other primitives.
+
+- Edge, Trust, Confidence, Matching, Selection, Transparency, Alignment, Inversion
+
+### Axioms
+13 foundational propositions, organized into two groups:
+
+- **Existential axioms (A1-A3)** — Why the protocol must exist. The market failures it addresses.
+- **Structural axioms (A4-A14)** — How the protocol operates. The rules it follows.
+
+### Theorems
+28 derived claims, grouped by theme:
+
+- **Core Flywheel (T1-T4)** — The basic growth engine
+- **Exponential (T5-T10)** — Why growth compounds
+- **Inversion (T11-T14)** — How power shifts from institutions to members
+- **S-Curve (T15-T17)** — The lifecycle dynamics
+- **Extraction (T18-T22)** — Why value capture is impossible
+- **Structural (T23-T28)** — Governance and long-term stability
+
+### Proofs
+6 formal proofs of key results, including the exponential growth proof, the extraction impossibility proof, and the community-beats-market proof.
+
+### Lean 4 Formalization
+The compiler-verified source code. The specification expressed in a language that a machine can check for consistency.
+
+### Cross-Validation Matrix
+A complete mapping of which axioms support which theorems, and which proofs validate which claims.
+
+---
+
+## For most members
+
+The About and Community sections tell you everything you need. You can use the DARWIN Economy, participate fully, and earn without ever reading a single axiom.
+
+This section is for those who want to verify the claims for themselves. It is here because the protocol has nothing to hide — and everything to prove.

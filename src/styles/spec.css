@@ -1,0 +1,87 @@
+/* Specification card styles */
+.spec-card {
+  border-left: 3px solid var(--card-accent, var(--sl-color-accent));
+  background: var(--sl-color-gray-6);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.spec-card--primitive { --card-accent: var(--color-primitive); }
+.spec-card--axiom { --card-accent: var(--color-axiom); }
+.spec-card--theorem { --card-accent: var(--color-theorem); }
+.spec-card--proof { --card-accent: var(--color-proof); }
+
+.spec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spec-badge--primitive { background: color-mix(in srgb, var(--color-primitive) 15%, transparent); color: var(--color-primitive); }
+.spec-badge--axiom { background: color-mix(in srgb, var(--color-axiom) 15%, transparent); color: var(--color-axiom); }
+.spec-badge--theorem { background: color-mix(in srgb, var(--color-theorem) 15%, transparent); color: var(--color-theorem); }
+.spec-badge--proof { background: color-mix(in srgb, var(--color-proof) 15%, transparent); color: var(--color-proof); }
+
+.spec-badge--verified {
+  background: color-mix(in srgb, var(--color-theorem) 15%, transparent);
+  color: var(--color-theorem);
+}
+
+/* Cross-reference links */
+.spec-xref {
+  font-family: var(--sl-font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.0625rem 0.375rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.spec-xref:hover {
+  text-decoration: none;
+}
+
+.spec-xref--primitive { background: color-mix(in srgb, var(--color-primitive) 10%, transparent); color: var(--color-primitive); }
+.spec-xref--primitive:hover { background: color-mix(in srgb, var(--color-primitive) 20%, transparent); }
+.spec-xref--axiom { background: color-mix(in srgb, var(--color-axiom) 10%, transparent); color: var(--color-axiom); }
+.spec-xref--axiom:hover { background: color-mix(in srgb, var(--color-axiom) 20%, transparent); }
+.spec-xref--theorem { background: color-mix(in srgb, var(--color-theorem) 10%, transparent); color: var(--color-theorem); }
+.spec-xref--theorem:hover { background: color-mix(in srgb, var(--color-theorem) 20%, transparent); }
+
+/* Derivation chain */
+.derivation-chain {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+}
+
+.derivation-chain .arrow {
+  color: var(--sl-color-gray-3);
+}
+
+/* Lean 4 code blocks */
+pre:has(code.language-lean4),
+pre:has(code.language-lean) {
+  border-left: 3px solid var(--color-proof);
+}
+
+/* Formal statement styling */
+.formal-statement {
+  font-style: italic;
+  padding: 1rem 1.25rem;
+  background: var(--sl-color-gray-6);
+  border-radius: 6px;
+  margin: 1rem 0;
+  line-height: 1.7;
+}

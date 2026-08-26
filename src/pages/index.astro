@@ -1,0 +1,713 @@
+---
+import starlightConfig from 'virtual:starlight/user-config';
+import type { Props } from '@astrojs/starlight/props';
+---
+
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DARWIN Protocol — Develop And Reward With INdx</title>
+  <meta name="description" content="An economy where independent traders develop verified track records and earn from them. Trade, get scored, get paid. Same rules for everyone." />
+  <meta property="og:title" content="DARWIN Protocol" />
+  <meta property="og:description" content="An economy where skill is the currency and merit owns the market." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://darwin-protocol.org" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --surface: #111827;
+      --surface-elevated: #1f2937;
+      --text: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --primitive: #f59e0b;
+      --axiom: #3b82f6;
+      --theorem: #10b981;
+      --proof: #8b5cf6;
+      --border: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-mark svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ─── HERO ─── */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 1rem;
+      background: var(--accent-glow);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--theorem) 50%, var(--primitive) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #2563eb; }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover { background: var(--surface-elevated); border-color: var(--text-secondary); }
+
+    /* ─── PROOF BANNER ─── */
+    .proof-banner {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .proof-banner-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .proof-stat {
+      background: var(--surface);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .proof-stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .proof-stat-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .proof-stat:nth-child(1) .proof-stat-number { color: var(--primitive); }
+    .proof-stat:nth-child(1) .proof-stat-label { color: var(--primitive); }
+    .proof-stat:nth-child(2) .proof-stat-number { color: var(--axiom); }
+    .proof-stat:nth-child(2) .proof-stat-label { color: var(--axiom); }
+    .proof-stat:nth-child(3) .proof-stat-number { color: var(--theorem); }
+    .proof-stat:nth-child(3) .proof-stat-label { color: var(--theorem); }
+    .proof-stat:nth-child(4) .proof-stat-number { color: var(--proof); }
+    .proof-stat:nth-child(4) .proof-stat-label { color: var(--proof); }
+
+    /* ─── VALUE PROPS ─── */
+    .value-props {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.2s;
+    }
+
+    .value-card:hover { border-color: var(--text-secondary); }
+
+    .value-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+    }
+
+    .value-card:nth-child(1) .value-card-icon { background: color-mix(in srgb, var(--primitive) 15%, transparent); }
+    .value-card:nth-child(2) .value-card-icon { background: color-mix(in srgb, var(--axiom) 15%, transparent); }
+    .value-card:nth-child(3) .value-card-icon { background: color-mix(in srgb, var(--theorem) 15%, transparent); }
+
+    .value-card h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .value-card p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    /* ─── SPEC PREVIEW ─── */
+    .spec-preview {
+      max-width: 1200px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+    }
+
+    .spec-preview h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .spec-preview-sub {
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      font-size: 1.0625rem;
+    }
+
+    .spec-tree {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .spec-tree-col h4 {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid;
+    }
+
+    .spec-tree-col:nth-child(1) h4 { color: var(--primitive); border-color: var(--primitive); }
+    .spec-tree-col:nth-child(2) h4 { color: var(--axiom); border-color: var(--axiom); }
+    .spec-tree-col:nth-child(3) h4 { color: var(--theorem); border-color: var(--theorem); }
+    .spec-tree-col:nth-child(4) h4 { color: var(--proof); border-color: var(--proof); }
+
+    .spec-tree-item {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .spec-tree-item:hover {
+      border-color: var(--text-secondary);
+      color: var(--text);
+    }
+
+    .spec-tree-item code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 0.375rem;
+    }
+
+    .spec-tree-col:nth-child(1) .spec-tree-item code { color: var(--primitive); }
+    .spec-tree-col:nth-child(2) .spec-tree-item code { color: var(--axiom); }
+    .spec-tree-col:nth-child(3) .spec-tree-item code { color: var(--theorem); }
+    .spec-tree-col:nth-child(4) .spec-tree-item code { color: var(--proof); }
+
+    /* ─── EQUATION ─── */
+    .equation-section {
+      max-width: 1200px;
+      margin: 5rem auto;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .equation-section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .equation-section p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .equation-block {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .equation-block .var-e { color: var(--primitive); }
+    .equation-block .var-trust { color: var(--axiom); }
+    .equation-block .var-conf { color: var(--theorem); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-secondary);
+      font-size: 0.8125rem;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--text); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .proof-banner-inner { grid-template-columns: repeat(2, 1fr); }
+      .value-props { grid-template-columns: 1fr; }
+      .spec-tree { grid-template-columns: repeat(2, 1fr) !important; }
+      .equation-block { font-size: 1rem; padding: 1.5rem 2rem; }
+      .equation-section > div[style*="grid"] { grid-template-columns: 1fr !important; }
+    }
+
+    @media (max-width: 480px) {
+      .spec-tree { grid-template-columns: 1fr !important; }
+      .proof-banner-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9l6 6 6-6-6-6z" fill="#fff"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">DARWIN Protocol</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/specification/">Specification</a></li>
+      <li><a href="/community/">Community</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/resources/">Resources</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#f59e0b"/></svg>
+      Return Wall Street to Main Street
+    </div>
+    <h1>
+      Your edge is<br />
+      <span class="gradient">your currency.</span>
+    </h1>
+    <p class="hero-sub">
+      Trade. Get scored. Get paid. The DARWIN Economy is where independent
+      traders develop verified track records and earn from them.
+      Same rules for everyone. Capital follows skill.
+    </p>
+    <div class="hero-actions">
+      <a href="/about/" class="btn btn-primary">
+        How It Works
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/community/movement/" class="btn btn-secondary">
+        Join the Movement
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="proof-banner">
+    <div class="proof-banner-inner">
+      <div class="proof-stat">
+        <div class="proof-stat-number">13K+</div>
+        <div class="proof-stat-label">Traders</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-number">70+</div>
+        <div class="proof-stat-label">Countries</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-number">100K</div>
+        <div class="proof-stat-label">Track Records</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-number">12yr</div>
+        <div class="proof-stat-label">Live Data</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="value-props">
+    <div class="value-card">
+      <div class="value-card-icon">&#9670;</div>
+      <h3>Trade</h3>
+      <p>
+        Every trade is logged, risk-adjusted, and produces a public
+        score &mdash; your DARWIN. Built one trade at a time. Nobody
+        can inflate it. Nobody can take it away.
+      </p>
+    </div>
+    <div class="value-card">
+      <div class="value-card-icon">&#9672;</div>
+      <h3>Earn</h3>
+      <p>
+        As your track record grows, capital follows. Investors back
+        your DARWIN. You earn 15% royalties on their gains. Or coach,
+        build tools, recruit talent &mdash; every contribution is measured
+        and rewarded.
+      </p>
+    </div>
+    <div class="value-card">
+      <div class="value-card-icon">&#10003;</div>
+      <h3>Own</h3>
+      <p>
+        Earn enough and you own equity in the protocol itself. The
+        better the community does, the better you do. Merit owns the
+        market. That's not a slogan &mdash; it's the endgame.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="spec-preview">
+    <h2>Five ways to contribute</h2>
+    <p class="spec-preview-sub">Members are defined by what they do, not what they are. Everyone can do everything.</p>
+    <div class="spec-tree" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="spec-tree-col">
+        <h4>Source</h4>
+        <span class="spec-tree-item">Bring new edge into the economy. Scout talent. Open new markets.</span>
+      </div>
+      <div class="spec-tree-col">
+        <h4 style="color: var(--axiom); border-color: var(--axiom);">Develop</h4>
+        <span class="spec-tree-item">Coach traders. Build tools. The protocol <strong>certifies</strong> your students' improvement.</span>
+      </div>
+      <div class="spec-tree-col">
+        <h4 style="color: var(--theorem); border-color: var(--theorem);">Contribute</h4>
+        <span class="spec-tree-item">Trade. Build your track record. Produce the raw edge the economy runs on.</span>
+      </div>
+      <div class="spec-tree-col">
+        <h4 style="color: var(--proof); border-color: var(--proof);">Process</h4>
+        <span class="spec-tree-item">Model the 100K dataset. Build allocation strategies. Turn raw edge into signals.</span>
+      </div>
+      <div class="spec-tree-col">
+        <h4 style="color: #ec4899; border-color: #ec4899;">Compound</h4>
+        <span class="spec-tree-item">Deploy capital. Back the winners. Invest INDX. Grow the war chest.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOLDEN CIRCLE: WHY / HOW / WHAT -->
+  <section class="spec-preview" style="padding-top: 4rem;">
+    <h2 style="text-align: center;">Why / How / What</h2>
+    <p class="spec-preview-sub" style="text-align: center;">Start with why. Always.</p>
+    <div class="spec-tree" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="value-card" style="border-left: 3px solid var(--primitive); text-align: center;">
+        <h3 style="color: var(--primitive); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Why</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 0.75rem;">
+          Return Wall Street<br />to Main Street
+        </p>
+        <p>
+          Markets are decided by access, not merit. Independent traders
+          with real edge are invisible to capital. The gap: credibility
+          deserved &gt; confidence awarded.
+        </p>
+      </div>
+      <div class="value-card" style="border-left: 3px solid var(--axiom); text-align: center;">
+        <h3 style="color: var(--axiom); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">How</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 0.75rem;">
+          Darwinex<br />The Meritocracy
+        </p>
+        <p>
+          A risk engine scores every trade. Matching creates surplus.
+          Surplus compounds trust. Collective credibility attracts
+          outside confidence. The flywheel self-accelerates.
+        </p>
+      </div>
+      <div class="value-card" style="border-left: 3px solid var(--theorem); text-align: center;">
+        <h3 style="color: var(--theorem); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">What</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 0.75rem;">
+          The DARWIN<br />Protocol
+        </p>
+        <p>
+          Develop And Reward With INdx. Your edge (<strong>e</strong>) compounded
+          by the community's trust stock (<strong>X</strong>). INDX = what you earn.
+          DWX = what you own. Formally verified.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MOVEMENT (Sivers) -->
+  <section class="equation-section" style="text-align: center; max-width: 900px;">
+    <h2>How movements start</h2>
+    <p style="margin-bottom: 2.5rem;">Derek Sivers showed it takes 3 minutes. Here's our version.</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden;">
+      <div style="background: var(--surface); padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; font-weight: 800; color: var(--primitive); margin-bottom: 0.5rem;">1</div>
+        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primitive); margin-bottom: 0.75rem;">The Lone Nut</div>
+        <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6;">
+          One trader publishes a public Quote. Ridicule: "independents can't beat the market."
+        </p>
+      </div>
+      <div style="background: var(--surface); padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; font-weight: 800; color: var(--axiom); margin-bottom: 0.5rem;">2</div>
+        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--axiom); margin-bottom: 0.75rem;">First Follower</div>
+        <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6;">
+          First investor allocates capital to a DARWIN. The lone nut becomes a leader. <strong style="color: var(--text);">e &times; X</strong>
+        </p>
+      </div>
+      <div style="background: var(--surface); padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; font-weight: 800; color: var(--theorem); margin-bottom: 0.5rem;">3</div>
+        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--theorem); margin-bottom: 0.75rem;">Tipping Point</div>
+        <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6;">
+          New followers emulate <em>followers</em>, not the leader. INDX beats the benchmark. The proof is public.
+        </p>
+      </div>
+      <div style="background: var(--surface); padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; font-weight: 800; color: var(--proof); margin-bottom: 0.5rem;">4</div>
+        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--proof); margin-bottom: 0.75rem;">The Movement</div>
+        <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6;">
+          It's no longer about Darwinex. It's about the members. <strong style="color: var(--text);">e^X</strong> &mdash; merit owns the market.
+        </p>
+      </div>
+    </div>
+    <a href="/community/movement/" class="btn btn-primary" style="margin-top: 2rem;">
+      Read the Full Story
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section class="equation-section" style="text-align: left; max-width: 800px;">
+    <h2 style="text-align: center;">Case study: Maria, the Educator</h2>
+    <p style="text-align: center; margin-bottom: 2.5rem;">The protocol <strong>certifies</strong> her students' development. Her income = their verified improvement.</p>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+      <div class="value-card">
+        <h3 style="color: var(--primitive);">Months 1-3: Play</h3>
+        <p>
+          Maria pays &euro;45/month. Accesses the 100K dataset. Builds a
+          training curriculum from 12 years of verified track records. Identifies
+          the 7 most common failure patterns. Publishes her coaching profile.
+        </p>
+      </div>
+      <div class="value-card">
+        <h3 style="color: var(--axiom);">Months 4-12: Develop</h3>
+        <p>
+          12 students, each with a DARWIN. Maria coaches; the protocol <strong>certifies</strong>.
+          Each student's improvement is measured by the risk engine.
+          Her impact is tracked and displayed &mdash; verified, public, unfalsifiable.
+        </p>
+      </div>
+      <div class="value-card">
+        <h3 style="color: var(--theorem);">Month 12+: Earn</h3>
+        <p>
+          INDX earned proportional to student improvements.
+          When they win DarwinIA capital, she earns a share.
+          When investors back her students, she earns from the ecosystem she built.
+        </p>
+      </div>
+      <div class="value-card">
+        <h3 style="color: var(--proof);">Month 24+: Own</h3>
+        <p>
+          Deploys INDX as capital. Now an Owner.
+          Coaching + INDX + capital returns all compound together.
+          Never held anyone's money. The protocol certified everything.
+        </p>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 1.5rem;">
+      <a href="/community/progression/" class="btn btn-secondary">Full Case Study</a>
+    </p>
+  </section>
+
+  <!-- PROTOCOL FOUNDATION (subtle) -->
+  <section class="spec-preview" style="text-align: center; padding-top: 3rem;">
+    <h2>Formally verified</h2>
+    <p class="spec-preview-sub">
+      You don't need to read the spec to use the economy &mdash; just like you don't
+      need TCP/IP to use the internet. But it's there, because transparency is not optional.
+    </p>
+    <div class="proof-banner-inner" style="max-width: 600px; margin: 0 auto;">
+      <div class="proof-stat">
+        <div class="proof-stat-number" style="font-size: 2rem;">8</div>
+        <div class="proof-stat-label">Primitives</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-number" style="font-size: 2rem;">13</div>
+        <div class="proof-stat-label">Axioms</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-number" style="font-size: 2rem;">28</div>
+        <div class="proof-stat-label">Theorems</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-number" style="font-size: 2rem;">6</div>
+        <div class="proof-stat-label">Proofs</div>
+      </div>
+    </div>
+    <a href="/specification/" class="btn btn-secondary" style="margin-top: 2rem;">
+      Read the Specification
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>&copy; 2026 DARWIN Protocol. All rights reserved.</span>
+    <span>
+      <a href="/specification/">Specification</a> &middot;
+      <a href="/resources/">Resources</a> &middot;
+      <a href="https://github.com/darwinex">GitHub</a>
+    </span>
+  </footer>
+</body>
+</html>

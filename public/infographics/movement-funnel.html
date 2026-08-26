@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Movement — Sivers Stages x INDX Funnel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0e17; color: #f1f5f9; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 3rem 2rem; }
+  h1 { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+  .sub { color: #94a3b8; text-align: center; margin-bottom: 3rem; font-size: 1.125rem; max-width: 600px; }
+  .funnel { display: flex; flex-direction: column; align-items: center; gap: 0; max-width: 700px; width: 100%; }
+  .stage { display: grid; grid-template-columns: 80px 1fr 1fr 100px; align-items: center; width: 100%; border-left: 3px solid; padding: 1.5rem; background: #111827; }
+  .stage + .stage { margin-top: 2px; }
+  .s-prospect { border-color: #64748b; }
+  .s-play { border-color: #f59e0b; }
+  .s-earn { border-color: #3b82f6; }
+  .s-own { border-color: #10b981; }
+  .stage-icon { font-size: 2rem; font-weight: 800; text-align: center; }
+  .s-prospect .stage-icon { color: #64748b; }
+  .s-play .stage-icon { color: #f59e0b; }
+  .s-earn .stage-icon { color: #3b82f6; }
+  .s-own .stage-icon { color: #10b981; }
+  .stage-main h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .stage-main p { font-size: 0.8125rem; color: #94a3b8; line-height: 1.5; }
+  .stage-sivers { padding-left: 1rem; border-left: 1px solid #1e293b; }
+  .stage-sivers h4 { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 0.25rem; }
+  .stage-sivers p { font-size: 0.8125rem; color: #94a3b8; line-height: 1.5; font-style: italic; }
+  .stage-math { text-align: center; font-family: 'Inter', monospace; font-weight: 700; font-size: 1.125rem; }
+  .s-play .stage-math { color: #f59e0b; }
+  .s-earn .stage-math { color: #3b82f6; }
+  .s-own .stage-math { color: #10b981; }
+  .gate { display: flex; align-items: center; justify-content: center; padding: 0.75rem; width: 100%; }
+  .gate-inner { background: #1f2937; border: 1px dashed #3b82f6; border-radius: 8px; padding: 0.5rem 1.5rem; font-size: 0.75rem; font-weight: 600; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.08em; }
+  .quote { margin-top: 3rem; text-align: center; max-width: 500px; padding: 1.5rem 2rem; background: #111827; border: 1px solid #1e293b; border-radius: 12px; }
+  .quote p { font-size: 0.9375rem; font-style: italic; color: #94a3b8; line-height: 1.7; }
+  .quote cite { display: block; margin-top: 0.75rem; font-size: 0.8125rem; color: #64748b; font-style: normal; }
+  .footer { margin-top: 3rem; color: #475569; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+  <h1>The Movement</h1>
+  <p class="sub">How a lone nut with a public track record starts a movement that returns Wall Street to Main Street.</p>
+
+  <div class="funnel">
+    <div class="stage s-prospect">
+      <div class="stage-icon">?</div>
+      <div class="stage-main">
+        <h3>Prospect</h3>
+        <p>Hears about Darwinex. Not yet in the economy.</p>
+      </div>
+      <div class="stage-sivers">
+        <h4>Sivers</h4>
+        <p>Sees the lone nut dancing</p>
+      </div>
+      <div class="stage-math" style="color: #64748b;">--</div>
+    </div>
+
+    <div class="stage s-play">
+      <div class="stage-icon">&#9654;</div>
+      <div class="stage-main">
+        <h3>User &mdash; PLAY</h3>
+        <p>EUR 45/mo. Building track record. Developing edge.</p>
+      </div>
+      <div class="stage-sivers">
+        <h4>Sivers</h4>
+        <p>Starts dancing too</p>
+      </div>
+      <div class="stage-math">e</div>
+    </div>
+
+    <div class="gate">
+      <div class="gate-inner">The Meritocratic Gate: "until all it takes is merit"</div>
+    </div>
+
+    <div class="stage s-earn">
+      <div class="stage-icon">&#9733;</div>
+      <div class="stage-main">
+        <h3>Member &mdash; EARN</h3>
+        <p>First INDX minted. Net earner. Proven edge.</p>
+      </div>
+      <div class="stage-sivers">
+        <h4>Sivers</h4>
+        <p>THE FIRST FOLLOWER. Transforms the nut into a leader.</p>
+      </div>
+      <div class="stage-math">e &times; X</div>
+    </div>
+
+    <div class="stage s-own">
+      <div class="stage-icon">&#9830;</div>
+      <div class="stage-main">
+        <h3>Owner &mdash; OWN</h3>
+        <p>Deploying INDX as capital. Protocol ownership.</p>
+      </div>
+      <div class="stage-sivers">
+        <h4>Sivers</h4>
+        <p>The movement owns itself. Leadership dissolves into the protocol.</p>
+      </div>
+      <div class="stage-math">e<sup>X</sup></div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The most important person in Darwinex's history isn't the founder. It's the first investor who followed a DARWIN. They turned a lone nut into a leader."</p>
+    <cite>darwin-protocol.org/community/movement</cite>
+  </div>
+
+  <p class="footer">darwin-protocol.org</p>
+</body>
+</html>

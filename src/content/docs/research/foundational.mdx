@@ -1,0 +1,66 @@
+---
+title: "Foundational Document"
+description: "Deep dive into the core mechanics of the DARWIN Economy."
+---
+
+## The mechanics in detail
+
+The foundational document provides a comprehensive technical analysis of the DARWIN Economy's core mechanics. It bridges the gap between the formal specification (axioms, theorems, proofs) and the operational reality (risk engine, matching engine, INDX selection, economic model).
+
+---
+
+## What the document covers
+
+### The risk engine
+
+How the risk engine normalises every trader to a standard risk scale. The methodology behind the 6.5% monthly VaR target. How the Quote is calculated. Why the normalisation process ensures that skill — not leverage — determines the ranking.
+
+The foundational document details the specific inputs, transformations, and outputs of the risk engine, including edge cases: what happens during market dislocations, how the engine handles correlated drawdowns, and how the normalisation adapts to changing volatility regimes.
+
+### The matching engine
+
+How the matching engine pools flow from 13,000+ traders and matches orders internally before routing overflow to external markets. The document models the relationship between:
+
+- Community size and internal matching rate
+- Internal matching rate and transaction cost savings
+- Transaction cost savings and reinvestable surplus
+- Reinvestable surplus and community growth
+
+This is the core economic engine. The matching engine's efficiency determines how much surplus the community generates — and surplus is what funds everything: challenges, infrastructure, dataset improvements, and member rewards.
+
+### The INDX selection process
+
+How the protocol selects DARWINs for the INDX composite. The criteria are multidimensional: risk-adjusted return, consistency, drawdown management, correlation (diversification value), and longevity. The document explains the weighting methodology, the rebalancing process, and the safeguards against overfitting.
+
+INDX is not a marketing metric. It is the community's scoreboard. The foundational document shows exactly how the score is kept.
+
+### The economic model
+
+How the DARWIN Economy sustains itself. The document models the flow of value through the system:
+
+- Membership fees (EUR 45/month per member)
+- Trust-flow split (80/15/5 between investor, edge-holder, community)
+- Booster premiums
+- DarwinIA capital allocations
+- Matching engine surplus
+
+It identifies the conditions under which the economy achieves **Free Trust-Flow (FTF > 1)** — the point at which the protocol generates more trust-flow than it costs to operate. At FTF > 1, the economy is self-sustaining. Growth becomes endogenous.
+
+---
+
+## Who this document is for
+
+The foundational document is written for:
+
+- **Researchers** who want to understand the quantitative foundations of the protocol
+- **Potential partners** (brokers, portfolio managers, technology providers) evaluating integration
+- **Members** who want to understand the economics behind their earnings
+- **Regulators** who need to understand the system's mechanics
+
+It assumes familiarity with financial markets, risk management, and basic statistics. It does not require knowledge of the formal specification (axioms, theorems, proofs), though it references the specification where relevant.
+
+---
+
+## Full document
+
+The complete foundational document is available for download in the [Downloads](/resources/downloads/) section.
