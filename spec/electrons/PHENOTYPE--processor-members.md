@@ -139,7 +139,7 @@ The sealed enclave + blockchain architecture solves the regulatory concern:
 1. **Data never leaves the enclave.** No "publication" of a benchmark — processors interact with transformed representations inside sealed infrastructure. The DP-anonymised development dataset preserves aggregate patterns but individual track records are non-invertible.
 2. **Blockchain attestation provides full audit trail.** Every processor submission, every signal output, every INDX allocation decision is attested on-chain. Abnormally high hit rates can be interrogated right back to the source — the attestation chain IS the surveillance mechanism.
 3. **Benchmark Regulation risk mitigated.** The intent dataset is not a "benchmark" (no replicable index published). It is a sealed input to a private allocation process. INDX is the output — already regulated as a managed portfolio.
-4. **MiFID "investment decision maker" concern.** Processor member signals are INPUTS to Book 100 (spread rescue), not direct investment decisions. The matching engine makes the execution decision. Processors are data contributors, not portfolio managers.
+4. **MiFID "investment decision maker" concern.** Processor member signals are INPUTS to the internal book (spread rescue), not direct investment decisions. The matching engine makes the execution decision. Processors are data contributors, not portfolio managers.
 
 ## Phased Roadmap
 
@@ -147,7 +147,7 @@ The sealed enclave + blockchain architecture solves the regulatory concern:
 |-------|----------|------|------------|
 | **0: Validate** | Now → 29 Apr | Board evidence | Hong/Page backtest (Martí). Whiteboard session with Jean. Board slide: Hong/Page + P+C+O + CrunchDAO. |
 | **1: First Follower** | May-Jul 2026 | Critical mass test | CrunchDAO co-integrated. DP-anonymised dev dataset. First competition. P scoring only. Public results. |
-| **2: The Crowd** | Aug-Oct 2026 | Production signals | Real-time intent data via sealed enclave. Full P+C+O. INDX staking. Signals → Book 100. |
+| **2: The Crowd** | Aug-Oct 2026 | Production signals | Real-time intent data via sealed enclave. Full P+C+O. INDX staking. Signals → the internal book. |
 | **3: The Monopoly** | Q4 2026+ | Signal source lock-up | Arb communities, prop firms. Jean distributes. Processing Darwinia operational. e×X compounding. |
 | **4: Data Liberation** | 2027+ | Data marketplace | Invite data providers as SOURCE members. Success-based rewards. Dataset compounds. "Return markets to people, on merit." |
 

@@ -23,7 +23,7 @@ cross_refs:
   - knowledge: MARKET_RISK_FRAMEWORK
     why: "σ_monthly = 6.5% is an output of the risk engine, used as input to the delta hedge formula"
   - knowledge: CCP_MATCHING_ENGINE
-    why: "Engine-generated risk adjustment trades flow into Book 100 (~1/minute)"
+    why: "Engine-generated risk adjustment trades flow into the internal book (~1/minute)"
   - framework: CONSTITUTION
     why: "This electron IS A8's implementation — investability requires independent, algorithmic standardisation. Three structural features: CCP faces investors, arm's length from providers, algorithmic not discretionary."
 protocol_component: [Risk Engine]

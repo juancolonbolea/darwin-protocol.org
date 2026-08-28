@@ -37,7 +37,7 @@ The title says it: "From Evolution Bottleneck to Evolution Enabler." The current
 |-------|-----------|-------------------|------|
 | **SOURCE** | PyEventBT, Data SDK, open APIs | The data (100K track records, live positioning) | Unique dataset |
 | **PROCESS** | Sealed enclave (code to data) | Matching engine parameters, risk engine internals | Algorithm |
-| **MATCH** | Signal schema, spread rescue interface | Book 100 state | Real-time state |
+| **MATCH** | Signal schema, spread rescue interface | the internal book state | Real-time state |
 | **ROUTE** | Signal routing, overflow management | — | Network effect |
 
 **Open rails + closed engine + unique data = the moat.**

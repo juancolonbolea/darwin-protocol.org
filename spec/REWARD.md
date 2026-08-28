@@ -86,7 +86,7 @@ metric: "IMR (Internal Matching Rate)"
 
 In extractive markets, the intermediary sees your intent before anyone else. That visibility is monetised: front-running, information selling, toxic flow routing. The spread you pay is the price of your intent being visible to someone whose incentive is to exploit it.
 
-The DARWIN Protocol's second inversion makes intent structurally invisible. The CCP (Central Counterparty) is the sole resting counterparty inside Book 100. Every member order is a market order — no member places limit orders internally. The CCP absorbs all flow, nets what can be netted, and routes overflow to external markets. No individual member's intent is ever exposed to another member or to any entity with an incentive to exploit it.
+The DARWIN Protocol's second inversion makes intent structurally invisible. The CCP (Central Counterparty) is the sole resting counterparty inside the internal book. Every member order is a market order — no member places limit orders internally. The CCP absorbs all flow, nets what can be netted, and routes overflow to external markets. No individual member's intent is ever exposed to another member or to any entity with an incentive to exploit it.
 
 This is not a policy. It is architectural. The matching engine cannot be configured to expose intent — the option does not exist. A14 (power inversion) means the venue IS the community. The entity that controls matching has no incentive to extract because its surplus is constitutionally reinvested (A5). The operator's interest and the community's interest are identical.
 
@@ -111,7 +111,7 @@ Matching operates across five dimensions — not just trade flow with trade flow
 
 | Dimension | What matches | P0 eliminated | Example |
 |-----------|-------------|---------------|---------|
-| **Flow** | Buy with sell (internal netting) | Execution cost, market impact | Book 100 CCP absorbs all flow, nets internally |
+| **Flow** | Buy with sell (internal netting) | Execution cost, market impact | the internal book CCP absorbs all flow, nets internally |
 | **Knowledge** | Track records with learners | Education cost, discovery cost | 100K records available to members via P5 |
 | **Capital** | Edge with confidence | Access cost (alpha-constrained ↔ AuM-constrained) | INDX allocates capital to certified credibility |
 | **Community** | Members with members | Coordination cost, network building | Sourcing rails, hackathons, member brokers |
@@ -131,7 +131,7 @@ Three sources grow the trust stock simultaneously:
 | ΔC | New confidence attracted by proof | Exogenous — closes the credibility-confidence gap |
 | Nτ | Membership surplus (N × fee − wholesale cost) | Community self-funding |
 
-Step 4 turns matching into surplus. The matching engine runs as a **two-stroke extraction pump** ([[PROTOCOL]] §6.1). Stroke 1 (internal matching inside Book 100) saves the spread and distills the residual — individual member intent is destroyed by netting before anything crosses the A9 boundary. Stroke 2 (overflow) funnels the netted, member-anonymized aggregate conviction outward; distilled edge extracts P&L from the external rent-extractor layer and mints continuous external credibility via T42. Savings (Stroke 1) + extraction P&L (Stroke 2) + credibility mint (Stroke 2's T42 surface) = joint pump output = surplus. Surplus split fairly:
+Step 4 turns matching into surplus. The matching engine runs as a **two-stroke extraction pump** ([[PROTOCOL]] §6.1). Stroke 1 (internal matching inside the internal book) saves the spread and distills the residual — individual member intent is destroyed by netting before anything crosses the A9 boundary. Stroke 2 (overflow) funnels the netted, member-anonymized aggregate conviction outward; distilled edge extracts P&L from the external rent-extractor layer and mints continuous external credibility via T42. Savings (Stroke 1) + extraction P&L (Stroke 2) + credibility mint (Stroke 2's T42 surface) = joint pump output = surplus. Surplus split fairly:
 
 | Party | Contribution | Reward |
 |-------|-------------|--------|
@@ -149,7 +149,7 @@ The venue IS the meritocracy. Its surplus is not extracted — it is reinvested 
 
 When e > 0 and reinvestment rate r > 1: the system is supercritical. Self-accelerating. Surplus funds better matching, which generates more surplus.
 
-**Electron detail:** [[PHENOTYPE--matching-engine]] (Book 100), [[PHENOTYPE--dataset]] (P5 as trust→edge vehicle, T6)
+**Electron detail:** [[PHENOTYPE--matching-engine]] (the internal book), [[PHENOTYPE--dataset]] (P5 as trust→edge vehicle, T6)
 
 ---
 
@@ -157,13 +157,13 @@ When e > 0 and reinvestment rate r > 1: the system is supercritical. Self-accele
 
 ```yaml
 constitutional_rule: A9
-enforcement: "Design principle — enforceable via smart contract (binary: no non-CCP resting orders in Book 100)"
+enforcement: "Design principle — enforceable via smart contract (binary: no non-CCP resting orders in the internal book)"
 scope: "Microstructure level (internal matching) + surplus level (reinvestment)"
 ```
 
 The mutualized monopoly is the structural guarantee that matching serves the community, not an intermediary. Three interlocking rules enforce it:
 
-**Rule 1 — CCP sole resting counterparty.** Inside Book 100, only the CCP places limit orders. All member orders are market orders. No member can front-run, queue-jump, or capture spread against another member. The spread between internal bid and ask accrues entirely to the mutualized pool.
+**Rule 1 — CCP sole resting counterparty.** Inside the internal book, only the CCP places limit orders. All member orders are market orders. No member can front-run, queue-jump, or capture spread against another member. The spread between internal bid and ask accrues entirely to the mutualized pool.
 
 **Rule 2 — All internal surplus mutualized.** Spread savings from internal matching are not distributed to individual members. They flow to the venue (Prop BU) as constitutive capital. Prop's monopoly on internal market-making IS value creation — competition between internal market makers would dilute surplus and reduce reinvestment. This inverts the extractive logic: in Wall Street, competition → tighter spreads (good for clients, extracted by fastest). In the DARWIN economy, mutualized monopoly → maximum surplus → maximum reinvestment → better for everyone.
 
@@ -457,7 +457,7 @@ model: "Two-level: 4 infrastructure BUs (the OS) + N member micro-BUs (the progr
 
 Prop holds two simultaneous roles: (1) **Constitutive** — CCP's balance sheet; Matching Rails doesn't function without Prop's capital. (2) **Customer** — pays Data Rails for data, pays Matching Rails for execution. The dual identity creates arm's length transfer pricing that validates the 4 BU decomposition.
 
-Five capital sources: venue share (25% pfees, T21), internal matching surplus (Stroke 1 of the extraction pump — spread in Book 100, A9), carry income (overnight NOP financing), overflow P&L (Stroke 2 of the extraction pump — distilled aggregate conviction deployed against external rent-extractor layer; see [[PROTOCOL]] §6.1), membership surplus (Nτ).
+Five capital sources: venue share (25% pfees, T21), internal matching surplus (Stroke 1 of the extraction pump — spread in the internal book, A9), carry income (overnight NOP financing), overflow P&L (Stroke 2 of the extraction pump — distilled aggregate conviction deployed against external rent-extractor layer; see [[PROTOCOL]] §6.1), membership surplus (Nτ).
 
 Three deployment vectors per A5: Compound (deploy as CCP at rate ≥ e), Source (fund distribution expansion via T27), Develop (fund better rails). VBM hurdle rate (e × X) determines active deployment vs organic compounding.
 
@@ -489,7 +489,7 @@ REWARD is the operational centre of the DARWIN Protocol. Where [[PROTOCOL]] defi
 
 ### The Core Mechanism
 
-The DARWIN economy matches participants across five dimensions — not just trade flow, but knowledge, capital, community, and tools. The CCP (Central Counterparty) is the sole resting counterparty inside Book 100. No member can front-run another. All internal surplus is mutualized and reinvested. This is the intent inversion: the intermediary's historical power to exploit intent is architecturally eliminated.
+The DARWIN economy matches participants across five dimensions — not just trade flow, but knowledge, capital, community, and tools. The CCP (Central Counterparty) is the sole resting counterparty inside the internal book. No member can front-run another. All internal surplus is mutualized and reinvested. This is the intent inversion: the intermediary's historical power to exploit intent is architecturally eliminated.
 
 ### Three Circles, One Compass
 

@@ -6,7 +6,7 @@ orbit: 1
 language: llm
 status: ACTIVE
 last_updated: 2026-04-11
-owns: CCP/Book 100 mechanics. NOP limits. Partial matching. Flow vs stock attribution. Internal matching rate. Empirical IMR by segment + trade size (Q1 2026 XCore data).
+owns: CCP/the internal book mechanics. NOP limits. Partial matching. Flow vs stock attribution. Internal matching rate. Empirical IMR by segment + trade size (Q1 2026 XCore data).
 chain_step: 4
 source: knowledge/CCP_MATCHING_ENGINE.md (primary), Jarrod meeting 1 Apr 2026
 defers_to: "[[CCP_MATCHING_ENGINE]]"
@@ -16,7 +16,7 @@ cross_refs:
   - atom: PROTOCOL
     why: "Internal matching = friction elimination = surplus source"
   - electron: PHENOTYPE--risk-engine
-    why: "Risk engine is upstream — manufactures the standardised DARWIN before it reaches Book 100"
+    why: "Risk engine is upstream — manufactures the standardised DARWIN before it reaches the internal book"
   - electron: PHENOTYPE--synthetic-capital
     why: "Booster/PA/DarwinIA flow feeds through this matching engine"
   - knowledge: "[[DATA_ACCESS]]"
@@ -26,7 +26,7 @@ protocol_layer: Machine
 protocol_piece: Economy
 ---
 
-# Matching Engine — CCP / Book 100
+# Matching Engine — CCP / the internal book
 
 Detailed matching engine mechanics live in [[CCP_MATCHING_ENGINE]].
 This electron is retained as a loading index entry and wikilink target.
@@ -37,13 +37,13 @@ This electron is retained as a loading index entry and wikilink target.
 
 User-agnostic mutualised market maker. The CCP (Central Counterparty) operates per-instrument NOP (Net Open Position) limits — not per-member. Risk boundaries trigger overflow to external market.
 
-**Mutualized monopoly (constitutional rule):** The CCP is the sole resting counterparty inside Book 100. No member may place limit orders internally — all member orders are market orders. This ensures all internal spread capture is mutualized, prevents private extraction at the microstructure level, and preserves user-agnosticism. Limit orders are permitted only in the overflow book, facing the external market.
+**Mutualized monopoly (constitutional rule):** The CCP is the sole resting counterparty inside the internal book. No member may place limit orders internally — all member orders are market orders. This ensures all internal spread capture is mutualized, prevents private extraction at the microstructure level, and preserves user-agnosticism. Limit orders are permitted only in the overflow book, facing the external market.
 
-Book 100 = the total aggregate volume across ALL investors in a DARWIN. One signal from a DARWIN generates one trade to Book 100. Post-execution, volume is allocated pro-rata to individual investors.
+the internal book = the total aggregate volume across ALL investors in a DARWIN. One signal from a DARWIN generates one trade to the internal book. Post-execution, volume is allocated pro-rata to individual investors.
 
 ## How matching works
 
-Every trade to Book 100 is split into tranches:
+Every trade to the internal book is split into tranches:
 
 1. **Absorbed tranche** — matched internally against opposing flow already in the book. Spread saved. No external execution cost. This IS the symbiosis.
 2. **Overflow tranche** — exceeds book capacity or no opposing flow. Routed to external market (LPs). Spread paid. This IS the trust test against the outside market.
@@ -66,9 +66,9 @@ The split is path-dependent: it depends on the book's current NOP state when the
 - **NOP transfer:** 95%+ to market (CCP retains ~5% as netting value)
 - **IMR formula:** `IMR_j = 1 - (|Net_j| / Gross_j)` per instrument j. IMR=100% (perfectly balanced), IMR=0% (all one direction)
 - **BookIMR:**
-  - definition: "System-wide aggregate IMR across all instruments and all flow sources entering Book 100. BookIMR = 1 − (|aggregate net position| / aggregate gross flow)."
+  - definition: "System-wide aggregate IMR across all instruments and all flow sources entering the internal book. BookIMR = 1 − (|aggregate net position| / aggregate gross flow)."
   - current_value: "≈35% platform-wide (Q1 2026) [[DATA_SOURCES#imr_platform]]"
-  - note: "BookIMR is a system-level metric, not per-DARWIN. It depends on the directional diversity of the total flow pool. In balanced markets (diverse DARWINs), BookIMR is higher. During trends (e.g., gold Q1 2026), directional concentration drags BookIMR down. Hedge flow from ITM synthetic allocations enters Book 100 and is matched at BookIMR like all other flow."
+  - note: "BookIMR is a system-level metric, not per-DARWIN. It depends on the directional diversity of the total flow pool. In balanced markets (diverse DARWINs), BookIMR is higher. During trends (e.g., gold Q1 2026), directional concentration drags BookIMR down. Hedge flow from ITM synthetic allocations enters the internal book and is matched at BookIMR like all other flow."
   - used_by: "[[PROP_BOOK_CAPITAL_DEPLOYMENT]] ROSC formula"
 - **Circuit breakers:** IMR <30% = escalate. IMR <15% = halt new allocations.
 
@@ -127,11 +127,11 @@ Every match eliminates friction between parties who would otherwise pay a middle
 
 ## INDX replication mechanics
 
-DARWIN execution: 1 signal → 1 trade to Book 100 (total volume all investors). Post-execution: volume allocated pro-rata to individual investors. Risk management generates ~1 net adjustment trade/minute across all DARWINs.
+DARWIN execution: 1 signal → 1 trade to the internal book (total volume all investors). Post-execution: volume allocated pro-rata to individual investors. Risk management generates ~1 net adjustment trade/minute across all DARWINs.
 
 **No intra-INDX netting** — DARWINs A and B generate separate trades. Matching happens at the CCP level across ALL flow (DARWIN, booster, broker, overlay), not between individual DARWINs.
 
-Matching cannot be measured from a single source. It requires the complete Book 100 trade log across ALL sources.
+Matching cannot be measured from a single source. It requires the complete the internal book trade log across ALL sources.
 
 ## Attribution
 

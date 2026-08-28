@@ -40,8 +40,8 @@ Boosters, PAs, and DarwinIA provide synthetic capital — simulated investment t
 - **Purpose**: proving ground. Demonstrates edge before real capital is at risk.
 
 flow_mechanics:
-  otm: "OTM synthetic = zero replication flow, zero external execution. The allocation is a paper contract — no positions, no trades, no flow through Book 100. Premium (if any) is collected. Zero cost."
-  itm: "ITM synthetic triggers hedge trades (delta × 15% × notional). Hedge flow enters the spread capture book (Book 100) and is matched at BookIMR. Unmatched portion goes to external LP (cost + NOP). Perf fee obligation crystallises."
+  otm: "OTM synthetic = zero replication flow, zero external execution. The allocation is a paper contract — no positions, no trades, no flow through the internal book. Premium (if any) is collected. Zero cost."
+  itm: "ITM synthetic triggers hedge trades (delta × 15% × notional). Hedge flow enters the spread capture book (the internal book) and is matched at BookIMR. Unmatched portion goes to external LP (cost + NOP). Perf fee obligation crystallises."
   transition: "OTM→ITM migration triggers hedge flow generation. Mass OTM→ITM (trending market) = iceberg scenario — hedge flow surges, directional concentration drags BookIMR down, NOP spikes."
 
 ### Phase 2: Live/overflow capital (uncapped external)

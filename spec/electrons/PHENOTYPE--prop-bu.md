@@ -43,8 +43,8 @@ protocol_piece: Economy
 |----------------|------------------------------|
 | "Venue reinvests" ([[CONSTITUTION]]) | Prop deploys capital |
 | "Venue's 25%" (governance parameter, [[CONSTITUTION]]) | Prop's retained earnings |
-| "Mutualized monopoly" ([[CONSTITUTION]]) | Prop's CCP monopoly (sole resting counterparty in Book 100) |
-| "No private extraction" ([[CONSTITUTION]]) | No entity other than Prop does market-making inside Book 100 |
+| "Mutualized monopoly" ([[CONSTITUTION]]) | Prop's CCP monopoly (sole resting counterparty in the internal book) |
+| "No private extraction" ([[CONSTITUTION]]) | No entity other than Prop does market-making inside the internal book |
 
 ## Dual Identity
 
@@ -86,7 +86,7 @@ Prop ROE is the empirical proof that the axiom system works operationally.
 | # | Source | Axiom grounding |
 |---|--------|----------------|
 | 1 | Venue share (25% of performance fees) | governance parameter (T21) — three-party split |
-| 2 | Internal matching surplus (spread saved in Book 100) | [[CONSTITUTION]], [[CONSTITUTION]] — mutualized monopoly |
+| 2 | Internal matching surplus (spread saved in the internal book) | [[CONSTITUTION]], [[CONSTITUTION]] — mutualized monopoly |
 | 3 | Carry income (overnight NOP financing) | [[CONSTITUTION]] — CCP as sole counterparty |
 | 4 | Overflow P&L (vs external market) | [[CONSTITUTION]] — edge proven externally |
 | 5 | Membership surplus (Nτ) | [[CONSTITUTION]] — community self-funding |
@@ -107,7 +107,7 @@ VBM hurdle rate (e × X) determines whether Prop deploys actively or compounds o
 
 | Rule | Prop implementation |
 |------|---------------------|
-| CCP = sole resting counterparty | Prop's limit orders are the ONLY resting orders in Book 100 |
+| CCP = sole resting counterparty | Prop's limit orders are the ONLY resting orders in the internal book |
 | No member limit orders internally | All member orders are market orders inside the venue |
 | All internal surplus mutualized | Prop retains ALL spread savings (not distributed to individual members) |
 | Monopoly acceptable because... | 100% of Prop surplus reinvested per [[CONSTITUTION]] |

@@ -98,7 +98,7 @@ Archived to `_archive/`. Content redistributed to causal atoms.
 
 | Electron | Orbit | Owns | Updated |
 |----------|-------|------|---------|
-| [[PHENOTYPE--matching-engine]] | 1 | CCP/Book 100 mechanics. NOP limits. Partial matching. Flow vs stock attribution. | 1 Apr |
+| [[PHENOTYPE--matching-engine]] | 1 | CCP/the internal book mechanics. NOP limits. Partial matching. Flow vs stock attribution. | 1 Apr |
 | [[PHENOTYPE--synthetic-capital]] | 1 | Synthetic vs live capital. Two-phase mountain. Capped vs uncapped. Option model. | 1 Apr |
 | [[GENOTYPE--vbm]] | 1 | VBM trust-flow reinvestment. Hurdle rate (e × X). S/D/S allocation. GSheet architecture. | 3 Apr |
 | [[PHENOTYPE--business-units]] | 2 | 4 BU architecture. Revenue mapping. SoP valuation. Two-level BU model. | 11 Apr |
