@@ -94,7 +94,7 @@ export default defineConfig({
                 { label: 'Extraction (T18-T22)', slug: 'specification/theorems/extraction' },
                 { label: 'Structural (T23-T28)', slug: 'specification/theorems/structural' },
                 { label: 'Extended (T29-T64)', slug: 'specification/theorems/extended' },
-                { label: 'Failure Theorems (F1-F9)', slug: 'specification/theorems/failure' },
+                { label: 'Failure Theorems (F1-F10)', slug: 'specification/theorems/failure' },
               ],
             },
             {

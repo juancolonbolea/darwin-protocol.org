@@ -19,10 +19,11 @@ The DARWIN Protocol is formally specified as:
 
 - **7 irreducible primitives** (P0–P6) — the foundational terms that cannot be decomposed further; the site presents them under eight public labels, mapped on the [Primitives](/specification/primitives/) page
 - **10 active axioms** (of A1–A16; three absorbed into others, three demoted) — the propositions the protocol assumes to be true (3 existential + 7 structural)
-- **71 derived theorems** — 61 positive claims and 10 failure theorems that follow logically from the axioms, plus one lemma
+- **71 derived theorems** — 61 positive claims and 10 failure theorems that follow logically from the axioms, plus one lemma, **L1 (Matching Density)**, which carries the scaling in membership that A4 implies without asserting
 - **21 formal proofs** — written derivations of the load-bearing results
+- **2 empirical anchors** — the two places the specification reaches outside itself: **E1** (T42, external validation — the falsifiability condition) and **E2** (A1, access dominance — the motivating condition), each with a stated measurement and falsifier
 
-The axiom set is at v13, the output of an adversarial audit of every axiom — one derivation attempt each, then refutation and defence — recorded in `analysis/axiom-stress/SYNTHESIS.md` in the repository. Thirteen active axioms were reduced to ten: A10 became vocabulary, and A15 and A16 became conformance requirements on the matching and settlement components.
+The axiom set is at v13, the output of an adversarial audit of every axiom — one derivation attempt each, then refutation and defence — recorded in `analysis/axiom-stress/SYNTHESIS.md` in the repository. Thirteen active axioms were reduced to ten: A10 became vocabulary, and A15 and A16 became conformance requirements on the matching and settlement components. The same revision added L1, the anchor E2, and a tenth failure theorem — **F10 (Surplus Not Retained)**, what happens when rescued surplus is rebated or held idle instead of redeployed.
 
 The target is for the full logical chain to be compiler-verified in **Lean 4** — a proof assistant used in academic mathematics and formal verification. If an axiom changes, dependent theorems break, and the compiler catches it. The Lean formalisation is an open community component; see [Lean 4 Formalization](/specification/lean4/) for status.
 
@@ -58,9 +59,9 @@ The foundational propositions, organized into two groups:
 - **Structural axioms (A4-A14)** — How the protocol operates. The rules it follows.
 
 ### Theorems
-71 derived claims, grouped by theme:
+71 derived claims plus the lemma L1, grouped by theme:
 
-- **Core Flywheel (T1-T4)** — The basic growth engine
+- **Core Flywheel (L1, T1-T4)** — The density lemma and the basic growth engine
 - **Exponential (T5-T10)** — Why growth compounds
 - **Inversion (T11-T14)** — How power shifts from institutions to members
 - **S-Curve (T15-T17)** — The lifecycle dynamics
@@ -70,7 +71,7 @@ The foundational propositions, organized into two groups:
 - **Failure Theorems (F1-F10)** — What breaks the flywheel, and the four Named Principles
 
 ### Proofs
-21 written proofs. Six are rendered as pages — the exponential growth proof, the extraction impossibility proof, the S-curve, the community-beats-market proof, the dataset vehicle and the linear-network decomposition; the rest are indexed on the Proofs overview.
+21 written proofs, plus the two empirical anchors (E1 and E2) that carry the framework's contact with reality. Six proofs are rendered as pages — the exponential growth proof, the extraction impossibility proof, the S-curve, the community-beats-market proof, the dataset vehicle and the linear-network decomposition; the rest are indexed on the Proofs overview.
 
 ### Lean 4 Formalization
 The specification expressed in a language a machine can check for consistency. Open community component — scope, status and acceptance criteria.

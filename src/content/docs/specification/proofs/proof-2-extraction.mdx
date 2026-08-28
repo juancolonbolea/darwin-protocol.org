@@ -9,13 +9,13 @@ description: "Why closing one extraction channel is not enough — the derivatio
 
 ## Premises
 
-- **A9 (no private extraction)** — the CCP is the sole resting counterparty inside the venue; no member limit orders internally; all internal surplus is mutualised. This closes the *flow* level.
+- **A9 (no counterparty extraction)** — no party, the operator included, may take the other side of member flow or trade on aggregate flow information. This closes the *flow* level. The mechanics that implement it inside the venue are a conformance requirement on the matching and settlement components, not axiom content.
 - **T19 (deadwood shareholders are stock-level extraction)** — a shareholder who holds ownership without ongoing contribution extracts at the *stock* level, in violation of P6 (merit).
 - **T12 (power inversion organises individuals off the menu)** — governance power that is not itself constrained can block reinvestment even when flow and stock are clean.
 
 ## Derivation
 
-1. **A9** closes the flow level: no intermediary can skim the matching engine's spread. It is silent on what happens to accumulated ownership.
+1. **A9** closes the flow level: no party may take the other side of member flow, so no intermediary can skim the matching engine's spread. It is silent on what happens to accumulated ownership.
 2. **T19** shows that even with flow closed, a zero-contribution shareholder still extracts — value flows to holders who no longer add trust, violating P6.
 3. Even with flow and stock both closed, governance power can still block reinvestment decisions, redirecting surplus away from the vectors that would mint the most trust (T17).
 4. Each channel is independent: closing one does not close, or even constrain, the others. A protocol clean at the flow level can still be captured at the stock or governance level.
@@ -23,7 +23,7 @@ description: "Why closing one extraction channel is not enough — the derivatio
 
 ## Load-bearing assumptions
 
-- **The three levels are genuinely independent.** The proof's step 4 is doing the real work — if closing the flow level structurally implied closing the stock or governance level, this would collapse to a simpler claim. It does not: a mutualised matching engine (A9) says nothing about who owns equity or who controls the reinvestment decision.
+- **The three levels are genuinely independent.** The proof's step 4 is doing the real work — if closing the flow level structurally implied closing the stock or governance level, this would collapse to a simpler claim. It does not: a prohibition on taking the other side of member flow (A9) says nothing about who owns equity or who controls the reinvestment decision.
 - **T19 and T12 hold on their own terms.** T19 depends on A9 + T15 (front-loading) + A7. T12 depends on A4 + A9 + A14 (power inversion).
 
 ## What breaks if a premise fails

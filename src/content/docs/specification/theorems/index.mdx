@@ -1,11 +1,13 @@
 ---
 title: "Theorems"
-description: "70 active theorems (61 positive + 9 failure), derived from the primitives and axioms and conditional on P6."
+description: "71 active theorems (61 positive + 10 failure) plus one lemma, derived from the primitives and axioms and conditional on P6."
 ---
 
 ## What a theorem is here
 
-Every theorem in this section is *derived*, not posited. Each one traces, through an explicit dependency chain, back to the seven primitives and thirteen axioms — nothing hangs unsupported. Where an entry says "Derives from," that is a real proof obligation, not a citation: given the axioms and prior theorems listed, the theorem's conclusion follows.
+Every theorem in this section is *derived*, not posited. Each one traces, through an explicit dependency chain, back to the seven primitives and the ten active axioms (A1–A5, A7–A9, A13, A14) — nothing hangs unsupported. Where an entry says "Derives from," that is a real proof obligation, not a citation: given the axioms and prior theorems listed, the theorem's conclusion follows.
+
+One derived result is carried as a **lemma** rather than a theorem: **L1 (Matching Density)** states the scaling in membership that A4 implies but does not itself assert, and T2, T26 and T29 cite it directly. It is a scaling property of A4, not an additional claim, which is why it is numbered apart from the theorem set.
 
 That derivation is conditional on one thing: **P6 (Merit) — contribution should determine reward.** P6 is the framework's only normative primitive; everything else (P0–P5 and the axioms built on them) is descriptive — a claim about how selection-driven systems evolve wherever information asymmetry creates pressure to resolve it. Strip out P6 and the theorems still hold as descriptive claims about those dynamics: the flywheel still self-accelerates, $e^X$ is still algebraic. What P6 adds is the normative reading — that this direction of evolution is a good one. Reject P6 and you reject the framework's conclusions in the same breath; the mechanics remain true either way.
 
@@ -15,6 +17,7 @@ The groups below are not independent chapters — they are stages of one derivat
 
 | Group | Theorems | Page |
 |---|---|---|
+| Matching Density (lemma) | L1 | [Core Flywheel](/specification/theorems/core-flywheel) |
 | Core Flywheel | T1–T3 (T4 absorbed into T11) | [Core Flywheel](/specification/theorems/core-flywheel) |
 | Exponential | T5–T10 | [Exponential](/specification/theorems/exponential) |
 | Inversion | T11–T14 | [Inversion](/specification/theorems/inversion) |
@@ -22,18 +25,21 @@ The groups below are not independent chapters — they are stages of one derivat
 | Extraction & Corruption | T18–T22 | [Extraction](/specification/theorems/extraction) |
 | Structural & Network Corollaries | T23–T28 | [Structural](/specification/theorems/structural) |
 | Extended (transition, certification, Nobel cross-check, monetary) | T29–T64 | [Extended Theorems](/specification/theorems/extended) |
-| Failure Theorems + Named Principles | F1–F9 | [Failure Theorems](/specification/theorems/failure) |
+| Failure Theorems + Named Principles | F1–F10 | [Failure Theorems](/specification/theorems/failure) |
 
-**Total: 70 active theorems — 61 positive + 9 failure.** (T4 is absorbed into T11 and does not count separately; T62 and T63 are not part of the active set.) Twenty-one formal proofs exist; six are published as standalone [proof pages](/specification/proofs), and the rest are referenced inline as "Proof N in the constitution."
+**Total: 71 active theorems — 61 positive + 10 failure — plus the lemma L1.** (T4 is absorbed into T11 and does not count separately; T62 and T63 are not part of the active set; L1 is a lemma and is counted apart from the theorems.) Twenty-one formal proofs exist; six are published as standalone [proof pages](/specification/proofs), and the rest are referenced inline as "Proof N in the constitution."
+
+The tenth failure theorem is **F10 (Surplus Not Retained)**, the second way Inheritance fails: F1 breaks the α channel, F10 breaks the retention channel. Every other operational force has exactly one failure mode.
 
 ## Dependency graph
 
-At the group level, dependency runs one direction — down from primitives and axioms, forward through the theorem groups — with the failure theorems drawing on the same axioms and later theorems from the opposite side (negated).
+At the group level, dependency runs one direction — down from primitives and axioms, forward through the theorem groups — with the failure theorems drawing on the same axioms and later theorems from the opposite side (negated). The lemma L1 sits between the axioms and the theorems: it is derived from A4 alone, and the dotted edges are the theorems that cite it outside the flywheel group (T26 structural, T29 extended).
 
 ```mermaid
 flowchart TD
     P["7 Primitives — P0 Information Asymmetry ... P6 Merit"]
-    AX["13 Axioms — A1-A16 (existential, structural, architectural)"]
+    AX["10 Active Axioms — A1-A5, A7-A9, A13, A14"]
+    L1["Lemma L1 — Matching Density"]
     CF["Core Flywheel — T1-T3"]
     EXP["Exponential — T5-T10"]
     INV["Inversion — T11-T14"]
@@ -41,10 +47,14 @@ flowchart TD
     EX["Extraction & Corruption — T18-T22"]
     ST["Structural & Network — T23-T28"]
     XT["Extended — T29-T64"]
-    F["Failure Theorems — F1-F9"]
+    F["Failure Theorems — F1-F10"]
 
     P --> AX
+    AX --> L1
     AX --> CF
+    L1 --> CF
+    L1 -.-> ST
+    L1 -.-> XT
     CF --> EXP
     EXP --> INV
     INV --> SC

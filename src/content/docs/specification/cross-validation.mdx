@@ -7,7 +7,7 @@ description: "Which theorems are consistently housed across the knowledge base, 
 
 Every theorem in the constitution is derived once, in `spec/CONSTITUTION.md` §III. But a theorem's conclusions get *used* in several other places — the narrative synthesis, the mechanism description, the membership terms, the plain-language algebra, the lifecycle and corruption-resistance treatments, the matching-engine mechanics, and the canonical glossary. The cross-validation matrix is a check that a theorem's conclusion, wherever it's referenced outside the constitution, agrees with the derivation that proved it.
 
-Each row is a theorem. Each column is a document where that theorem's conclusion might be expected to show up. A checkmark means the theorem is both consistent with and actually present in that document; an empty cell means the theorem simply isn't relevant there. The one status in between — flagged separately — means the conclusion is logically consistent but hasn't been written into that document yet.
+Each row is a claim the constitution derives — a theorem in almost every case, plus the lemma L1 and the empirical anchor E2. Each column is a document where that claim's conclusion might be expected to show up. A checkmark means the theorem is both consistent with and actually present in that document; an empty cell means the theorem simply isn't relevant there. The one status in between — flagged separately — means the conclusion is logically consistent but hasn't been written into that document yet.
 
 This is a **consistency audit, not a proof**. A checkmark doesn't re-verify the derivation; it confirms that wherever the theorem's conclusion is repeated, it hasn't drifted from what was actually proved. The intended end state — listed in COMPONENTS.md as W-11 — is a three-way diff: this matrix, the site's own pages, and eventually the [Lean 4 formalisation](/specification/lean4/), all checked automatically for the same axiom counts and theorem IDs. That automated diff does not exist yet. What follows is the matrix as maintained in the constitution today.
 
@@ -85,12 +85,17 @@ This is a **consistency audit, not a proof**. A checkmark doesn't re-verify the 
 | F3 | ○ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
 | F4 | ○ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ |
 | F5 | ○ | ✅ | ○ | ○ | ✅ | ○ | ○ | ○ | ✅ |
+| L1 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ✅ | ⚠️ |
+| F10 | ○ | ✅ | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ⚠️ |
+| E2 | ✅ | ✅ | ○ | ○ | ○ | ○ | ○ | ○ | ⚠️ |
 
 *T4 is not listed: it was absorbed into T11 (identical derivation from A2+A7+A13) and carries no independent row.*
 
+*The last three rows are not theorems.* **L1** is the matching-density lemma — the scaling in membership that A4 implies and that T2, T26 and T29 cite. **F10** is the tenth failure theorem, Inheritance failing at its retention channel. **E2** is the second empirical anchor: A1's access-dominance claim, with its own measurement and falsifier. All three arrived with the v13 restatement, which is why each still carries ⚠️ in the glossary column — consistent with its derivation, not yet written into the canonical framing document.
+
 Two theorems recur across almost every column — T27 (Protocol Network Corollary) and T39 (Endgame Entity) — because both sit at a point in the dependency graph where mission, mechanism, deal terms, growth phase, corruption-resistance, and structure all have to agree simultaneously. A gap in either row is the highest-priority kind to close.
 
-The ⚠️ cells cluster around T17, T20, T21, T24, and T38 — all consistent with their derivations, none yet fully propagated into CORR-RES or CANON_FR. That is a documentation backlog, not a logical inconsistency.
+The ⚠️ cells cluster around T17, T20, T21, T24, and T38 — all consistent with their derivations, none yet fully propagated into CORR-RES or CANON_FR — and around the three v13 additions, L1, F10 and E2, which are not yet in CANON_FR at all. That is a documentation backlog, not a logical inconsistency.
 
 ---
 
@@ -98,7 +103,19 @@ The ⚠️ cells cluster around T17, T20, T21, T24, and T38 — all consistent w
 
 The constitution tracks its own logical gaps — places where a claim was flagged as under-derived, ambiguous, or missing a formal treatment — and resolves them over successive revisions. The gaps below are the ones internal to the framework's own logical structure: whether a claim is derivable, whether a duplicate derivation exists, whether an empirical claim should instead be a proven one. (A separate set of gaps in the same section tracks whether specific glossary terms and dimension lists have been written into the right internal document; those are documentation housekeeping, not logical gaps, and aren't reproduced here.)
 
-All of the gaps below are marked resolved as of the current constitution version.
+### Open
+
+Three gaps are open as of v13. Two of them are the direct cost of the v13 restatement: reducing an axiom to its irreducible claim exposes the parameters that used to hide inside it.
+
+| Gap | What it flags | Status |
+|-----|----------------|--------|
+| G20 | **The β estimator is undefined.** A7 asserts β > 0 in $dK/dt = g(C, dC/dt) + \beta \cdot T$, but no estimator of β is specified, so the axiom is not yet measurable. What is needed: the regression that identifies β separately from $g$, the capital series standing for $K$, the trust series standing for $T$, a sampling frequency, and an identification argument that keeps capital arriving for reasons other than proof out of the coefficient. | Open — the highest-value follow-up. After the v13 restatement β roots both halves of the recurrence, since aggregate α (T56) derives from A7, so credibility rests on the anchor programme: E1, E2, and a published β |
+| G21 | **A13's granularity and lag are unparameterised.** The disclosure boundary is set "at a granularity and lag that preserves the capacity of the edge disclosed," but neither is specified and "preserves capacity" has no measurable test. What is needed: a capacity-preservation rule relating publication lag to signal half-life, and a granularity floor that keeps results comparable without reconstructing the live process | Open — couples directly to F7 (reflexivity): the lag that preserves capacity is the same parameter that caps capital-following velocity |
+| G22 | **Whether accrued trust stock is redeployable as allocative capital is unstated.** It was the residue of A10, which v13 demotes to vocabulary | Deferred. With Proof 9 and T35 now typed correctly — trust is a stock, INDX is the per-period flow off it, and the compounding rate comes from A5's Compound vector rather than an assumed lower bound — no current derivation needs the claim. It is revisited only if a derivation then fails |
+
+### Resolved
+
+The gaps below are marked resolved as of the current constitution version.
 
 | Gap | What it flagged | How it was resolved |
 |-----|------------------|----------------------|
@@ -112,7 +129,7 @@ All of the gaps below are marked resolved as of the current constitution version
 | G18 | The non-rivalrous-inside / rivalrous-outside duality had no formal theorem | Resolved by T51 (Non-Rivalry Duality) — the physical explanation for why growth is exponential rather than additive |
 | G19 | "Trust as residual" (trust is revealed by removing asymmetry, not built) had no formal statement | Resolved by T52 (Trust as Residual): $T = T_{max} - A$, where $dT/dt = -dA/dt$ |
 
-No gap in this list is currently open. The audit discipline itself — flag a claim as under-derived, then either derive it, demote it, or absorb it into an existing theorem — is what the dependency graph in `spec/CONSTITUTION.md` §V exists to make checkable.
+The audit discipline itself — flag a claim as under-derived, then either derive it, demote it, absorb it into an existing theorem, or state plainly that it is still open — is what the dependency graph in `spec/CONSTITUTION.md` §V exists to make checkable. G20 and G21 are the current live entries on that list.
 
 ---
 

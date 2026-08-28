@@ -1,13 +1,13 @@
 ---
-title: "Failure Theorems (F1–F9)"
+title: "Failure Theorems (F1–F10)"
 description: "How the framework diagnoses its own breakdown, and the four named principles that bound the monetary design."
 ---
 
-The framework diagnoses its own breakdown through two failure classes. **Class A (F1–F5)** is internal force collapse — one failure mode per evolutionary force, self-inflicted. **Class B (F6–F9)** is adversarial or externally induced failure that can occur even under honest operation. Each failure mode is an information pathology: a stage of the create → protect → liberate lifecycle (T50) breaking down.
+The framework diagnoses its own breakdown through two failure classes. **Class A (F1–F5, F10)** is internal force collapse — one failure mode per evolutionary force, and two for Inheritance, which can fail at either of its two channels. **Class B (F6–F9)** is adversarial or externally induced failure that can occur even under honest operation. Each failure mode is an information pathology: a stage of the create → protect → liberate lifecycle (T50) breaking down.
 
 ---
 
-## Class A — Internal Force Collapse (F1–F5)
+## Class A — Internal Force Collapse (F1–F5, F10)
 
 **F1 — α-Collapse (Dataset Failure).** If aggregate α is broken (the dataset stops transmitting trust into edge, ¬T56), $e$ becomes constant and exogenous, and $e^X$ collapses to $e \times X$: linear rather than exponential growth. The system keeps functioning; it stops compounding.
 
@@ -39,6 +39,12 @@ The framework diagnoses its own breakdown through two failure classes. **Class A
 
 ---
 
+**F10 — Surplus Not Retained (Retention Failure).** If rescued surplus is rebated to members or held idle instead of redeployed into trust-minting capacity (¬A5), the compounding term vanishes. Each cycle returns to the capacity it started with, so growth is whatever exogenous inflow happens to supply: the S-curve (T16) degrades to a line, and there is no compounding left to price. The flywheel still turns — matching still rescues surplus (A4), members are still paid — but nothing accumulates.
+
+**Derives from** ¬A5+A4+T16. **Consequence:** this is Inheritance failing at its retention channel, where F1 is Inheritance failing at its α channel. It is distinct from F4: under F4 the surplus leaks to an intermediary and never reaches the venue, while under F10 it is genuinely rescued and then not put to work — a governance decision (T21) rather than a breach. Diagnosable as a falling ratio of rescued surplus to reinvestment, flat reinvestment vectors while matching volume grows, and per-cycle trust-minting capacity constant across cycles; the fix is restoring the retention rule and re-opening the allocation surface, since a rebate is a distribution decision, not an operating cost.
+
+---
+
 ## Class B — Adversarial & External Failure (F6–F9)
 
 **F6 — Dataset Poisoning.** A coordinated group of providers submits crafted signals to bias the aggregate statistics the risk engine learns from; honest providers then see falling allocation despite genuine edge and withdraw.
@@ -61,7 +67,7 @@ The framework diagnoses its own breakdown through two failure classes. **Class A
 
 **F9 — Strategy Convergence / Monoculture.** Uniform scoring homogenises what "good" looks like: rational traders converge on the same objective, strategy correlation rises, effective variation collapses toward a single factor, and selection (T18) operates on a degenerate manifold — a back door into F5 through the scoring layer rather than the entry gate.
 
-**Derives from** ¬V(endog)+A8+T18. **Consequence:** mitigated by multi-objective scoring with orthogonal axes and a diversity bonus in attribution, diagnosed via rising pairwise correlation among certified return streams.
+**Derives from** ¬V(endog)+A2+A8+T18. **Consequence:** mitigated by multi-objective scoring with orthogonal axes and a diversity bonus in attribution, diagnosed via rising pairwise correlation among certified return streams.
 
 ---
 
@@ -71,7 +77,7 @@ Four corollaries are named for reference and teaching but are not numbered in th
 
 **Normalisation Principle.** The pump applies invertible transforms to signals — risk normalisation, volatility adjustment — and never scores members directly. Scoring discriminates the member; normalisation only reshapes the signal. Derived from A9+P6.
 
-**Stock-Flow Conservation.** INDX flow integrates into trust stock across cycles; a cashout exits that integration and a loss-certification reverses a prior increment. The trust ledger is a balanced triple-entry system: mint, loss-destroy, cashout-destroy. Derived from A15+T42 (bilateral)+definitional accounting.
+**Stock-Flow Conservation.** INDX flow integrates into trust stock across cycles; a cashout exits that integration and a loss-certification reverses a prior increment. The trust ledger is balanced double-entry with three posting types: mint, loss-destroy, cashout-destroy. Derived from A9+A4 (the netting identity the ledger journals)+T42 (bilateral certification supplies the sign of each posting)+definitional accounting.
 
 **Capital-vs-Merit Separation.** Capital is compensated at market rate plus bounded alpha; merit is compensated with DWX (exponential platform equity) and INDX (flow credits). The compounding rate matches the contribution type, and neither side has a claim on the other's compensation structure. Derived from P6+T5.
 

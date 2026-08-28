@@ -9,8 +9,8 @@ description: "Why the community converges on being the market itself — the der
 
 ## Premises
 
-- **T2 (internal matching rate rises with N)** — as membership $N$ grows, the fraction of flow matched internally rather than routed externally increases, because more opposing intent exists to net against.
-- **A5 (surplus reinvested compounds trust via three vectors)** — surplus rescued by matching is reinvested wherever it mints the most trust, which grows $N$ further.
+- **T2 (internal matching rate rises with N)** — as membership $N$ grows, the fraction of flow matched internally rather than routed externally increases, because more opposing intent exists to net against. T2 rests on the density lemma L1: within each matching dimension, feasible pairings grow super-linearly in $N$ up to that dimension's capacity ceiling.
+- **A5 (retention)** — surplus rescued by matching is retained and redeployed into trust-minting capacity, which grows $N$ further; how it is split across the Compound, Source and Develop vectors is governance (T21).
 
 ## Derivation
 
@@ -29,7 +29,7 @@ description: "Why the community converges on being the market itself — the der
 
 If **T2 fails** — IMR does not rise with $N$, or rises and then reverses — the community never approaches market-equivalence; it remains a routing layer on top of an external market, and T3's conclusion does not follow.
 
-If **A5 fails** — surplus is not reinvested toward the vectors that grow $N$ — the flywheel that drives T2's growth stalls, and IMR plateaus below the threshold where community self-knowledge is a genuine substitute for external price discovery. This is adjacent to failure theorem **F4 (★-Collapse)**, where the venue stops matching or starts extracting.
+If **A5 fails** — surplus is rescued but not redeployed toward the vectors that grow $N$ — the flywheel that drives T2's growth stalls, and IMR plateaus below the threshold where community self-knowledge is a genuine substitute for external price discovery. That is failure theorem **F10 (Surplus Not Retained)**; the adjacent case where the surplus never reaches the venue at all, because it leaks to an intermediary, is **F4 (★-Collapse)**.
 
 ## Related theorems
 
