@@ -1,8 +1,36 @@
 ---
 title: "P1 — Edge"
-description: "Risk-adjusted performance rate"
+description: "The stock of certified skill — earned by producing edge, accumulated in the Quote."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+Spec identity: **P1 — Credibility (e)**
 
-Formal definition and irreducibility test coming in Phase 2.
+---
+
+## Definition
+
+Credibility is earned by producing edge and certified by the protocol. It accumulates in the Quote — the risk-adjusted, unfalsifiable track record the risk engine attests to on every trade. Credibility cannot be claimed; it can only be built, one attested trade at a time.
+
+## Type
+
+Stock, with a rate: $\dfrac{dC}{dt}$. Credibility is not a single event — it is a level that trades add to over time, and the rate at which it grows is itself a tracked quantity in the trust equation (`spec/PROTOCOL.md` §6).
+
+## Verb & circle
+
+**Develop.** Circle: **e** (the edge circle) — one of the three overlapping domains whose non-overlap area is P0.
+
+## Irreducibility test
+
+Credibility cannot be derived from trust or confidence alone. Both of those require credibility to already exist — trust is the residual of credibility meeting confidence (P3), and confidence is capital allocated in response to observed credibility (P2). What credibility itself requires is something neither trust nor confidence can supply: actual performance against the market. There is no shortcut around producing edge.
+
+## Grounding
+
+P1 is the first resolution in the causal chain: it resolves the **credibility dimension** of P0 (information asymmetry) — the individual-level question "is this merit real?" Resolving it converts human capital into a certified, comparable signal. Everything downstream — confidence, trust, matching, the dataset — depends on credibility existing first. Canonical treatment: `spec/CONSTITUTION.md` §I (row P1), `spec/DEVELOP.md`.
+
+## Where it appears
+
+- [Axioms — A2, Merit Visible](/specification/axioms/existential/a2-merit-visible/) — certification as the mechanism that makes credibility legible
+- [Axioms — A6, Collective Credibility](/specification/axioms/structural/a6-collective-credibility/)
+- [Theorems — Core Flywheel (T1–T4)](/specification/theorems/core-flywheel/) — how P1 feeds the growth loop
+- [How It Works — the Quote](/about/mechanism/) — the site's plain-language treatment of the same mechanism
+- [Primitives — Overview](/specification/primitives/) — P1's place in the P0 → P1 → P2 → P3 causal chain

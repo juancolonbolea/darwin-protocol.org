@@ -1,8 +1,38 @@
 ---
 title: "Proof 5 — Dataset Vehicle"
-description: "Formal proof of the dataset vehicle"
+description: "Why the dataset is the mechanism, not just an input — the derivation of T6 from A7 and P5."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Claim
 
-Formal proof coming in Phase 2.
+**T6 — The dataset is the trust→edge vehicle.** A7 asserts that trust and edge reinforce one another but does not specify how. T6 identifies the mechanism: the accumulated dataset (P5), which serves a dual function as the α-vehicle (converting trust into edge across five channels) and as the risk engine's training corpus (converting trust into more precise standardisation).
+
+## Premises
+
+- **A7 (trust begets confidence, and — pre-T56 split — trust begets edge)** — the double-recurrence claim that motivates asking *how* trust becomes edge.
+- **P5 (the dataset)** — twelve years of certified track records, matching patterns, and risk-adjusted histories; non-portable and protocol-owned.
+
+## Derivation
+
+1. A7 claims a trust → edge relationship but, taken alone, is silent on mechanism — it states the correlation, not the channel.
+2. Five channels carry that relationship in practice: inheritance (new members draw on accumulated patterns), matching intelligence, the risk engine itself, the variometer, and community knowledge-sharing.
+3. Each channel converts accumulated trust — recorded, attributed data — into improved edge for participants, present or future.
+4. Without P5, the trust → confidence leg of A7 could still hold (capital can follow proof without a growing dataset), but the trust → edge leg has no substrate to act through. $e$ would be constant, and $e^X$ collapses to $e \times X$ — linear, not exponential.
+5. Therefore the dataset is not incidental to the trust → edge claim; it *is* the vehicle. $\blacksquare$
+
+## Load-bearing assumptions
+
+- **The five channels are genuinely distinct and additive.** If they collapsed into one mechanism, T6's "dual function" framing (α-vehicle and training corpus) would be doing less work than claimed.
+- **P5 keeps growing.** T6 depends on the dataset accumulating over time — a static or shrinking dataset cannot serve as an ongoing vehicle.
+- **A8 (standardisation)** is presupposed for the training-corpus half of T6's claim: richer data sharpens the risk engine's calibration only if the risk engine's normalisation process is itself trustworthy and algorithmic.
+
+## What breaks if a premise fails
+
+If **P5 stops growing or degrades** (contamination, staleness, or a pipeline failure), the α-vehicle fails. This is failure theorem **F1 (α-Collapse)**: $e$ decouples from $X$, and growth becomes additive rather than compounding. Adversarially, this is also the failure surface named in **F6 (Dataset Poisoning)** — a coordinated coalition submitting crafted signals to bias the aggregate statistics the risk engine learns from.
+
+If **A7's confidence leg fails** independently, the training-corpus half of T6 can still hold — the risk engine keeps improving — but nobody is funding the edge that improvement produces. That is **F2 (β-Collapse)**, not a failure of T6 itself.
+
+## Related theorems
+
+- [Exponential (T5–T10)](/specification/theorems/exponential/) — the cluster this proof belongs to, including T5 (e^X is algebraically literal, which T6 makes mechanistically possible) and T10 (the e-inflection as the dataset going real-time)
+- [Extraction (T18–T22)](/specification/theorems/extraction/) — T18, the selection mechanism that P5 feeds

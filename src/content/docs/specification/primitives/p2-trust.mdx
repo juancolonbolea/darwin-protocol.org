@@ -1,8 +1,38 @@
 ---
 title: "P2 — Trust"
-description: "Accumulated result of attested edge"
+description: "The residual left over once credibility meets confidence — minted, not built."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+Spec identity: **P3 — Trust (INDX)**
 
-Formal definition and irreducibility test coming in Phase 2.
+This page carries spec primitive P3, not P2. Site numbering places Trust second in the narrative; the spec derives it third, after Confidence. See the [numbering table](/specification/primitives/#site-numbering-vs-spec-numbering) for the full mapping.
+
+---
+
+## Definition
+
+Trust is not something the protocol constructs. It is the **residual of resolved information asymmetry** — what remains once credibility asymmetry, intent asymmetry, and data asymmetry have been removed. It is minted the instant certified credibility (P1) meets allocated confidence (P2). In protocol notation: $\text{INDX} = \Delta\text{Quote} \times \text{Outside Confidence}$ — new information created, multiplied by information acted upon. INDX is the measure of that impact.
+
+## Type
+
+Stock, defined as a product: $C \times K$ (credibility times confidence). Its rate of change follows the product rule: $\dfrac{dT}{dt} = \dfrac{dC}{dt} \cdot K + C \cdot \dfrac{dK}{dt}$.
+
+## Verb & circle
+
+**Accrue.** Circle: **e ∩ X** — the overlap between the edge circle and the capital circle. Trust lives exactly where credibility and confidence intersect, nowhere else.
+
+## Irreducibility test
+
+Trust cannot be derived from credibility or confidence in isolation. Credibility alone is unproven skill nobody has backed; confidence alone is capital with nothing certified to attach to. Trust requires the **product** of both — which is also why it cannot be manufactured directly. There is no action that mints trust without first producing edge and then having that edge backed with capital.
+
+## Grounding
+
+Trust is the terminal node of the primary causal chain (P0 → P1 → P2 → P3) and the source of the two feedback loops that make the system compound: trust reinvested into more data (α loop, P3 → P1) and trust reinvested into tighter proof (β loop, P3 → P2). Trust's velocity, $dT/dt$, is the rate at which information asymmetry is being resolved. Canonical treatment: `spec/CONSTITUTION.md` §I (row P3), `spec/VOCABULARY.md`.
+
+## Where it appears
+
+- [Axioms — A10, Trust Flow](/specification/axioms/structural/a10-trust-flow/)
+- [Axioms — A13, Transparency Inversion](/specification/axioms/structural/a13-transparency/)
+- [Theorems — Exponential (T5–T10)](/specification/theorems/exponential/) — the compounding this residual produces
+- [Membership — Tokens (INDX & DWX)](/membership/tokens/) — INDX as the token expression of P3
+- [Primitives — Overview](/specification/primitives/) — the causal chain and the site-vs-spec numbering table

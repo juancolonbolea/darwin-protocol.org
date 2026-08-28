@@ -1,8 +1,40 @@
 ---
 title: "Proof 2 — Extraction Levels"
-description: "Formal proof of extraction levels"
+description: "Why closing one extraction channel is not enough — the derivation of T20 from A9, T19 and T12."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Claim
 
-Formal proof coming in Phase 2.
+**T20 — Three extraction levels must all be closed.** Corruption-resistance requires closing extraction at the flow level, the stock level, and the governance level simultaneously. Closing any one or two of the three leaves the protocol exploitable.
+
+## Premises
+
+- **A9 (no private extraction)** — the CCP is the sole resting counterparty inside the venue; no member limit orders internally; all internal surplus is mutualised. This closes the *flow* level.
+- **T19 (deadwood shareholders are stock-level extraction)** — a shareholder who holds ownership without ongoing contribution extracts at the *stock* level, in violation of P6 (merit).
+- **T12 (power inversion organises individuals off the menu)** — governance power that is not itself constrained can block reinvestment even when flow and stock are clean.
+
+## Derivation
+
+1. **A9** closes the flow level: no intermediary can skim the matching engine's spread. It is silent on what happens to accumulated ownership.
+2. **T19** shows that even with flow closed, a zero-contribution shareholder still extracts — value flows to holders who no longer add trust, violating P6.
+3. Even with flow and stock both closed, governance power can still block reinvestment decisions, redirecting surplus away from the vectors that would mint the most trust (T17).
+4. Each channel is independent: closing one does not close, or even constrain, the others. A protocol clean at the flow level can still be captured at the stock or governance level.
+5. Therefore corruption-resistance requires all three constitutional simultaneously — flow (A9), stock (T19 resolved), and governance (T12 resolved). $\blacksquare$
+
+## Load-bearing assumptions
+
+- **The three levels are genuinely independent.** The proof's step 4 is doing the real work — if closing the flow level structurally implied closing the stock or governance level, this would collapse to a simpler claim. It does not: a mutualised matching engine (A9) says nothing about who owns equity or who controls the reinvestment decision.
+- **T19 and T12 hold on their own terms.** T19 depends on A9 + T15 (front-loading) + A7. T12 depends on A4 + A9 + A14 (power inversion).
+
+## What breaks if a premise fails
+
+If **A9 fails**, the venue itself becomes an intermediary — surplus leaks out at the flow level regardless of what happens to stock or governance. This is failure theorem **F4 (★-Collapse)**: the pre-transition broker state.
+
+If **T19's stock-level closure fails** (ownership is not tied to contribution), the "landed gentry" failure mode reappears: early contributors accumulate stock, stop contributing, and extract indefinitely even while flow stays clean. T61 (DWX Decay) is the constitution's structural answer — ownership decays without sustained contribution.
+
+If **T12's governance closure fails**, a clean flow-and-stock system can still be steered to under-fund the highest-trust-minting vector, quietly reintroducing extraction through allocation decisions rather than through the ledger.
+
+## Related theorems
+
+- [Extraction (T18–T22)](/specification/theorems/extraction/) — the full cluster, including T18 (the 98% as filtering mechanism) and T21 (the allocation decision as governance surface)
+- [Inversion (T11–T14)](/specification/theorems/inversion/) — T12's power inversion, the governance-level closure this proof depends on

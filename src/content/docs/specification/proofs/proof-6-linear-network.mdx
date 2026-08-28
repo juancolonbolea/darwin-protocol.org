@@ -1,8 +1,41 @@
 ---
 title: "Proof 6 — Linear-Network"
-description: "Formal proof of linear-network dynamics"
+description: "Why every participant's value splits the same way regardless of role — the derivation of T28 from A4, A5, A13 and T7."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Claim
 
-Formal proof coming in Phase 2.
+**T28 — Linear-Network Decomposition is universal.** Every participant in the protocol creates two kinds of value: linear value they keep (their individual contribution) and network value the venue captures and reinvests (the effect their participation has on everyone else). The same formula applies to every participant type — trader, investor, mentor, tool builder — only the matching dimension changes.
+
+## Premises
+
+- **A4 (matching eliminates friction across five dimensions)** — flow, knowledge, capital, community, tool. Any participant operates in at least one dimension.
+- **A5 (surplus reinvested compounds trust via three vectors)** — network surplus, once captured, is reinvested into rails that raise every other participant's linear value.
+- **A13 (transparency inversion)** — individual, self-interested action becomes social trust once results are public and attested.
+- **T7 (e = platform effect, X = network effect)** — the general split between an individual's own rate of return and the effect of the collective stock on that return.
+
+## Derivation
+
+1. **A4** establishes that friction is eliminated across five dimensions, and every participant type operates in at least one of them.
+2. **T7** establishes the general split: each participant creates a platform effect (value proportional to their own activity, which is individual — linear) and a network effect (value proportional to the collective, which the venue captures — network).
+3. **A13** shows that this split does not require altruism: self-interested action, once made public and attested, automatically generates the network component. The network benefit is a by-product, not a separate ask.
+4. Because the T7 split is defined independently of *which* matching dimension a participant operates in, the linear/network decomposition applies unchanged whether the participant is a signal manager, an academy, an investor, or a tool builder — only the dimension (from A4's five) changes, not the formula.
+5. **A5** closes the loop: the network component the venue captures is reinvested into rails, data, and infrastructure, which raises the linear value every participant earns from their own activity going forward.
+6. The formula is therefore identical across participant types — only the matching dimension varies row to row.
+7. Therefore T28's decomposition is universal: linear-network splits are not designed per participant type; they fall out of A4 + A5 + A13 + T7 applied to whichever dimension a given participant occupies. $\blacksquare$
+
+## Load-bearing assumptions
+
+- **T7's platform/network split is itself well-defined.** T28 does not re-derive this split; it inherits it and shows the split is dimension-invariant.
+- **A5's reinvestment loop actually raises linear value for others**, not just for the venue. If captured network surplus were not reinvested into shared rails, the "universal" claim would degrade to "the venue captures network value" with no compounding benefit back to participants.
+
+## What breaks if a premise fails
+
+If **A4 fails** for a given participant type — no matching dimension actually applies to their activity — that type has no network component at all; their contribution is purely linear, and T28's decomposition is vacuous for them rather than false.
+
+If **A5 fails** (captured surplus is not reinvested), the network component becomes pure extraction rather than shared compounding — this is failure theorem **F4 (★-Collapse)**, and T28's formula still describes the *split* but the network half no longer benefits anyone but the venue.
+
+## Related theorems
+
+- [Structural (T23–T28)](/specification/theorems/structural/) — the cluster this proof belongs to, including T24 (Rails/Exchange/Method) and T26 (collective edge capacity)
+- [Exponential (T5–T10)](/specification/theorems/exponential/) — T7, the platform/network split that T28 generalises across participant types

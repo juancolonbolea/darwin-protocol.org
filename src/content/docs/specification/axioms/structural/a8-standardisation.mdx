@@ -1,0 +1,40 @@
+---
+title: "A8 — Independent Standardisation"
+description: "Credibility can only attract confidence when expressed as a comparable instrument, manufactured by a trusted, independent, algorithmic process."
+---
+
+## Statement
+
+Credibility (P1) can only attract confidence (P2) when expressed as a comparable instrument, manufactured by a trusted, independent process. Read as an information translator: A8 converts quality information — raw edge, idiosyncratic, incomparable — into allocation information: comparable, investable, rational. Without A8, quality information exists but cannot be acted on. Confidence is zero identically.
+
+Three structural features make this work:
+
+1. **The CCP faces investors.** Darwinex is the centralised counterparty — the investor trusts the institution, not the trader. This is a trust architecture, not a marketing claim.
+2. **Arm's length from providers.** The risk engine operates independently of the signal provider. A trader cannot game the manufacturing of their own instrument.
+3. **Algorithmic, not discretionary.** A deterministic process — normalisation, engine-generated trades at fixed intervals, VaR scaling to a fixed benchmark. Every adjustment is auditable; no human judgment sits in the loop.
+
+Together these three features build the comparison surface: any certified instrument can be evaluated against any other. A8's credibility rests on [A9](/specification/axioms/structural/a9-no-extraction/) — if the venue's integrity fails, the standardiser is biased, A8 loses trust, and the β-loop collapses to zero.
+
+## Grounded in
+
+P1 (Credibility) + P2 (Confidence) + P4 (Matching) + A9 (No Extraction). A8 sits between P1 and P2 as the membrane that makes the transition between them rational, and depends on A9 for its own integrity.
+
+## Circle
+
+e→X membrane — A8 is not a circle but the translator between the credibility circle and the confidence circle.
+
+## Why it is an axiom
+
+A8 was demoted once (to a theorem, T5, in an earlier version) and then restored with different content — which is itself evidence of the independence check working as designed. The restored claim is not that $e^X$ is algebraically literal (that later became a separate theorem) but that *investability itself has a precondition*: capital cannot rationally allocate to an idiosyncratic, incomparable signal, no matter how well-certified. This is not derivable from A2 (merit can be certified) — A2 establishes that quality can be measured; A8 makes the separate claim that measurement alone is insufficient, and that a further translation step — standardisation into a common, algorithmically-produced comparison surface — is required before confidence can rationally form. Nothing about certification implies comparability.
+
+## What it explains
+
+A8 grounds T6 (the dataset serves both the edge loop and the risk engine's training corpus), T8 (three panels feed X, presupposing A8's comparability), T53 (Market Existence), and T54 (Two-Step Resolution). It is the explicit precondition of A7's β-loop — the Constitution states $\beta = 0$ without A8 — and couples with the α-loop: richer data improves risk-engine calibration, which sharpens standardisation, which strengthens confidence.
+
+## Force mapping
+
+A8 powers **S (Selection)**, alongside A4, A9, and A14. The Constitution separately describes A8 as **the membrane** between the internal forces (V/S/I) and the external force (P): without standardisation, credibility cannot cross the boundary to attract confidence, and $K = 0$.
+
+## Economic precedent
+
+A8 directly satisfies **Holmström's informativeness principle** (1982): the risk engine includes every signal statistically informative about trader quality, which is why a single Quote is not a sufficient statistic and multi-dimensional scoring is theoretically optimal rather than incidental complexity. A8, jointly with A9, approximates Holmström's first-best allocation by making trader actions fully observable (T54). The Constitution also names Holmström's **career-concerns** effect: a published, continuously-updating track record creates implicit incentive beyond the explicit fee structure.

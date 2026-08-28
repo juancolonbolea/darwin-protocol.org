@@ -1,8 +1,36 @@
 ---
 title: "A9 — No Extraction"
-description: "Axiom on extraction prohibition"
+description: "The CCP is the sole resting counterparty inside the venue. No member limit orders internally. All internal surplus is mutualized."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Statement
 
-Formal statement and derivation coming in Phase 2.
+The CCP is the sole resting counterparty inside Book 100. No member limit orders internally. All internal surplus is mutualized — the mutualised market maker IS Main Street, not a party sitting between members and the market.
+
+A9 is also the **budget constraint of insight compounding**: the spread rescued from intermediaries, plus the venue's share, has exactly two destinations — dataset acquisition (reducing P0) and processor funding (intent-change detectors). Private extraction would leak money out of data acquisition, degrading insight quality, degrading allocation, reopening P0, and stalling compounding. A market maker inside the venue would tax the compounding rate itself.
+
+**Transition note.** During transition, sovereign capital (the prop book) operates inside the venue as a bridge function, arm's-length from the operating entity. At endgame (T39), prop *is* the venue — resolved by identity, not by rule.
+
+## Grounded in
+
+P4 (Matching) + P6 (Merit). P4 supplies the venue mechanics; P6 supplies the reason extraction inside it is disallowed — extraction is the thing merit-based allocation exists to prevent.
+
+## Circle
+
+★ constraint — A9 is not a circle itself but the rule governing what may and may not happen inside the community circle.
+
+## Why it is an axiom
+
+A9 cannot be derived from A4 (matching creates surplus): A4 says friction removal creates surplus, but says nothing about who is entitled to it. A9 is the separate, structural commitment that the surplus stays with those who generated it rather than being captured by whoever operates the matching mechanism. This is a constitutional choice about the venue's own incentives, not a consequence of matching mechanics.
+
+## What it explains
+
+A9 grounds T12 (power inversion organizes individuals off the menu, with A4+A14), T14 (competition between market makers is a bug in mutualized systems), T19/T20 (deadwood shareholders and closing all three extraction levels), T22 (mutualized monopoly aligned with endgame), T34 (trust ownership), T41 (the Challenge Marketplace), T54 (Two-Step Resolution — Holmström), T55 (Provision Commons — Ostrom), T59 (continuous irreplaceability), and T61 (DWX decay). It is [A8](/specification/axioms/structural/a8-standardisation/)'s credibility precondition: if A9 fails, the standardiser is biased, A8 loses trust, and β collapses to zero.
+
+## Force mapping
+
+A9 powers **S (Selection)**, alongside A4, A8, and A14 — letting merit determine allocation requires that the allocator not skim. Without it: F4 (★-Collapse) — surplus leaks to intermediaries instead of being recycled, and the system degrades to a traditional broker.
+
+## Economic precedent
+
+A9 is a joint grounding axiom for T54 (Two-Step Resolution — Holmström, 2016): together with A8, it makes trader actions fully observable, converting a moral-hazard problem into a measurable adverse-selection one. It also grounds T55 (Provision Commons — Ostrom, 2009): A9's automated, continuous monitoring exceeds Ostrom's own monitoring design principle for sustainable commons governance.

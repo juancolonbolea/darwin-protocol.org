@@ -1,6 +1,123 @@
 ---
 title: "Cross-Validation Matrix"
-description: "Cross-validation of protocol elements"
+description: "Which theorems are consistently housed across the knowledge base, and the framework's own resolved logical gaps."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## What this checks
+
+Every theorem in the constitution is derived once, in `spec/CONSTITUTION.md` §III. But a theorem's conclusions get *used* in several other places — the narrative synthesis, the mechanism description, the membership terms, the plain-language algebra, the lifecycle and corruption-resistance treatments, the matching-engine mechanics, and the canonical glossary. The cross-validation matrix is a check that a theorem's conclusion, wherever it's referenced outside the constitution, agrees with the derivation that proved it.
+
+Each row is a theorem. Each column is a document where that theorem's conclusion might be expected to show up. A checkmark means the theorem is both consistent with and actually present in that document; an empty cell means the theorem simply isn't relevant there. The one status in between — flagged separately — means the conclusion is logically consistent but hasn't been written into that document yet.
+
+This is a **consistency audit, not a proof**. A checkmark doesn't re-verify the derivation; it confirms that wherever the theorem's conclusion is repeated, it hasn't drifted from what was actually proved. The intended end state — checked in COMPONENTS.md as C-07 — is a three-way diff: this matrix, the site's own pages, and eventually the [Lean 4 formalisation](/specification/lean4/), all checked automatically for the same axiom counts and theorem IDs. That automated diff does not exist yet. What follows is the matrix as maintained in the constitution today.
+
+**Columns**, in the order the constitution lists them: **MISSION** (why the protocol exists), **MECHANISM** (how it operates day to day), **DEAL** (the terms members and investors actually get), **ALGEBRA** (the formal trust equation and its variables), **S-CURVE** (growth-phase and lifecycle treatment), **CORR-RES** (corruption-resistance analysis), **PARTNERSHIP** (how external parties plug into the protocol structurally), **CCP_ME** (the CCP matching-engine mechanics), **CANON_FR** (the canonical glossary and framing).
+
+**Legend:** ✅ consistent and housed · ⚠️ consistent but not yet propagated into that document · ○ not directly relevant to that document.
+
+---
+
+## The matrix
+
+| Theorem | MISSION | MECHANISM | DEAL | ALGEBRA | S-CURVE | CORR-RES | PARTNERSHIP | CCP_ME | CANON_FR |
+|---------|---------|-----------|------|---------|---------|----------|-------------|--------|----------|
+| T1 | ✅ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ✅ | ✅ |
+| T2 | ○ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ✅ | ✅ |
+| T3 | ✅ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ✅ | ✅ |
+| T5 | ✅ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| T6 | ○ | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ○ | ○ |
+| T7 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T8 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ○ |
+| T9 | ○ | ○ | ○ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T10 | ○ | ○ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| T11 | ✅ | ✅ | ○ | ○ | ✅ | ○ | ○ | ○ | ✅ |
+| T12 | ✅ | ✅ | ○ | ○ | ○ | ○ | ✅ | ✅ | ✅ |
+| T13 | ✅ | ✅ | ○ | ○ | ○ | ✅ | ○ | ○ | ✅ |
+| T14 | ○ | ○ | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| T15 | ○ | ○ | ○ | ○ | ✅ | ○ | ✅ | ○ | ○ |
+| T16 | ○ | ○ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| T17 | ✅ | ○ | ○ | ✅ | ✅ | ⚠️ | ✅ | ○ | ⚠️ |
+| T18 | ○ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ | ○ |
+| T19 | ○ | ○ | ○ | ○ | ✅ | ✅ | ✅ | ○ | ○ |
+| T20 | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ | ○ | ⚠️ |
+| T21 | ○ | ○ | ○ | ○ | ○ | ✅ | ○ | ○ | ⚠️ |
+| T22 | ○ | ○ | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| T23 | ○ | ○ | ○ | ○ | ○ | ○ | ○ | ○ | ✅ |
+| T24 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ⚠️ |
+| T25 | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ | ○ | ○ |
+| T26 | ○ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ | ○ |
+| T27 | ✅ | ✅ | ○ | ✅ | ✅ | ○ | ✅ | ✅ | ✅ |
+| T28 | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T29 | ✅ | ✅ | ○ | ✅ | ○ | ○ | ○ | ✅ | ✅ |
+| T30 | ○ | ✅ | ○ | ○ | ✅ | ○ | ○ | ○ | ✅ |
+| T31 | ○ | ✅ | ✅ | ○ | ✅ | ○ | ✅ | ○ | ✅ |
+| T32 | ○ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| T33 | ✅ | ✅ | ✅ | ✅ | ✅ | ○ | ✅ | ○ | ✅ |
+| T34 | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T35 | ○ | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| T36 | ✅ | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| T37 | ○ | ✅ | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ✅ |
+| T38 | ○ | ✅ | ✅ | ✅ | ✅ | ○ | ✅ | ○ | ⚠️ |
+| T39 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ○ | ✅ |
+| T40 | ○ | ○ | ✅ | ✅ | ✅ | ✅ | ✅ | ○ | ✅ |
+| T41 | ✅ | ✅ | ✅ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| T42 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T43 | ○ | ✅ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ |
+| T44 | ○ | ✅ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ |
+| T45 | ✅ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T46 | ○ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| T47 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ✅ | ✅ |
+| T48 | ○ | ✅ | ✅ | ✅ | ○ | ✅ | ✅ | ○ | ✅ |
+| T49 | ✅ | ✅ | ○ | ✅ | ○ | ○ | ○ | ✅ | ✅ |
+| T50 | ✅ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| T51 | ○ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| T52 | ✅ | ✅ | ○ | ✅ | ○ | ○ | ○ | ✅ | ✅ |
+| T53 | ✅ | ✅ | ✅ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| T54 | ○ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| T55 | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ✅ | ○ | ✅ |
+| T56 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ✅ | ✅ |
+| T57 | ✅ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T58 | ✅ | ✅ | ✅ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| T59 | ○ | ✅ | ✅ | ✅ | ○ | ✅ | ○ | ○ | ✅ |
+| T60 | ✅ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| F1 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| F2 | ○ | ✅ | ○ | ✅ | ○ | ○ | ○ | ○ | ✅ |
+| F3 | ○ | ✅ | ○ | ✅ | ✅ | ○ | ○ | ○ | ✅ |
+| F4 | ○ | ✅ | ○ | ○ | ○ | ○ | ○ | ✅ | ✅ |
+| F5 | ○ | ✅ | ○ | ○ | ✅ | ○ | ○ | ○ | ✅ |
+
+*T4 is not listed: it was absorbed into T11 (identical derivation from A2+A7+A13) and carries no independent row.*
+
+Two theorems recur across almost every column — T27 (Protocol Network Corollary) and T39 (Endgame Entity) — because both sit at a point in the dependency graph where mission, mechanism, deal terms, growth phase, corruption-resistance, and structure all have to agree simultaneously. A gap in either row is the highest-priority kind to close.
+
+The ⚠️ cells cluster around T17, T20, T21, T24, and T38 — all consistent with their derivations, none yet fully propagated into CORR-RES or CANON_FR. That is a documentation backlog, not a logical inconsistency.
+
+---
+
+## Open gaps
+
+The constitution tracks its own logical gaps — places where a claim was flagged as under-derived, ambiguous, or missing a formal treatment — and resolves them over successive revisions. The gaps below are the ones internal to the framework's own logical structure: whether a claim is derivable, whether a duplicate derivation exists, whether an empirical claim should instead be a proven one. (A separate set of gaps in the same section tracks whether specific glossary terms and dimension lists have been written into the right internal document; those are documentation housekeeping, not logical gaps, and aren't reproduced here.)
+
+All of the gaps below are marked resolved as of the current constitution version.
+
+| Gap | What it flagged | How it was resolved |
+|-----|------------------|----------------------|
+| G11 | P5 (Surplus), then a primitive, failed the irreducibility test | Demoted: surplus is derivable from P4 (matching), not irreducible on its own |
+| G12 | The three-party split (formerly axiom A12) looked derivable from other axioms rather than independent | Demoted to a governance parameter — the *ratio* (e.g. 75/25) is a design choice, not a structural law, once A11 and A5 establish the split exists |
+| G13 | T4 and T11 used an identical derivation (A2+A7+A13) for the same conclusion | T4 absorbed into T11 — one theorem, not two |
+| G14 | T32 (Regulatory Architecture) was stated as an empirical claim rather than a logically derived one | Reframed as a normative design theorem, grounded in P6 (merit ordering) + A4 (dimensions are independently regulable) + A9 (venue integrity) |
+| G15 | No theorem formalised "does this organizational layer help or hurt" as a general test | Resolved by T48 (Organizational Extraction Test): any layer that net-consumes trust — without minting or protecting it — is extraction, testable against every hire, partnership, or process |
+| G16 | The trust→edge loop (aggregate α) had no derivation, only an axiomatic assertion | Resolved by T47: aggregate α is derivable from the confidence axiom plus matching, dataset growth, and selection improvement. Individual-level α remains empirical, but it isn't required for the aggregate exponential claim to hold |
+| G17 | The information lifecycle (create → protect → liberate) had no formal theorem | Resolved by T50 (Information Lifecycle) |
+| G18 | The non-rivalrous-inside / rivalrous-outside duality had no formal theorem | Resolved by T51 (Non-Rivalry Duality) — the physical explanation for why growth is exponential rather than additive |
+| G19 | "Trust as residual" (trust is revealed by removing asymmetry, not built) had no formal statement | Resolved by T52 (Trust as Residual): $T = T_{max} - A$, where $dT/dt = -dA/dt$ |
+
+No gap in this list is currently open. The audit discipline itself — flag a claim as under-derived, then either derive it, demote it, or absorb it into an existing theorem — is what the dependency graph in `spec/CONSTITUTION.md` §V exists to make checkable.
+
+---
+
+## Related
+
+- [Proofs](/specification/proofs/) — the 21 derivations this matrix cross-checks
+- [Theorems](/specification/theorems/) — the full theorem set, grouped by cluster
+- [Lean 4 Formalization](/specification/lean4/) — the machine-checked version of this same consistency check, not yet built

@@ -1,8 +1,39 @@
 ---
 title: "Proof 3 — S-Curve"
-description: "Formal proof of the S-curve"
+description: "Why the protocol's growth curve is prescribed, not merely observed — the derivation of T16 from A5 and T15."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Claim
 
-Formal proof coming in Phase 2.
+**T16 — The S-curve is prescribed, not just described.** The shape of the protocol's growth over time is not an empirical accident to be fitted after the fact. It follows directly from how surplus is allocated across the three reinvestment vectors named in A5.
+
+## Premises
+
+- **A5 (surplus reinvested compounds trust via three vectors)** — surplus is reinvested wherever it mints the most trust, decomposed into three vectors: **Compound** (organic growth at rate $e$), **Source** (new members, growing matching density), and **Develop** (improved edge rate and rails).
+- **T15 (front-loading is compensation for early conviction)** — early contributors are compensated ahead of the trust they will eventually generate, because conviction under uncertainty is itself a scarce contribution.
+
+## Derivation
+
+1. $\Delta C$ (new confidence, i.e. capital) is allocated across the three A5 vectors, and the marginal rate of each vector varies by phase.
+2. **Launch phase:** Source and Develop dominate — the ratio of new members to existing stock ($\Delta N / N$) is far larger than the organic edge rate ($e$). Growth is driven by adding density, not by compounding what already exists.
+3. **Growth phase:** the mix shifts. As $N$ grows, the marginal value of adding more members falls relative to the marginal value of compounding existing trust — this is the inflection point.
+4. **Maturity phase:** the gap between vectors closes to near zero. Growth becomes organic, driven almost entirely by rate $e$ on an already-large stock.
+5. The shape of the curve — slow start, accelerating middle, flattening top — is therefore *determined by the allocation decision itself*, not fitted to it after the fact.
+6. Therefore the S-curve is prescriptive: it tells you which vector to fund at each phase, rather than merely describing what happened. $\blacksquare$
+
+## Load-bearing assumptions
+
+- **A5's three-vector decomposition is exhaustive.** If a fourth reinvestment channel existed outside Compound / Source / Develop, the phase-by-phase allocation argument would need to account for it.
+- **T15's front-loading claim holds.** Early compensation ahead of proven trust is what makes the launch phase's Source/Develop dominance economically rational rather than merely observed.
+- **No formal density threshold is claimed.** The constitution is explicit that the point at which a vector "inflects" is not derived from a closed-form density theorem — it is anchored empirically via T42 monitoring, not proven from axioms alone.
+
+## What breaks if a premise fails
+
+If **A5's vector decomposition fails** — surplus is reinvested without regard to which vector mints the most trust — the curve loses its prescriptive content and becomes whatever emerges from ad hoc allocation. T21 (the allocation decision as a governance surface) then has nothing to govern.
+
+If **T15 fails** (front-loading is not honoured, or is honoured without basis), the launch phase has no mechanism to attract early conviction, and the curve's steep early climb has no source of fuel.
+
+## Related theorems
+
+- [S-Curve (T15–T17)](/specification/theorems/s-curve/) — the full cluster, including T17 (which vector to fund, formalised as "closest to inflection")
+- [Structural (T23–T28)](/specification/theorems/structural/) — T25 (contribution score as three-vector weighting), which operationalises the same decomposition

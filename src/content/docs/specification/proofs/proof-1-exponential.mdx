@@ -1,8 +1,43 @@
 ---
 title: "Proof 1 — Exponential"
-description: "Formal proof of exponential growth"
+description: "e^X is algebraically literal, not a metaphor — the derivation of T5 from A7 and T56."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Claim
 
-Formal proof coming in Phase 2.
+**T5 — $e^X$ is algebraically literal.** The protocol's growth is not additive, and calling it "exponential" is not a figure of speech. Base and exponent are both endogenous variables that grow with each other, which is the algebraic definition of exponential growth.
+
+## Premises
+
+- **A7 (β-loop, axiom)** — trust attracts confidence. Proven, comparable, transparent edge rationally attracts capital ($\Delta C = f(X)$).
+- **T56 (aggregate α, theorem)** — trust attracts edge at the aggregate level. More trust brings more members, richer data, better selection, higher collective edge ($e = f(X)$).
+- **P5 (the dataset)** — the vehicle that carries T56's channel.
+- **A5 (surplus reinvestment)** — surplus compounds trust via three vectors, keeping both loops fed.
+
+## Derivation
+
+1. By **T56**, $e = f(X)$: more trust stock produces a richer dataset (P5), which produces higher aggregate edge.
+2. By **A7**, $\Delta C = f(X)$: more trust produces more proof, which produces more confidence — capital rationally allocates toward it.
+3. The base of the exponent ($e$) grows as a function of the exponent's own driver ($X$). The exponent ($X$) grows with itself.
+4. Both sides of $e^X$ are endogenous. The growth rate accelerates with the stock, rather than staying constant.
+5. Therefore $e^X$ is a structural description of the system's dynamics, not a metaphorical one. $\blacksquare$
+
+**Honest framing.** Earlier versions of the constitution treated A7 as a single axiom covering both loops. The current version splits it: A7 (β) remains an axiom — the irreducible behavioural claim that proven, comparable, transparent edge attracts capital. T56 (α) is a theorem, derived as a specialisation of T47's resolution of gap G16. The exponential structure holds only if *both* legs hold — β as axiom, α as theorem — and each is independently open to challenge: reject A7 and you reject β; reject T47's derivation and you reject T56 and therefore α.
+
+## Load-bearing assumptions
+
+- **A7 is irreducible.** It is a behavioural claim about capital allocators, not something derived from more primitive facts. If capital does not rationally follow proven edge, the β-loop does not exist.
+- **T56's derivation holds.** T56 depends on A4 (matching), P5 (dataset), T18 (selection improves with data), A13+T11 (transparency makes the improvement observable), and A2+T34 (certification is protocol-owned). Weaken any link and aggregate α weakens with it.
+
+## What breaks if a premise fails
+
+If **T56 fails** (aggregate α collapses — the dataset stops transmitting trust into edge), $e$ becomes exogenous and constant. $e^X$ degrades to $e \times X$: growth becomes linear, not exponential. This is failure theorem **F1 (α-Collapse)**.
+
+If **A7 fails** (trust stops attracting confidence), $X$ stagnates — the system develops edge that nobody funds. This is failure theorem **F2 (β-Collapse)**.
+
+Both loops must hold simultaneously for the exponential structure to be literal rather than aspirational.
+
+## Related theorems
+
+- [Exponential (T5–T10)](/specification/theorems/exponential/) — the full cluster this proof belongs to, including T6 (the dataset as vehicle) and T7 (platform effect vs. network effect)
+- [Core Flywheel (T1–T4)](/specification/theorems/core-flywheel/) — the self-acceleration claim T5 makes structural

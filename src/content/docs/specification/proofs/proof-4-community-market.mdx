@@ -1,8 +1,37 @@
 ---
 title: "Proof 4 — Community Market"
-description: "Formal proof of community market dynamics"
+description: "Why the community converges on being the market itself — the derivation of T3 from T2 and A5."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Claim
 
-Formal proof coming in Phase 2.
+**T3 — The community becomes the market.** As internal matching rate (IMR) rises toward its ceiling, the community's self-knowledge converges with what an external market would need to know to price the same flow. At the limit, the community *is* the market for its own members' activity.
+
+## Premises
+
+- **T2 (internal matching rate rises with N)** — as membership $N$ grows, the fraction of flow matched internally rather than routed externally increases, because more opposing intent exists to net against.
+- **A5 (surplus reinvested compounds trust via three vectors)** — surplus rescued by matching is reinvested wherever it mints the most trust, which grows $N$ further.
+
+## Derivation
+
+1. As $N$ grows, IMR rises (T2). Rising IMR rescues more surplus. That surplus is reinvested (A5), which grows $N$ further — a closed loop.
+2. As IMR approaches its ceiling, virtually all flow between members matches internally rather than exiting to external liquidity providers.
+3. Community self-knowledge — who is trading what, at what size, against whom — converges with market knowledge, because the community's aggregate order book *is* the price-discovery mechanism for that flow (T10).
+4. Therefore the community is not merely a venue that routes to a market; at high IMR it performs the market's function directly. What remains to differentiate participants is merit (P6) — not access to liquidity, since liquidity is now internal and shared.
+5. $\blacksquare$
+
+## Load-bearing assumptions
+
+- **T2 holds without an exogenous ceiling below saturation.** If matching efficiency plateaued far short of near-total internalisation for structural reasons (e.g. persistent one-sided flow in a given instrument), T3's convergence claim would be bounded, not asymptotic.
+- **A5's reinvestment loop is uninterrupted.** T3 depends on the same flywheel dynamics (T1) that A5 and A9 keep intact — if surplus leaks to an intermediary instead of being reinvested, $N$ stops compounding and the convergence stalls.
+
+## What breaks if a premise fails
+
+If **T2 fails** — IMR does not rise with $N$, or rises and then reverses — the community never approaches market-equivalence; it remains a routing layer on top of an external market, and T3's conclusion does not follow.
+
+If **A5 fails** — surplus is not reinvested toward the vectors that grow $N$ — the flywheel that drives T2's growth stalls, and IMR plateaus below the threshold where community self-knowledge is a genuine substitute for external price discovery. This is adjacent to failure theorem **F4 (★-Collapse)**, where the venue stops matching or starts extracting.
+
+## Related theorems
+
+- [Core Flywheel (T1–T4)](/specification/theorems/core-flywheel/) — the cluster this proof belongs to, including T1 (self-acceleration) and T2 (IMR rising with N)
+- [Exponential (T5–T10)](/specification/theorems/exponential/) — T10, the claim that the $e$-inflection coincides with the dataset going real-time

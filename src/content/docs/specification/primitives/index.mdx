@@ -1,6 +1,76 @@
 ---
 title: "Primitives"
-description: "8 irreducible terms"
+description: "The undefined terms of the protocol — seven primitives in the canonical spec, presented here as eight site pages."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+Primitives are the words the rest of the specification is written in. Each one is accepted without proof, and each one comes with an irreducibility test — a demonstration that it cannot be built out of the other primitives. Axioms are grounded in primitives. Theorems are derived from axioms. Nothing is grounded in nothing.
+
+The canonical protocol documents (`spec/CONSTITUTION.md` §I, `spec/PROTOCOL.md` §5) define **seven primitives, P0 through P6**, ordered by causality. An eighth term, Inversion, was proposed as a primitive and then demoted — it is not a thing the protocol *has*, it is what the protocol *does*. It still gets a site page because it is load-bearing for understanding the other seven.
+
+---
+
+## P0 — Information Asymmetry
+
+P0 has no page of its own in this site's navigation, because it is not one of the eight pages listed below — it is the problem the other primitives exist to resolve. The spec states it plainly: **the spread is the cost of one party knowing more than another.**
+
+P0 splits into three irreducible dimensions, each resolved by a different primitive:
+
+| Dimension | Question | Level | Resolved by |
+|---|---|---|---|
+| Credibility asymmetry | Is this merit real? | Individual | P1 (Credibility) |
+| Intent asymmetry | What are others doing with my flow? | Community | P4 (Matching) |
+| Data asymmetry | What information exists? | Society | P5 (Dataset) |
+
+Trust (P3) is not something the protocol builds — it is the residual left over once all three asymmetries are removed. Geometrically, P0 is the non-overlap area of three circles, each a domain of information. As P0 falls, the circles converge toward concentricity: full information symmetry, zero friction.
+
+---
+
+## The causal chain
+
+```
+P0 (Information asymmetry)   Three dimensions: credibility, intent, data
+        |
+P1 (Credibility)              Certify edge -> Quote. Resolves credibility asymmetry.
+        |
+P2 (Confidence)                Capital allocated to certified credibility. Rational only
+                                once P1 is standardised and comparable.
+        |
+P4 (Matching, by-product)      Resolves intent asymmetry. Effect, not goal.
+        |
+P5 (Dataset, open)             Resolves data asymmetry. Society-level commons.
+        |
+P3 (Trust = P1 x P2)            Residual of resolved asymmetry. Minted when
+                                credibility meets confidence.
+        |
+P3 -> P1, P3 -> P2               Two feedback loops: more trust funds more data
+                                and more proof, shrinking P0 further.
+        |
+P0 falls                       Surplus reinvested. e^X: growth compounds.
+```
+
+P6 (Merit) sits outside this chain as the ordering principle — the only primitive that is normative rather than descriptive. It does not get resolved by the chain; it judges the chain. See [P7 — Alignment](/specification/primitives/p7-alignment/) for the site page carrying P6.
+
+---
+
+## Site numbering vs. spec numbering
+
+This site presents eight primitive pages, P1 through P8. The canonical spec numbers seven primitives, P0 through P6, plus a demoted P7. The two numbering schemes diverge — site P2 and P3 are swapped relative to the spec, for instance, because "Trust" reads better before "Confidence" in a member-facing narrative even though the spec derives Confidence first.
+
+| Site page | Site label | Spec identity | Spec type |
+|---|---|---|---|
+| p1-edge | P1 — Edge | **P1 — Credibility (e)** | Stock (rate: $dC/dt$) |
+| p2-trust | P2 — Trust | **P3 — Trust (INDX)** | Stock ($C \times K$) |
+| p3-confidence | P3 — Confidence | **P2 — Confidence (K)** | Flow → Stock (AuM) |
+| p4-matching | P4 — Matching | **P4 — Matching** | Process (by-product) |
+| p5-selection | P5 — Selection | **P5 — The Dataset** | Stock asset |
+| p6-transparency | P6 — Transparency | Grounded in A13 + P0's data dimension — not one of the spec's seven primitives | — |
+| p7-alignment | P7 — Alignment | **P6 — Merit** | Ordering principle (normative) |
+| p8-inversion | P8 — Inversion | ~~P7~~ — Inversion, demoted as a primitive, recognised as a protocol operation | Method, not primitive |
+
+Every page below opens with a **Spec identity** line stating which canonical primitive it corresponds to, so the mapping is never left implicit.
+
+---
+
+## Where the full formal treatment lives
+
+Definitions, the irreducibility tests, and the causal-chain derivation are canonical in `spec/CONSTITUTION.md` §I and `spec/PROTOCOL.md` §5. Axioms build on these primitives — start with [Axioms](/specification/axioms/). Theorems build on axioms — start with [Theorems](/specification/theorems/).

@@ -1,6 +1,58 @@
 ---
 title: "Theorems"
-description: "28 derived claims"
+description: "70 active theorems (61 positive + 9 failure), derived from the primitives and axioms and conditional on P6."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## What a theorem is here
+
+Every theorem in this section is *derived*, not posited. Each one traces, through an explicit dependency chain, back to the seven primitives and thirteen axioms — nothing hangs unsupported. Where an entry says "Derives from," that is a real proof obligation, not a citation: given the axioms and prior theorems listed, the theorem's conclusion follows.
+
+That derivation is conditional on one thing: **P6 (Merit) — contribution should determine reward.** P6 is the framework's only normative primitive; everything else (P0–P5 and the axioms built on them) is descriptive — a claim about how selection-driven systems evolve wherever information asymmetry creates pressure to resolve it. Strip out P6 and the theorems still hold as descriptive claims about those dynamics: the flywheel still self-accelerates, $e^X$ is still algebraic. What P6 adds is the normative reading — that this direction of evolution is a good one. Reject P6 and you reject the framework's conclusions in the same breath; the mechanics remain true either way.
+
+## How the groups relate
+
+The groups below are not independent chapters — they are stages of one derivation. Core Flywheel and Exponential establish that growth compounds and specify how. Inversion and Extraction show what has to be true structurally for that compounding to stay honest. S-Curve and Structural describe the shape growth takes and how the protocol organizes around it. Extended Theorems carries the same derivation into the protocol's transition path, its certification architecture, a cross-check against prior economic theory, and its monetary design. Failure Theorems is the mirror image of all of it: the same dependency chains, run in reverse, showing exactly what breaks and how to detect it.
+
+| Group | Theorems | Page |
+|---|---|---|
+| Core Flywheel | T1–T3 (T4 absorbed into T11) | [Core Flywheel](/specification/theorems/core-flywheel) |
+| Exponential | T5–T10 | [Exponential](/specification/theorems/exponential) |
+| Inversion | T11–T14 | [Inversion](/specification/theorems/inversion) |
+| S-Curve & Lifecycle | T15–T17 | [S-Curve](/specification/theorems/s-curve) |
+| Extraction & Corruption | T18–T22 | [Extraction](/specification/theorems/extraction) |
+| Structural & Network Corollaries | T23–T28 | [Structural](/specification/theorems/structural) |
+| Extended (transition, certification, Nobel cross-check, monetary) | T29–T64 | [Extended Theorems](/specification/theorems/extended) |
+| Failure Theorems + Named Principles | F1–F9 | [Failure Theorems](/specification/theorems/failure) |
+
+**Total: 70 active theorems — 61 positive + 9 failure.** (T4 is absorbed into T11 and does not count separately; T62 and T63 are not part of the active set.) Twenty-one formal proofs exist; six are published as standalone [proof pages](/specification/proofs), and the rest are referenced inline as "Proof N in the constitution."
+
+## Dependency graph
+
+At the group level, dependency runs one direction — down from primitives and axioms, forward through the theorem groups — with the failure theorems drawing on the same axioms and later theorems from the opposite side (negated).
+
+```mermaid
+flowchart TD
+    P["7 Primitives — P0 Information Asymmetry ... P6 Merit"]
+    AX["13 Axioms — A1-A16 (existential, structural, architectural)"]
+    CF["Core Flywheel — T1-T3"]
+    EXP["Exponential — T5-T10"]
+    INV["Inversion — T11-T14"]
+    SC["S-Curve & Lifecycle — T15-T17"]
+    EX["Extraction & Corruption — T18-T22"]
+    ST["Structural & Network — T23-T28"]
+    XT["Extended — T29-T64"]
+    F["Failure Theorems — F1-F9"]
+
+    P --> AX
+    AX --> CF
+    CF --> EXP
+    EXP --> INV
+    INV --> SC
+    SC --> EX
+    EX --> ST
+    ST --> XT
+    AX -.negated.-> F
+    XT -.negated.-> F
+```
+
+Each group page carries the full per-theorem dependency chain (`A1+A2+A4...`) for every entry. The constitution's own dependency graph (§V) and cross-validation matrix (§VI) are the canonical source if a chain here needs auditing against the original.

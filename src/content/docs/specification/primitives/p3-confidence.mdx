@@ -1,8 +1,40 @@
 ---
 title: "P3 — Confidence"
-description: "Forward-looking decision to deploy capital"
+description: "Capital allocated to certified credibility — a forward-looking bet, given rather than taken."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+Spec identity: **P2 — Confidence (K)**
 
-Formal definition and irreducibility test coming in Phase 2.
+This page carries spec primitive P2, not P3. Site numbering places Confidence third in the narrative; the spec derives it second, before Trust. See the [numbering table](/specification/primitives/#site-numbering-vs-spec-numbering) for the full mapping.
+
+---
+
+## Definition
+
+Confidence is bestowed by allocating capital to certified credibility. It is forward-looking — a bet placed on observed P1 performance, not a settlement of past performance. Confidence is **given, not taken**: capital chooses to back a Quote, and once given, it must be honoured by the protocol's execution.
+
+**Enabling condition.** Confidence is only rational when certified edge is expressed as a comparable instrument — risk-normalised at a uniform VaR standard, so a cautious trader and an aggressive trader are judged on skill, not leverage. Without that standardisation, comparability collapses and confidence is identically zero: $K = 0$.
+
+## Type
+
+Flow → Stock. Confidence begins as a flow (capital being allocated) and accumulates into a stock (AuM behind a given DARWIN).
+
+## Verb & circle
+
+**Honour.** Circle: **X** (the capital circle).
+
+## Irreducibility test
+
+Confidence cannot be derived from credibility alone. Credibility (P1) is proof of skill; it says nothing about whether anyone acts on it. Confidence requires two things credibility cannot supply by itself: an external act of trust, and an investable comparison surface that makes one Quote weighable against another. Skill without a market willing to back it stays a private fact, not confidence.
+
+## Grounding
+
+Confidence is the second link in the causal chain (P0 → P1 → P2 → P3): it resolves nothing about P0 directly, but it is the necessary bridge between credibility (individual-level) and trust (the product of both). The standardisation step that makes confidence rational is a structural axiom, not a primitive itself — it is what allows quality information to translate into allocation information. Canonical treatment: `spec/CONSTITUTION.md` §I (row P2), `spec/REWARD.md` Step 3.
+
+## Where it appears
+
+- [Axioms — A11, Three Vectors](/specification/axioms/structural/a11-three-vectors/)
+- [Axioms — A12, Three-Party Split](/specification/axioms/structural/a12-three-party-split/)
+- [How It Works — capital follows skill](/about/mechanism/)
+- [Theorems — Core Flywheel (T1–T4)](/specification/theorems/core-flywheel/)
+- [Primitives — Overview](/specification/primitives/) — the causal chain and the site-vs-spec numbering table

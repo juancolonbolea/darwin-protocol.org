@@ -1,8 +1,34 @@
 ---
 title: "A3 — Fair Terms"
-description: "Axiom on fair terms"
+description: "Same deal for everyone. Fee gates tourists, publication gates frauds — self-selection replaces gatekeeping."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## Statement
 
-Formal statement and derivation coming in Phase 2.
+Same deal for everyone. Fee gates tourists. Publication gates frauds. What remains after both filters: developing traders.
+
+A3 is Rothschild-Stiglitz screening applied to a trading venue. Uniform terms are not naivete — they are mechanism design. The same contract creates *differential* incentives: skilled traders find participation profitable ($E[\text{allocation}] - \text{signal\_cost} > \text{outside\_option}$); tourists find it unprofitable (poor results plus fee plus exposure exceeds zero allocation). Self-selection happens without the platform ever needing to observe quality ex ante. The four signal-cost dimensions — time, fee, drawdown, publication — each satisfy Spence's single-crossing condition: cost of signaling is strictly decreasing in quality ($dc/d\theta < 0$).
+
+## Grounded in
+
+P6 (Merit) + P1 (Credibility). P1 is what the terms select for; P6 is why uniformity rather than negotiated or tiered terms is the correct design.
+
+## Circle
+
+The e edge — A3 is the gate at the boundary of the credibility circle, deciding who gets to start accumulating a Quote at all.
+
+## Why it is an axiom
+
+A3 could look derivable from A1+A2 — "if merit can be certified, just offer everyone the same terms and let certification sort them out." But that skips the actual claim: A3 asserts that *uniformity itself* is the screening mechanism, prior to and independent of any certification event. The self-selection happens at the point of entry, before a single trade is certified. This is a distinct structural commitment — a system could certify merit (A2) and still gate entry by negotiated terms, discretionary underwriting, or capital minimums. A3 rules that out. It is not implied by A1 or A2; it is a separate design axiom about how access itself is structured.
+
+## What it explains
+
+A3 grounds T53 (Market Existence — Akerlof/Spence) alongside P0, P1, A2, and A13, and feeds T42/T47 through A13's dependence chain. It is also one of the axioms F5 (Stagnation) names directly: if A3 is "over-optimised" — barriers raised until self-selection excludes all but incumbents — variation dries up and A1 (access, not merit) reasserts itself inside the protocol.
+
+## Force mapping
+
+A3 powers **V (Variation)**, alongside A1, A2, and A13 — it is the condition under which new edge can enter the pool at all. Without it, entry is discretionary rather than merit-screened, and the system risks F5.
+
+## Economic precedent
+
+A3 is a direct instance of **Rothschild-Stiglitz screening** (1976): a single contract offered universally, engineered so that self-selection under it reveals type without the principal observing type directly. The four cost dimensions additionally satisfy **Spence's** (1973) single-crossing condition, which is what guarantees the separating equilibrium holds — skilled traders in, tourists out — rather than collapsing to a pooling equilibrium.

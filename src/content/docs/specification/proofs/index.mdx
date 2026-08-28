@@ -1,6 +1,77 @@
 ---
 title: "Proofs"
-description: "6 formal proofs"
+description: "21 written derivations from axioms to theorems, and the one empirical anchor that ties them to reality."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## What a proof is, here
+
+A proof in this specification is a derivation, not an assertion. Each proof starts from a named set of axioms and previously-proved theorems, applies logical steps, and ends at a conclusion — marked $\blacksquare$ — that follows from the premises alone. No proof appeals to intuition, precedent, or authority. If a step doesn't follow from what came before it, the proof is broken, and so is everything built on top of it.
+
+This is also why the dependency graph matters as much as any individual proof: a theorem is only as solid as the chain of axioms underneath it. Change an axiom, and every theorem that depends on it — directly or transitively — needs to be re-checked. That is the discipline the [Lean 4 formalisation](/specification/lean4/) is meant to enforce mechanically once it exists.
+
+---
+
+## The one empirical anchor: T42
+
+Almost every theorem in this specification derives from primitives, axioms, and other theorems — a closed logical system. One theorem is different.
+
+**T42 (External Validation)** is the sole claim that ties the framework to reality outside itself. The protocol's internal certification (the Quote) only becomes credible when overflow — the flow that doesn't match internally — beats an external benchmark. Internal matching rescues surplus; external overflow mints trust. Without that external check, internal certification is self-referential: the protocol grading its own students.
+
+This makes T42 the framework's **falsifiability condition**. Every structural claim downstream — $e^X$ exponentiality (T5), aggregate α (T56), Open Trust's evolutionary attractor (T60), the routing-legitimacy argument the narrative synthesis rests on — ultimately depends on T42 holding empirically. If T42 fails persistently, the framework doesn't become false; it becomes a descriptive theory with no normative grip. We measured, we certified, we allocated — but the market disagreed.
+
+That is not treated as a weakness in the design. A theoretical structure that cannot be disconfirmed has no grip on reality; T42 is what gives this one its grip. Its bilateral extension makes the anchor two-sided: external validation certifies both the minting of trust (overflow beats the benchmark) and its destruction (overflow underperforms) — a persistently negative T42 doesn't just mean the flywheel stopped; it means the meritocracy is destroying trust it previously minted. Operationally, T42 is not a proof filed once — it is measured continuously.
+
+---
+
+## All 21 proofs
+
+Six proofs have dedicated pages, with full derivations, load-bearing assumptions, and failure conditions. The rest are indexed here; their full derivations live in `spec/CONSTITUTION.md` §IV.
+
+| # | Theorem | Claim |
+|---|---------|-------|
+| 1 | [T5](/specification/proofs/proof-1-exponential/) | $e^X$ is algebraically literal — both base and exponent are endogenous |
+| 2 | [T20](/specification/proofs/proof-2-extraction/) | Extraction must be closed at the flow, stock, and governance levels simultaneously |
+| 3 | [T16](/specification/proofs/proof-3-s-curve/) | The growth S-curve is prescribed by the reinvestment-vector allocation, not just observed |
+| 4 | [T3](/specification/proofs/proof-4-community-market/) | As internal matching rate rises, the community converges on being the market |
+| 5 | [T6](/specification/proofs/proof-5-dataset/) | The dataset is the mechanism that carries trust into edge, not just an input |
+| 6 | [T28](/specification/proofs/proof-6-linear-network/) | Every participant's value splits into linear and network components, by the same formula |
+| 7 | T29 | Moat strength is a product across matching dimensions and participant types — any zero factor collapses it to zero |
+| 8 | T30 | Open-sourcing methods strengthens the dataset moat rather than weakening it |
+| 9 | T35 | Protocol value exists simultaneously as flow (INDX = $e \times X$) and stock (DWX = $e^X$) |
+| 10 | T36 | The DWX:INDX exchange rate traces an inverse S-curve, converging to 1 at maturity |
+| 11 | T37 | Converting earned participation (INDX) into ownership (DWX) is positive-sum, not dilutive |
+| 12 | T39 | The endgame entity is a member-owned prop fund that owns a trust-minting protocol |
+| 13 | T41 | The challenge marketplace is self-reinforcing — it funds its own prerequisite (Quote integrity) |
+| 14 | T42 | External validation is a necessary condition for internal certification to be credible |
+| 15 | T43 | Two-way certification (to capital, and to contributors) is necessary for the flywheel to engage |
+| 16 | T44 | INDX is attributed certification of contribution, not a promise of financial return |
+| 17 | T56 | Aggregate α (trust → edge) is derivable from the β axiom plus matching, dataset, and selection — not itself axiomatic |
+| 18 | T57 | Open Trust's four disclosure axes are in bijection with the four evolutionary forces (V/S/I/P) |
+| 19 | T58 | The Open Trust disclosure basis and the INDX scoring basis are the same V/S/I/P engine, read at different layers |
+| 20 | T59 | The surplus-split quantum (historically anchored at 75%) is a continuous function of originality, not a flat tier |
+| 21 | T60 | Maximum disclosure is the unique fixed point of the system's control loop (a Bellman attractor) |
+
+For proofs 7–21, the full step-by-step derivation, given/derived structure, and honest framing notes are in the constitution: `spec/CONSTITUTION.md` §IV.
+
+---
+
+## Notation
+
+The trust equation appears in different files under different variable names. This is the reconciliation, from `spec/CONSTITUTION.md` §IX.
+
+| Framework symbol | Public / algebra symbol | Meaning | Type |
+|---|---|---|---|
+| $C$ (P1) | $e$ | Credibility / edge rate | Stock (rate: $dC/dt$) |
+| $K$ (P2) | — | Confidence / capital deployed | Flow → Stock (AuM) |
+| $T = C \times K$ (P3) | $X$ | Trust = credibility × confidence | Stock (instantaneous product) |
+| $dT/dt$ | $X(t+1) - X(t)$ | Trust accumulation rate | Flow (per period) |
+| INDX $= \Delta \text{Quote} \times \text{Outside Confidence}$ | $e \times X$ | Trust earned per period | Flow (participation) |
+| DWX | $e^X$ | Protocol ownership value (NPV of all future flows) | Stock |
+
+**The apparent contradiction.** The framework states $T = C \times K$ — a product, trust as credibility times confidence. Elsewhere, trust stock is described by an accumulation equation: $X(t+1) = X(t) \times (1 + e) + \Delta C + N\tau$ — organic compounding of existing stock, plus new confidence inflows, plus subscription surplus.
+
+These are not in conflict; they operate at different timescales. $T = C \times K$ is the *instantaneous minting rate* — how much trust is being produced right now. $X(t+1) = X(t)(1+e) + \Delta C + N\tau$ is the *stock accumulation equation* — how total trust stock evolves period over period. One is a flow equation; the other is periodic.
+
+**A warning worth repeating:** the letter $C$ means *credibility* in the framework's own notation and *confidence flow* in the algebra atom. Which one is meant is determined by context, not by the letter alone.
+
+See also: [The Math Behind Your Earnings](/about/algebra/) for the plain-language version of $e \times X$ and $e^X$.

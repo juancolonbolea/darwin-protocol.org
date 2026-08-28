@@ -1,6 +1,58 @@
 ---
 title: "Lean 4 Formalization"
-description: "Compiler-verified specification"
+description: "The Lean 4 proof is not in this repository yet — scope, intended structure, and how to build it."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+## This does not exist yet
+
+Be clear about what this page is: a specification for work that has not been done, not a description of a working system. There is no `lean/` package in this repository. No primitive, axiom, or theorem from `spec/CONSTITUTION.md` has been machine-checked. The claim elsewhere on this site that the protocol's logic is "compiler-verified" describes the target, not the current state.
+
+What exists today is the informal proof layer: 7 primitives, 13 active axioms, 70 theorems, and 21 written proofs in `spec/CONSTITUTION.md`, six of which are rendered on this site under [Proofs](/specification/proofs/). Those proofs are checked the way mathematics has always been checked — by a person reading each step and confirming it follows. A Lean 4 formalisation would replace "a person confirms it follows" with "a compiler confirms it follows," for the primitives and axioms first, then for the theorems built on them.
+
+---
+
+## Why Lean 4
+
+Lean 4 is a proof assistant: a programming language whose type system is expressive enough to state mathematical claims, and whose kernel will refuse to compile a proof that has a gap in it. Formalising a claim in Lean does not make the claim true — it makes the claim's *internal consistency* checkable by a machine instead of by careful reading alone.
+
+For a specification with this many interdependent axioms and theorems, that matters for a specific reason: **if an axiom changes, every theorem that depends on it — directly or transitively — needs to be re-verified.** Today that re-verification is manual: someone re-reads the dependency graph in `spec/CONSTITUTION.md` §V and checks each affected derivation by eye. A compiled Lean formalisation would do this automatically. Edit an axiom's statement, and the theorems that depended on the old statement stop compiling until they're fixed or the change is shown not to affect them.
+
+---
+
+## Intended scope
+
+The formalisation, when it exists, is intended to cover three layers, in order:
+
+1. **Primitives as types.** Each of the 7 primitives (P0 information asymmetry, P1 credibility, P2 confidence, P3 trust, P4 matching, P5 the dataset, P6 merit) becomes a Lean type or structure — the vocabulary the rest of the formalisation is stated in. Primitives are accepted without proof; there is nothing to verify at this layer beyond internal well-formedness.
+
+2. **Axioms as `axiom` declarations.** Each of the 13 active axioms (A1–A16, with A6, A11, A12 demoted and absorbed elsewhere) becomes a Lean `axiom` — a statement the system is permitted to assume without derivation, exactly as the constitution treats it. Declaring something as a Lean `axiom` is a claim that it cannot be derived from the other primitives and axioms; the irreducibility tests already written into §I and §II of the constitution are the informal versions of what an axiom declaration asserts formally.
+
+3. **Theorems as `theorem` declarations, with proofs that compile.** Each of the 70 active theorems becomes a Lean `theorem`, and its proof term must type-check against the stated axioms and prior theorems it depends on — the same dependency chain shown in `spec/CONSTITUTION.md` §V, but now enforced by the kernel rather than by a reader.
+
+**What "compiles" means here.** A compiling Lean proof for a given theorem means: given the stated axioms and prior theorems as premises, the kernel has mechanically verified that the conclusion follows by valid logical steps. It does not mean the axioms are true of the real world — that is a separate, empirical question, and for this framework it is carried almost entirely by [T42](/specification/proofs/#the-one-empirical-anchor-t42), the one theorem that reaches outside the closed logical system. A compiling Lean proof means the *reasoning* is gap-free, not that the *premises* are correct.
+
+---
+
+## Current status
+
+This is an **open component**, tracked as two separate items in the repository's component list:
+
+- **C-05** — Lean 4 formalisation of the primitives and axioms (`CONSTITUTION.md` §I–§II). Deliverable: a `lean/` package that compiles, and this page updated to document it.
+- **C-06** — Lean 4 proofs of the core flywheel theorems, T1–T4 (`CONSTITUTION.md` §III–§IV). Depends on C-05.
+
+Neither has been started. Contributors are welcome — this is exactly the kind of self-contained, verifiable unit of work the component breakdown exists to enable. See [`COMPONENTS.md`](https://github.com/juancolonbolea/darwin-protocol.org/blob/main/COMPONENTS.md) for the full list of open components, including C-07 (the cross-validation script that would eventually diff axiom counts and IDs across the spec, the Lean package, and this site).
+
+---
+
+## Acceptance criteria
+
+For C-05 and C-06 to be considered done, at minimum:
+
+- The `lean/` package builds with no `sorry` (Lean's placeholder for an unproven gap) in any primitive, axiom, or theorem declaration covered by C-05/C-06.
+- Every primitive P0–P6 is declared as a type or structure, matching `spec/CONSTITUTION.md` §I.
+- Every active axiom A1–A16 (excluding those demoted per the axiom audit trail) is declared as a Lean `axiom`, with its statement traceable back to the corresponding row in §II.
+- T1–T4 (the core flywheel cluster) are declared as `theorem`s whose proofs compile against only the axioms and primitives declared above — no hidden or undeclared assumptions.
+- The mapping between each Lean declaration and its constitution source (file, section, item number) is documented on this page, so a reader can check the formalisation against the prose without re-deriving anything.
+- CI runs the Lean build on every pull request that touches `lean/`, so a broken proof fails the same way a broken test would.
+
+Once C-05 and C-06 land, this page will describe what is formalised, link to the package, and report build status — not restate this scope section.

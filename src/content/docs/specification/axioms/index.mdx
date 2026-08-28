@@ -1,6 +1,53 @@
 ---
 title: "Axioms"
-description: "13 foundational propositions"
+description: "16 numbered propositions, 13 active, grounding the DARWIN Protocol in the seven primitives."
 ---
 
-Content for this section is being migrated from the canonical protocol documents.
+An axiom here is a claim the Constitution accepts without proof and cannot derive from any other axiom or from a prior theorem. Each is grounded in one or more of the seven primitives (P0–P6). Theorems build on axioms; axioms do not build on each other. Independence is not a formality — it is checked. If an axiom's content turns out to be a consequence of another axiom plus existing theorems, it is demoted and its number is marked absorbed. Three numbers in this list carry that mark: A6, A11, A12.
+
+Sixteen numbers have been used. Thirteen are active. The gaps are load-bearing, not gaps to be filled — they are the record of the Constitution correcting itself.
+
+## Existential vs. structural
+
+The axioms split into two groups by what question they answer.
+
+**Existential axioms (A1–A3)** answer *why the system exists*. They describe the world without the protocol: capital and reward are allocated by access rather than contribution, and the two things that would fix this — certifying merit, offering the same terms to everyone — are both achievable.
+
+**Structural axioms (A4–A16)** answer *how the system works*. They describe the machinery once it exists: how matching removes friction, how surplus compounds, how standardisation makes capital allocation rational, how the venue is constrained against extracting from its own members, and how the ★-center pump conserves intent and commits atomically.
+
+## The sixteen numbers
+
+| # | Axiom | Status | Statement |
+|---|-------|--------|-----------|
+| [A1](/specification/axioms/existential/a1-rigged-by-access/) | Rigged by Access | Active | Markets are decided by access, not merit. |
+| [A2](/specification/axioms/existential/a2-merit-visible/) | Merit Visible | Active | Merit can be certified. |
+| [A3](/specification/axioms/existential/a3-fair-terms/) | Fair Terms | Active | Fair terms make self-selection total. |
+| [A4](/specification/axioms/structural/a4-matching/) | Matching | Active | Matching eliminates friction across five dimensions. |
+| [A5](/specification/axioms/structural/a5-surplus-compounds/) | Surplus Compounds | Active | Surplus reinvested compounds trust via three vectors. |
+| [A6](/specification/axioms/structural/a6-collective-credibility/) | Collective Credibility | Absorbed → A7 | Collective credibility attracts confidence. |
+| [A7](/specification/axioms/structural/a7-double-recurrence/) | Double Recurrence | Active (β-only) | Trust begets confidence. |
+| [A8](/specification/axioms/structural/a8-standardisation/) | Standardisation | Active | Investability requires independent, algorithmic standardisation. |
+| [A9](/specification/axioms/structural/a9-no-extraction/) | No Extraction | Active | No private extraction inside the venue. |
+| [A10](/specification/axioms/structural/a10-trust-flow/) | Trust Flow | Active | Trust-flow is confidence-loaded allocation. |
+| [A11](/specification/axioms/structural/a11-three-vectors/) | Three Vectors | Absorbed → A5 | Confidence reinvests into three vectors. |
+| [A12](/specification/axioms/structural/a12-three-party-split/) | Three-Party Split | Absorbed → A11+A5 | The three-party split is a confidence allocation. |
+| [A13](/specification/axioms/structural/a13-transparency/) | Transparency Inversion | Active | Results public, IP encrypted, process proprietary. |
+| [A14](/specification/axioms/structural/a14-power-inversion/) | Power Inversion | Active | Individuals at the table, not on the menu. |
+| [A15](/specification/axioms/structural/a15-intent-conservation/) | Intent Conservation | Active | Aggregate risk-adjusted intent is conserved across the pump's transforms. |
+| [A16](/specification/axioms/structural/a16-atomic-cycle/) | Atomic Cycle | Active | Each pump cycle commits as one atomic transaction or not at all. |
+
+## Force-axiom mapping
+
+The existential/structural split above is the *logical* view — why an axiom exists and what it does. There is an orthogonal *temporal* view: which of the four evolutionary forces (Variation, Selection, Inheritance, Propagation), plus Conservation, each axiom powers.
+
+| Force | Axioms | Governs | Without it |
+|---|---|---|---|
+| **V** — Variation | A1, A2, A3, A13 | Create the conditions for edge to exist: open access, certify merit, self-select, publish. | F5 — Stagnation: nothing to select from |
+| **S** — Selection | A4, A8, A9, A14, A15, A16 | Let merit determine allocation: match, standardise, protect intent, invert power, conserve intent through the pump, commit atomically. | F4 — ★-Collapse: variation without direction |
+| **I** — Inheritance | A5, T56 | Compound trust across cycles: reinvest surplus, and — via the theorem T56 — let trust beget edge through the aggregated dataset. | F1 — α-Collapse: each cycle starts at zero |
+| **P** — Propagation | A7, A10 | Attract confidence from outside: proof compounds into capital. | F2 — β-Collapse: an internal ceiling |
+| **C** — Conservation | A1 (negation), P6 | Preserve the fitness function: merit, not extraction, determines outcomes. | Extraction — compounding serves the wrong people |
+
+Both views coexist. Nothing here is metaphorical: the same sixteen numbers are simply read two ways — by what they claim (existential/structural) and by what they power (V/S/I/P/C).
+
+Formal grounding, dependency graph, and the full theorem list: [`spec/CONSTITUTION.md`](https://github.com/juancolonbolea/darwin-protocol.org/blob/main/spec/CONSTITUTION.md) §II–III.

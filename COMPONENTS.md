@@ -4,10 +4,10 @@ The DARWIN Protocol is decomposed into components that can be built independentl
 
 | ID | Component | Source in `spec/` | Deliverable | Skills |
 |---|---|---|---|---|
-| C-01 | Migrate primitives P1–P8 into site pages | `CONSTITUTION.md` §I | `src/content/docs/specification/primitives/*.mdx` populated, stubs removed | Markdown, close reading |
-| C-02 | Migrate axioms A1–A14 into site pages | `CONSTITUTION.md` §II | `specification/axioms/**/*.mdx` populated | Markdown, close reading |
-| C-03 | Migrate theorems T1–T28 groups into site pages | `CONSTITUTION.md` §III | `specification/theorems/*.mdx` populated | Markdown, maths |
-| C-04 | Migrate proofs 1–6 into site pages | `CONSTITUTION.md` §IV | `specification/proofs/*.mdx` populated, KaTeX-rendered | Maths, KaTeX |
+| ~~C-01~~ | Migrate primitives P1–P8 into site pages | `CONSTITUTION.md` §I | `src/content/docs/specification/primitives/*.mdx` populated, stubs removed | Markdown, close reading |
+| ~~C-02~~ | Migrate axioms A1–A14 into site pages | `CONSTITUTION.md` §II | `specification/axioms/**/*.mdx` populated | Markdown, close reading |
+| ~~C-03~~ | Migrate theorems T1–T28 groups into site pages | `CONSTITUTION.md` §III | `specification/theorems/*.mdx` populated | Markdown, maths |
+| ~~C-04~~ | Migrate proofs 1–6 into site pages | `CONSTITUTION.md` §IV | `specification/proofs/*.mdx` populated, KaTeX-rendered | Maths, KaTeX |
 | C-05 | Lean 4 formalisation of primitives + axioms | `CONSTITUTION.md` §I–§II | `lean/` package that compiles; `specification/lean4.mdx` documents it | Lean 4, formal methods |
 | C-06 | Lean 4 proofs of the core flywheel theorems (T1–T4) | `CONSTITUTION.md` §III–§IV | Compiling proofs depending on C-05 | Lean 4 |
 | C-07 | Cross-validation page: spec ↔ Lean ↔ site consistency check | all of `spec/` | `specification/cross-validation.mdx` + a script that diffs axiom counts/IDs across the three | Scripting |
@@ -19,4 +19,4 @@ The DARWIN Protocol is decomposed into components that can be built independentl
 | C-13 | Translations (ES first) | all site content | `src/content/docs/es/**` | Bilingual |
 | C-14 | Publish referenced internal docs | dangling `[[wikilinks]]` in `spec/` (e.g. VOCABULARY, SETTLEMENT-ARCHITECTURE) | Maintainer-gated: scrub + add to `spec/` | Maintainers only |
 
-Components are ordered roughly by dependency: C-01–C-04 unblock the site; C-05–C-07 make the "compiler-verified" claim true; C-08–C-12 are builds on top.
+Struck-through components are done (C-01–C-04 landed 28-Aug-2026; reviewing those pages against `spec/` for drift is welcome as an ordinary PR). Components are ordered roughly by dependency: C-05–C-07 make the "compiler-verified" claim true; C-08–C-12 are builds on top.
