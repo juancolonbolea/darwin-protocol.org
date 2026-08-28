@@ -46,13 +46,13 @@ Neither has been started. Contributors are welcome — this is exactly the kind 
 
 ## Acceptance criteria
 
-For C-05 and C-06 to be considered done, at minimum:
+For W-10 to be considered done, at minimum:
 
-- The `lean/` package builds with no `sorry` (Lean's placeholder for an unproven gap) in any primitive, axiom, or theorem declaration covered by C-05/C-06.
+- The `lean/` package builds with no `sorry` (Lean's placeholder for an unproven gap) in any primitive, axiom, or theorem declaration covered by W-10.
 - Every primitive P0–P6 is declared as a type or structure, matching `spec/CONSTITUTION.md` §I.
 - Every active axiom A1–A16 (excluding those demoted per the axiom audit trail) is declared as a Lean `axiom`, with its statement traceable back to the corresponding row in §II.
 - T1–T4 (the core flywheel cluster) are declared as `theorem`s whose proofs compile against only the axioms and primitives declared above — no hidden or undeclared assumptions.
 - The mapping between each Lean declaration and its constitution source (file, section, item number) is documented on this page, so a reader can check the formalisation against the prose without re-deriving anything.
 - CI runs the Lean build on every pull request that touches `lean/`, so a broken proof fails the same way a broken test would.
 
-Once C-05 and C-06 land, this page will describe what is formalised, link to the package, and report build status — not restate this scope section.
+Once W-10 land, this page will describe what is formalised, link to the package, and report build status — not restate this scope section.

@@ -8,6 +8,10 @@ Method: **map → verify → reduce**. One agent per unit writes a bounded card;
 |---|---|---|
 | 1 — Axiom stress test | each active axiom | `axiom-stress/A{n}.md` cards → `axiom-stress/SYNTHESIS.md` |
 | 2 — Component decomposition | each cell of the §11 architecture map + electrons | `components/C-*.md` cards → `components/ARCHITECTURE.md`, `components.json` |
-| 3 — Build sequencing | `components.json` | `SEQUENCE.md` |
+| 3 — Build sequencing | `components/components.json` | `SEQUENCE.md` |
 
 Every card records the `spec/` commit it was written against. A card against a stale commit is stale.
+
+## Status (28-Aug-2026)
+
+Pass 1 complete and ratified (v13 applied to `spec/`). Pass 2 complete (`components/ARCHITECTURE.md`). Pass 3 complete (`SEQUENCE.md`). Rulings Q6–Q9 in ARCHITECTURE §5 await the maintainer.

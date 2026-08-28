@@ -1,22 +1,32 @@
-# Open components
+# Open work units
 
-The DARWIN Protocol is decomposed into components that can be built independently. Each row is a unit of work a contributor can claim (open an issue: "Claiming C-xx").
+Derived from `analysis/SEQUENCE.md` (build order) and `analysis/components/` (one card per protocol component). Claim a unit by opening an issue titled "Claiming W-nn". Units marked **maintainer** need artefacts only the protocol's operators can supply; everything else is buildable from the published spec.
 
-| ID | Component | Source in `spec/` | Deliverable | Skills |
-|---|---|---|---|---|
-| ~~C-01~~ | Migrate primitives P1–P8 into site pages | `CONSTITUTION.md` §I | `src/content/docs/specification/primitives/*.mdx` populated, stubs removed | Markdown, close reading |
-| ~~C-02~~ | Migrate axioms A1–A14 into site pages | `CONSTITUTION.md` §II | `specification/axioms/**/*.mdx` populated | Markdown, close reading |
-| ~~C-03~~ | Migrate theorems T1–T28 groups into site pages | `CONSTITUTION.md` §III | `specification/theorems/*.mdx` populated | Markdown, maths |
-| ~~C-04~~ | Migrate proofs 1–6 into site pages | `CONSTITUTION.md` §IV | `specification/proofs/*.mdx` populated, KaTeX-rendered | Maths, KaTeX |
-| C-05 | Lean 4 formalisation of primitives + axioms | `CONSTITUTION.md` §I–§II | `lean/` package that compiles; `specification/lean4.mdx` documents it | Lean 4, formal methods |
-| C-06 | Lean 4 proofs of the core flywheel theorems (T1–T4) | `CONSTITUTION.md` §III–§IV | Compiling proofs depending on C-05 | Lean 4 |
-| C-07 | Cross-validation page: spec ↔ Lean ↔ site consistency check | all of `spec/` | `specification/cross-validation.mdx` + a script that diffs axiom counts/IDs across the three | Scripting |
-| C-08 | Trust-equation explorer | `PROTOCOL.md` §6, `INDX.md` | Interactive component (dT/dt = (dC/dt)·K + C·(dK/dt)) embeddable in the site | JS/TS, Astro |
-| C-09 | INDX composition rule — reference implementation | `INDX.md`, `electrons/INDX-COMPOSITION-RULE.md` | Pure function + tests reproducing the selection rule from the spec | Python or TS, testing |
-| C-10 | Glossary reconciliation | `CONSTITUTION.md` vocabulary, `resources/glossary.mdx` | One glossary; every term in the spec appears with the same definition | Editing |
-| C-11 | Electrons → site | `spec/electrons/*` (genotype / phenotype / niche pieces) | One site page per electron under a new `components/` section | Markdown |
-| C-12 | Whitepaper PDF build | `PROTOCOL.md`, `CONSTITUTION.md` | Reproducible build (pandoc/typst) producing the PDF promised in `resources/downloads.mdx` | Pandoc/Typst, CI |
-| C-13 | Translations (ES first) | all site content | `src/content/docs/es/**` | Bilingual |
-| C-14 | Publish referenced internal docs | dangling `[[wikilinks]]` in `spec/` (e.g. VOCABULARY, SETTLEMENT-ARCHITECTURE) | Maintainer-gated: scrub + add to `spec/` | Maintainers only |
+Protocol components are numbered 1–8 as in `spec/PROTOCOL.md` §11; work units are numbered W-nn.
 
-Struck-through components are done (C-01–C-04 landed 28-Aug-2026; reviewing those pages against `spec/` for drift is welcome as an ordinary PR). Components are ordered roughly by dependency: C-05–C-07 make the "compiler-verified" claim true; C-08–C-12 are builds on top.
+| Unit | Tranche | Work | Component card | Blocked by | Who |
+|---|---|---|---|---|---|
+| W-01 | 0 | Publish the record schema, provenance root format, access-control and retention rules | C-05b | — | maintainer (M12) |
+| W-02 | 0 | Set the disclosure-boundary parameter: granularity and lag (A13) | C-02 | — | maintainer (M3) |
+| W-03 | 0 | Publish the risk-engine numeric parameter set + golden test vectors | C-01 | — | maintainer (M1) |
+| W-04 | 0 | Publish cycle length + selection procedure; the operational definition of surplus; the joint-output attribution rule | C-03, C-04 | — | maintainer (M2, M4, M6) |
+| W-05 | 0 | Publish the deterministic INDX composition rule (ruling Q9) | C-05 | — | maintainer (M5) |
+| W-06 | 0 | Field dictionary + message flows + golden messages; attribution output schema + sum-to-cycle fixture; λ sizing rule; cohort floor / noise budget; reconciled tier table + premium map; β estimator | C-08, C-03, C-05b, C-06, C-05 | — | maintainer (M7–M11) |
+| W-07 | 1 | Conformance test suite for the Settlement Layer from C-04's SHALLs, parameterised by M2/M4/M6 | C-04 | — | community |
+| W-08 | 1 | Conformance test suite for the Trust Signal from C-05's SHALLs and test-vector list | C-05 | — | community |
+| W-09 | 1 | Conformance test suites for components 1, 2, 3, 6, 8 from their SHALLs | C-01, C-02, C-03, C-06, C-08 | — | community |
+| W-10 | 1 | Lean 4 formalisation of v13: primitives, 10 axioms, core flywheel theorems T1–T4 | `spec/CONSTITUTION.md` | — | community |
+| W-11 | 1 | Cross-validation script: spec ↔ site ↔ Lean IDs and counts | all | — | community |
+| W-12 | 2 | Reference Settlement ledger: double-entry per cycle, atomic commit, retention and ceiling checks, trial-balance statement | C-04 | W-04 | community |
+| W-13 | 2 | Reference INDX composition: pure function + C-05 test vectors | C-05 | W-05, W-12 | community |
+| W-14 | 2 | Demo prediction market on the published series with third-party-settleable propositions; allocation wire cut (ruling Q8) | C-07 | W-13 | community |
+| W-15 | 3 | Independent risk-engine re-implementations against golden vectors; robustness estimators (F6), half-life publication (F7), orthogonal axes (F9) | C-01 | W-03 | community after maintainer reference |
+| W-16 | 3 | Attestation verifier tooling: hash-chain, signatures, replay; alternative chain back-ends | C-02 | W-02 | community after maintainer boundary construction |
+| W-17 | 3 | Client libraries per Open Protocol interface; broker-rail node reference; dashboard state machine; third-party-node conformance harness | C-08 | W-06 | community after maintainer golden messages |
+| W-18 | 4 | Matching-engine simulator against synthetic intents; conformance harness on public telemetry; priority-ordering proposals | C-03 | W-04, W-06, W-02 | community after maintainer reference pump |
+| W-19 | 4 | Options pricing / payoff / escrow library as a pure function; payoff calculators | C-06 | W-06, ruling Q6 | community |
+| W-20 | any | Migrate `spec/electrons/*` into site pages; ES translation; whitepaper PDF build; glossary reconciliation | — | — | community |
+
+Never open: the dataset corpus (5b) and live state surfaces (book, residual, routing schedule, inventory, hedge book). Rules are always published — see `analysis/components/ARCHITECTURE.md` §1.
+
+Done: migration of primitives, axioms, theorems and proofs into site pages (28-Aug-2026).
