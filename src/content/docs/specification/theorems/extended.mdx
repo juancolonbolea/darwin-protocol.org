@@ -3,7 +3,7 @@ title: "Extended Theorems (T29–T64)"
 description: "The protocol's transition path, certification architecture, prior-theory cross-check, and monetary design, one compact entry per theorem."
 ---
 
-T1–T28 establish the flywheel, the exponential, the two inversions, the S-curve, and extraction resistance. Everything from here extends those results into the protocol's transition path, its certification architecture, its relationship to prior economic theory, and its endgame monetary design. Entries are compact and grouped by the topic headings the constitution itself uses. Numbering runs T29–T64; T62 and T63 are not part of the active theorem set.
+T1–T28 establish the flywheel, the exponential, the two inversions, the S-curve, and extraction resistance. Everything from here extends those results into the protocol's transition path, its certification architecture, its relationship to prior economic theory, and its endgame monetary design. Entries are compact and grouped by the topic headings the constitution itself uses. Numbering runs T29–T64; T62 and T63 joined the active set at v14, when A17 was adopted.
 
 ---
 
@@ -108,3 +108,17 @@ T1–T28 establish the flywheel, the exponential, the two inversions, the S-curv
 **T61 — DWX Decay (Ownership Is Maintained, Not Granted).** DWX ownership decays every cycle without sustained contribution, mirroring the way an individual Quote decays without trading. **Derives from** A7+A9+P6+T16, self-similar with Quote decay. **Consequence:** this blocks the landed-gentry failure mode where early contributors accumulate ownership, stop contributing, and extract indefinitely — sustained merit becomes the continuous entry condition for ownership, not a one-time qualification.
 
 **T64 — Patience Lever.** The internal matching rate rises monotonically with the length of the batching cycle, up to the point where delay cost — hedge drift, signal staleness — exceeds the marginal matching surplus gained. A longer window presents a larger cohort of opposing conviction to the same per-dimension matching capacity (A4), and a larger accumulated pool selects better (T18), which is what feeds $e^X$ (T5). This inverts the classical speed-as-edge thesis: for a meritocratic aggregator, patience — not microsecond speed — is the competitive advantage. **Derives from** A4+T18+T5. **Consequence:** the optimal cycle length is a measurable design parameter, set by where marginal netting surplus crosses marginal delay cost, not a race to zero latency.
+
+---
+
+## Custody & Settlement (T62–T63)
+
+Both entries derive from A17, the v14 addition, and are the only two theorems that rest on it.
+
+**T62 — Regulatory Surface.** The regulated surface, the attack surface and the balance-sheet surface all attach to custody and capital rather than to attestation: a protocol that certifies a money loop without holding the assets moving through it carries a materially smaller version of each. The claim is about where the surface concentrates, not about its disappearance — attestation is itself a regulated activity in some jurisdictions independently of custody, and rating agencies, benchmark administrators and auditors are the standing counterexample class. **Derives from** A17+A9+P6+T32. **Consequence:** the jurisdiction hedge is part of the theorem, not a caveat attached to it — T62 predicts a smaller and differently shaped surface, and is falsified by a regime in which the attestation function alone carries a surface comparable to custody's.
+
+**T63 — Settlement.** The certified loop — allocation-in → fill → realised P&L → payout to the owner — is one cycle and is certified as one cycle, not as a set of independently attested legs. This is a conformance requirement on the matching and settlement components rather than a proposition the constitution assumes: an implementation SHALL certify the loop end to end, against a reference it does not control. **Derives from** A17+A2+P1+T42. **Consequence:** partial attestation is not a weaker version of the same guarantee — a loop certified leg by leg leaves the joins uncertified, which is exactly where an unattested step can be inserted.
+
+**T63.1 — Settlement is not scoring.** Settling a cycle records what happened; scoring evaluates it. The two run on the same record but are separate operations, and the settlement path must not influence the estimate it exists to feed. **Derives from** T63+A2+A9. **Consequence:** a settlement component that could adjust a score would close a loop between the measurement and the thing measured, which is the failure A9 prohibits at the venue and A17 prohibits along the path.
+
+**T63.2 — The fee is a leg.** The protocol's fee dissolves into the loop rather than sitting beside it: it is a leg of the certified cycle, taken inside it and recorded against the same reference everything else is certified against, not a charge levied alongside. **Derives from** T63+P6+A9+T44. **Consequence:** the fee is audited by the same mechanism that audits the allocation — there is no second accounting surface where a charge could sit unattested, which is what makes "the protocol follows the money" checkable rather than declared.

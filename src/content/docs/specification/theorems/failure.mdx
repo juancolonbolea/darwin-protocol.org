@@ -1,9 +1,9 @@
 ---
-title: "Failure Theorems (F1–F10)"
+title: "Failure Theorems (F1–F11)"
 description: "How the framework diagnoses its own breakdown, and the four named principles that bound the monetary design."
 ---
 
-The framework diagnoses its own breakdown through two failure classes. **Class A (F1–F5, F10)** is internal force collapse — one failure mode per evolutionary force, and two for Inheritance, which can fail at either of its two channels. **Class B (F6–F9)** is adversarial or externally induced failure that can occur even under honest operation. Each failure mode is an information pathology: a stage of the create → protect → liberate lifecycle (T50) breaking down.
+The framework diagnoses its own breakdown through two failure classes. **Class A (F1–F5, F10)** is internal force collapse — one failure mode per evolutionary force, and two for Inheritance, which can fail at either of its two channels. **Class B (F6–F9, F11)** is failure at the protocol's contact with the outside: adversarial, externally induced, or a loss of integrity in the external reference the protocol checks itself against — each of which can occur under honest internal operation. Each failure mode is an information pathology: a stage of the create → protect → liberate lifecycle (T50) breaking down.
 
 ---
 
@@ -45,7 +45,7 @@ The framework diagnoses its own breakdown through two failure classes. **Class A
 
 ---
 
-## Class B — Adversarial & External Failure (F6–F9)
+## Class B — Adversarial & External Failure (F6–F9, F11)
 
 **F6 — Dataset Poisoning.** A coordinated group of providers submits crafted signals to bias the aggregate statistics the risk engine learns from; honest providers then see falling allocation despite genuine edge and withdraw.
 
@@ -68,6 +68,12 @@ The framework diagnoses its own breakdown through two failure classes. **Class A
 **F9 — Strategy Convergence / Monoculture.** Uniform scoring homogenises what "good" looks like: rational traders converge on the same objective, strategy correlation rises, effective variation collapses toward a single factor, and selection (T18) operates on a degenerate manifold — a back door into F5 through the scoring layer rather than the entry gate.
 
 **Derives from** ¬V(endog)+A2+A8+T18. **Consequence:** mitigated by multi-objective scoring with orthogonal axes and a diversity bonus in attribution, diagnosed via rising pairwise correlation among certified return streams.
+
+---
+
+**F11 — Anchor Compromise (Self-Certification).** If the reference an attestation is anchored against is one the protocol controls — its own ledger, its own venue's prints, a custodial record it directs — attestation collapses into self-certification (¬A17). The loop closes inside the protocol: every step is attested, nothing is checked, and the certificate stops being evidence about the world. The failure is silent by construction, because a self-anchored attestation always reconciles.
+
+**Derives from** ¬A17+T42+A2. **Consequence:** this is the failure mode A17's anchoring clause exists to exclude, and the one it trades for counterparty risk — the protocol stops depending on a custodian's honesty about assets and starts depending on a reference's honesty about events. Diagnosable as attestation and reference disagreeing never, rather than rarely, and as the set of anchors narrowing toward parties the protocol can instruct; mitigated by anchor plurality, by requiring at least one reference with no commercial dependence on the protocol, and by publishing the reconciliation rate rather than only the reconciled result. It is the anchor-side twin of F7: F7 is the protocol's own success degrading its signal, F11 is the protocol's own reach degrading its check.
 
 ---
 

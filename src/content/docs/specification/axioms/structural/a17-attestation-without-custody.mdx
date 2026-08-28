@@ -1,0 +1,44 @@
+---
+title: "A17 — Attestation Without Custody"
+description: "Attestation and custody are separable: certifying an economic loop needs observational access, an anchor the protocol does not control, and no proprietary interest in the assets moved."
+---
+
+## Statement
+
+Attestation and custody are separable. Certifying an economic loop requires observational access to its events, anchored against a reference the protocol does not control, and no proprietary interest in the assets moved.
+
+In plain terms: the protocol follows the money, it never holds it.
+
+## v14 note
+
+A17 is the one addition of v14. It was stress-tested by the same method applied to the other axioms — one adversarial derivation attempt, then hidden assumptions, load, and recommendation — and was adopted only in restated form: the separation claim alone. Two clauses that travelled with it were removed. The requirement that certification cover the closed loop (allocation-in → fill → realised P&L → payout to owner) is an estimand-scope clause and belongs to A2. The enumeration of acceptable anchors is mechanism and belongs to the settlement component specification, where it is already written as conformance requirements. Source: the axiom stress test, `analysis/axiom-stress/SYNTHESIS.md` in the repository.
+
+## Grounded in
+
+P1 (Credibility) + P6 (Merit) + A2 (Merit Visible) + A9 (No Extraction). P1 and A2 supply the object being certified — a contribution estimate that must be computable from observed events. P6 supplies the reason the loop must be certified end to end rather than at a convenient midpoint: reward tracks contribution only if the whole path from allocation to payout is measured. A9 supplies the shape of the constraint, which A17 generalises: A9 bars a proprietary interest inside the venue, A17 bars it across the entire money loop.
+
+## Circle
+
+★ constraint, extended outward — like A9, A17 is not a circle but a rule about what may happen inside one. Its scope is wider: A9 governs conduct at the venue, A17 governs the protocol's relation to the assets moving along the whole path an allocation travels, into the venue and back out to its owner.
+
+## Why it is an axiom
+
+A17 cannot be derived from the primitives. **P0–P6 contain no possession predicate** — nothing in the vocabulary distinguishes an agent that observes a flow from one that holds it, so no combination of primitives can yield a constraint on holding.
+
+Nor can it be derived from the axioms that come closest. **A9** forbids taking the other side of member flow and trading on aggregate flow information. A segregated custodian does neither: it holds the assets and executes instructions without opinion. A9 therefore reaches conduct, not possession, and never touches custody. The natural bridge — that custody is a capability, and a venue binding itself should remove the capability rather than merely the intent — is a prudential argument, not an entailment, and it proves too much. **A13** governs which information is released and at what granularity; it is silent on who holds the assets the information describes.
+
+What remains after those attempts is the separation claim itself, and it is the half that does structural work: it is what lets certification be a read rather than an operation.
+
+## What it explains
+
+A17 grounds three results.
+
+**T62 (Regulatory Surface)** — the regulated surface, the attack surface, and the balance-sheet surface all attach to custody and capital, not to attestation. A protocol that certifies without holding carries a materially smaller version of each. The claim is bounded, not absolute: it is a statement about where the surface concentrates, and the attestation function itself is regulated in some jurisdictions regardless of custody — rating agencies, benchmark administrators and auditors are the standing counterexample class. T62 is stated with that hedge and needs a falsifiable anchor of its own.
+
+**T63 (Settlement)** — the certified loop, from allocation-in through fill and realised P&L to payout to the owner, is one cycle and is certified as one cycle, not as a set of independently attested legs. This is a conformance requirement on the matching and settlement components rather than a claim the constitution assumes. Two corollaries follow. **T63.1:** settlement is not scoring — settling a cycle records what happened, while scoring evaluates it, and collapsing the two would let the settlement path influence the estimate it exists to feed. **T63.2:** the protocol's fee dissolves into the loop rather than sitting beside it — it is taken inside the certified cycle, on the same record everything else is certified against, which is what keeps it visible to the same audit.
+
+**F11 (Anchor Compromise)** — the failure mode. If the reference an attestation is anchored against is one the protocol controls, attestation collapses into self-certification.
+
+## Force mapping
+
+A17 powers **C (Conservation)**, alongside A1's negation, A9 and P6. Conservation preserves the fitness function: A9 keeps the venue from standing on the other side of the flow it measures, and A17 keeps the protocol from holding the assets it certifies. Both are prohibitions on the measurer acquiring an interest in the measurement. Without A17, the protocol can certify a loop it also owns — and the certificate stops being evidence of anything external.

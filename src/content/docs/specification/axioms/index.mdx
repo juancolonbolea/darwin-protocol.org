@@ -1,13 +1,15 @@
 ---
 title: "Axioms"
-description: "16 numbered propositions, 10 active, grounding the DARWIN Protocol in the seven primitives."
+description: "17 numbered propositions, 11 active, grounding the DARWIN Protocol in the seven primitives."
 ---
 
 An axiom here is a claim the Constitution accepts without proof and cannot derive from any other axiom or from a prior theorem. Each is grounded in one or more of the seven primitives (P0–P6). Theorems build on axioms; axioms do not build on each other. Independence is not a formality — it is checked. A number leaves the active set in one of two ways: **absorbed**, when its content turns out to be a consequence of another axiom plus existing theorems, or **demoted**, when its content is a definition, a governance parameter, or an implementation property rather than a proposition. Six numbers carry one of those marks: A6, A11 and A12 absorbed; A10, A15 and A16 demoted.
 
-Sixteen numbers have been used. Ten are active. The gaps are load-bearing, not gaps to be filled — they are the record of the Constitution correcting itself.
+Seventeen numbers have been used. Eleven are active. The gaps are load-bearing, not gaps to be filled — they are the record of the Constitution correcting itself.
 
 The v13 set is the output of an adversarial audit of every active axiom, one derivation attempt per axiom, recorded in `analysis/axiom-stress/SYNTHESIS.md` in the repository. Every surviving axiom was restated: the recurring defect was not redundancy but bundling — a primitive restated, a mechanism clause, a governance parameter, and one irreducible claim, fused under a single number. The restatements keep the irreducible claim and move the rest to where it can be tested or configured.
+
+**v14 adds one axiom.** A17 (Attestation Without Custody) went through the same audit and was adopted in restated form — the separation claim alone, with its scope clause moved to A2 and its anchor enumeration moved to the settlement component specification. It generalises A9's arm's-length principle from the venue to the whole money loop, and brings T62, T63 and F11 with it.
 
 ## Existential vs. structural
 
@@ -15,9 +17,9 @@ The axioms split into two groups by what question they answer.
 
 **Existential axioms (A1–A3)** answer *why the system exists*. They describe the world without the protocol: capital and reward are allocated by access rather than contribution, and the two things that would fix this — estimating merit, offering the same terms to everyone — are both achievable.
 
-**Structural axioms (A4–A14)** answer *how the system works*. They describe the machinery once it exists: how matching removes friction, how surplus is retained and compounds, how estimates become commensurable, how the venue is constrained against taking the other side of its own members' flow, and what standing members hold in it.
+**Structural axioms (A4–A17)** answer *how the system works*. They describe the machinery once it exists: how matching removes friction, how surplus is retained and compounds, how estimates become commensurable, how the venue is constrained against taking the other side of its own members' flow, what standing members hold in it, and why certifying a money loop does not require holding it.
 
-## The sixteen numbers
+## The seventeen numbers
 
 | # | Axiom | Status | Statement |
 |---|-------|--------|-----------|
@@ -37,6 +39,7 @@ The axioms split into two groups by what question they answer.
 | [A14](/specification/axioms/structural/a14-power-inversion/) | Power Inversion | Active | Members hold governance standing and the residual claim on the venue. |
 | [A15](/specification/axioms/structural/a15-intent-conservation/) | Intent Conservation | Demoted (v13) | Netting and anti-differencing — a matching/settlement conformance requirement. |
 | [A16](/specification/axioms/structural/a16-atomic-cycle/) | Atomic Cycle | Demoted (v13) | Atomic per-cycle commit — a matching/settlement conformance requirement. |
+| [A17](/specification/axioms/structural/a17-attestation-without-custody/) | Attestation Without Custody | Active | Attestation and custody are separable — observational access, an anchor the protocol does not control, no proprietary interest. |
 
 ## Force-axiom mapping
 
@@ -48,7 +51,7 @@ The existential/structural split above is the *logical* view — why an axiom ex
 | **S** — Selection | A4, A8, A14 | Let merit determine allocation: match, place estimates on one ordering, seat members with standing. | F4 — ★-Collapse: variation without direction |
 | **I** — Inheritance | A5, T56 | Compound trust across cycles: retain surplus, and — via the theorem T56 — let trust beget edge through the aggregated dataset. | F1 — α-Collapse: each cycle starts at zero |
 | **P** — Propagation | A7, T9 | Attract confidence from outside: proof compounds into capital. | F2 — β-Collapse: an internal ceiling |
-| **C** — Conservation | A1 (negation), A9, P6 | Preserve the fitness function: merit, not extraction, determines outcomes. | Extraction — compounding serves the wrong people |
+| **C** — Conservation | A1 (negation), A9, A17, P6 | Preserve the fitness function: merit, not extraction, determines outcomes — and keep the measurer out of the measurement, at the venue and along the whole money loop. | Extraction — compounding serves the wrong people |
 
 Both views coexist. Nothing here is metaphorical: the same numbers are simply read two ways — by what they claim (existential/structural) and by what they power (V/S/I/P/C).
 

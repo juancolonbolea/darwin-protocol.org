@@ -7,7 +7,7 @@ description: "The Lean 4 proof is not in this repository yet — scope, intended
 
 Be clear about what this page is: a specification for work that has not been done, not a description of a working system. There is no `lean/` package in this repository. No primitive, axiom, or theorem from `spec/CONSTITUTION.md` has been machine-checked. The claim elsewhere on this site that the protocol's logic is "compiler-verified" describes the target, not the current state.
 
-What exists today is the informal proof layer: 7 primitives, 10 active axioms, 71 theorems, 1 lemma (L1), and 21 written proofs in `spec/CONSTITUTION.md`, six of which are rendered on this site under [Proofs](/specification/proofs/). Those proofs are checked the way mathematics has always been checked — by a person reading each step and confirming it follows. A Lean 4 formalisation would replace "a person confirms it follows" with "a compiler confirms it follows," for the primitives and axioms first, then for the theorems built on them.
+What exists today is the informal proof layer: 7 primitives, 11 active axioms (v14), 74 theorems, 1 lemma (L1), and 21 written proofs in `spec/CONSTITUTION.md`, six of which are rendered on this site under [Proofs](/specification/proofs/). Those proofs are checked the way mathematics has always been checked — by a person reading each step and confirming it follows. A Lean 4 formalisation would replace "a person confirms it follows" with "a compiler confirms it follows," for the primitives and axioms first, then for the theorems built on them.
 
 ---
 
@@ -25,9 +25,9 @@ The formalisation, when it exists, is intended to cover three layers, in order:
 
 1. **Primitives as types.** Each of the 7 primitives (P0 information asymmetry, P1 credibility, P2 confidence, P3 trust, P4 matching, P5 the dataset, P6 merit) becomes a Lean type or structure — the vocabulary the rest of the formalisation is stated in. Primitives are accepted without proof; there is nothing to verify at this layer beyond internal well-formedness.
 
-2. **Axioms as `axiom` declarations.** Each of the ten active axioms (A1–A5, A7–A9, A13, A14) becomes a Lean `axiom` — a statement the system is permitted to assume without derivation, exactly as the constitution treats it. Declaring something as a Lean `axiom` is a claim that it cannot be derived from the other primitives and axioms; the irreducibility tests already written into §I and §II of the constitution are the informal versions of what an axiom declaration asserts formally.
+2. **Axioms as `axiom` declarations.** Each of the eleven active axioms (A1–A5, A7–A9, A13, A14, A17) becomes a Lean `axiom` — a statement the system is permitted to assume without derivation, exactly as the constitution treats it. Declaring something as a Lean `axiom` is a claim that it cannot be derived from the other primitives and axioms; the irreducibility tests already written into §I and §II of the constitution are the informal versions of what an axiom declaration asserts formally.
 
-3. **Theorems as `theorem` declarations, with proofs that compile.** Each of the 71 active theorems — and the lemma L1 — becomes a Lean `theorem`, and its proof term must type-check against the stated axioms and prior theorems it depends on — the same dependency chain shown in `spec/CONSTITUTION.md` §V, but now enforced by the kernel rather than by a reader.
+3. **Theorems as `theorem` declarations, with proofs that compile.** Each of the 74 active theorems — and the lemma L1 — becomes a Lean `theorem`, and its proof term must type-check against the stated axioms and prior theorems it depends on — the same dependency chain shown in `spec/CONSTITUTION.md` §V, but now enforced by the kernel rather than by a reader.
 
 **What "compiles" means here.** A compiling Lean proof for a given theorem means: given the stated axioms and prior theorems as premises, the kernel has mechanically verified that the conclusion follows by valid logical steps. It does not mean the axioms are true of the real world — that is a separate, empirical question, and for this framework it is carried by the [two empirical anchors](/specification/proofs/#the-two-empirical-anchors-e1-and-e2) — E1 (T42, external validation) and E2 (A1, access dominance), the two places where the specification reaches outside its own closed logical system. A compiling Lean proof means the *reasoning* is gap-free, not that the *premises* are correct.
 
@@ -37,7 +37,7 @@ The formalisation, when it exists, is intended to cover three layers, in order:
 
 This is an **open component**, tracked as two separate items in the repository's component list:
 
-- **W-10** — Lean 4 formalisation of v13: the primitives, the ten active axioms (`CONSTITUTION.md` §I–§II) and the core flywheel theorems T1–T4 (§III–§IV). Deliverable: a `lean/` package that compiles, and this page updated to document it.
+- **W-10** — Lean 4 formalisation of v14: the primitives, the eleven active axioms (`CONSTITUTION.md` §I–§II) and the core flywheel theorems T1–T4 (§III–§IV). Deliverable: a `lean/` package that compiles, and this page updated to document it.
 
 It has not been started. Contributors are welcome — this is exactly the kind of self-contained, verifiable unit of work the component breakdown exists to enable. See [`COMPONENTS.md`](https://github.com/juancolonbolea/darwin-protocol.org/blob/main/COMPONENTS.md) for the full list of open work units, including W-11 (the cross-validation script that would eventually diff axiom counts and IDs across the spec, the Lean package, and this site).
 
@@ -49,7 +49,7 @@ For W-10 to be considered done, at minimum:
 
 - The `lean/` package builds with no `sorry` (Lean's placeholder for an unproven gap) in any primitive, axiom, or theorem declaration covered by W-10.
 - Every primitive P0–P6 is declared as a type or structure, matching `spec/CONSTITUTION.md` §I.
-- Each of the ten active axioms (A1–A5, A7–A9, A13, A14) is declared as a Lean `axiom`, with its statement traceable back to the corresponding row in §II. The demoted and absorbed numbers — A6, A10, A11, A12, A15, A16 — are not declared.
+- Each of the eleven active axioms (A1–A5, A7–A9, A13, A14, A17) is declared as a Lean `axiom`, with its statement traceable back to the corresponding row in §II. The demoted and absorbed numbers — A6, A10, A11, A12, A15, A16 — are not declared.
 - T1–T4 (the core flywheel cluster) are declared as `theorem`s whose proofs compile against only the axioms and primitives declared above — no hidden or undeclared assumptions.
 - The mapping between each Lean declaration and its constitution source (file, section, item number) is documented on this page, so a reader can check the formalisation against the prose without re-deriving anything.
 - CI runs the Lean build on every pull request that touches `lean/`, so a broken proof fails the same way a broken test would.

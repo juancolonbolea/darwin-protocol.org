@@ -1,11 +1,11 @@
 ---
 title: "Theorems"
-description: "71 active theorems (61 positive + 10 failure) plus one lemma, derived from the primitives and axioms and conditional on P6."
+description: "74 active theorems (63 positive + 11 failure) plus one lemma, derived from the primitives and axioms and conditional on P6."
 ---
 
 ## What a theorem is here
 
-Every theorem in this section is *derived*, not posited. Each one traces, through an explicit dependency chain, back to the seven primitives and the ten active axioms (A1–A5, A7–A9, A13, A14) — nothing hangs unsupported. Where an entry says "Derives from," that is a real proof obligation, not a citation: given the axioms and prior theorems listed, the theorem's conclusion follows.
+Every theorem in this section is *derived*, not posited. Each one traces, through an explicit dependency chain, back to the seven primitives and the eleven active axioms (A1–A5, A7–A9, A13, A14, A17) — nothing hangs unsupported. Where an entry says "Derives from," that is a real proof obligation, not a citation: given the axioms and prior theorems listed, the theorem's conclusion follows.
 
 One derived result is carried as a **lemma** rather than a theorem: **L1 (Matching Density)** states the scaling in membership that A4 implies but does not itself assert, and T2, T26 and T29 cite it directly. It is a scaling property of A4, not an additional claim, which is why it is numbered apart from the theorem set.
 
@@ -25,11 +25,11 @@ The groups below are not independent chapters — they are stages of one derivat
 | Extraction & Corruption | T18–T22 | [Extraction](/specification/theorems/extraction) |
 | Structural & Network Corollaries | T23–T28 | [Structural](/specification/theorems/structural) |
 | Extended (transition, certification, Nobel cross-check, monetary) | T29–T64 | [Extended Theorems](/specification/theorems/extended) |
-| Failure Theorems + Named Principles | F1–F10 | [Failure Theorems](/specification/theorems/failure) |
+| Failure Theorems + Named Principles | F1–F11 | [Failure Theorems](/specification/theorems/failure) |
 
-**Total: 71 active theorems — 61 positive + 10 failure — plus the lemma L1.** (T4 is absorbed into T11 and does not count separately; T62 and T63 are not part of the active set; L1 is a lemma and is counted apart from the theorems.) Twenty-one formal proofs exist; six are published as standalone [proof pages](/specification/proofs), and the rest are referenced inline as "Proof N in the constitution."
+**Total: 74 active theorems — 63 positive + 11 failure — plus the lemma L1.** (T4 is absorbed into T11 and does not count separately; T62, T63 and F11 joined the active set at v14 with the adoption of A17; L1 is a lemma and is counted apart from the theorems.) Twenty-one formal proofs exist; six are published as standalone [proof pages](/specification/proofs), and the rest are referenced inline as "Proof N in the constitution."
 
-The tenth failure theorem is **F10 (Surplus Not Retained)**, the second way Inheritance fails: F1 breaks the α channel, F10 breaks the retention channel. Every other operational force has exactly one failure mode.
+The tenth failure theorem is **F10 (Surplus Not Retained)**, the second way Inheritance fails: F1 breaks the α channel, F10 breaks the retention channel. Every other operational force has exactly one failure mode. The eleventh is **F11 (Anchor Compromise)**, which is not a force failure at all: it is what happens when the external reference an attestation is checked against is one the protocol controls, and certification collapses into self-certification.
 
 ## Dependency graph
 
@@ -38,7 +38,7 @@ At the group level, dependency runs one direction — down from primitives and a
 ```mermaid
 flowchart TD
     P["7 Primitives — P0 Information Asymmetry ... P6 Merit"]
-    AX["10 Active Axioms — A1-A5, A7-A9, A13, A14"]
+    AX["11 Active Axioms — A1-A5, A7-A9, A13, A14, A17"]
     L1["Lemma L1 — Matching Density"]
     CF["Core Flywheel — T1-T3"]
     EXP["Exponential — T5-T10"]
@@ -47,7 +47,7 @@ flowchart TD
     EX["Extraction & Corruption — T18-T22"]
     ST["Structural & Network — T23-T28"]
     XT["Extended — T29-T64"]
-    F["Failure Theorems — F1-F10"]
+    F["Failure Theorems — F1-F11"]
 
     P --> AX
     AX --> L1

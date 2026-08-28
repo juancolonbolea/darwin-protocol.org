@@ -6,13 +6,13 @@ This repository is the open-source blueprint of the DARWIN Protocol: the trust-m
 
 | Folder | What it is | Status |
 |---|---|---|
-| `spec/` | The canonical protocol specification — `PROTOCOL.md` (governing synthesis), `CONSTITUTION.md` (7 primitives · 10 active axioms (v13) · 71 theorems · 21 proofs), `DEVELOP.md`, `REWARD.md`, `INDX.md`, `MANIFEST.md`, and `electrons/` (component-level pieces) | Complete, authoritative |
+| `spec/` | The canonical protocol specification — `PROTOCOL.md` (governing synthesis), `CONSTITUTION.md` (7 primitives · 11 active axioms (v14) · 74 theorems · 21 proofs), `DEVELOP.md`, `REWARD.md`, `INDX.md`, `MANIFEST.md`, and `electrons/` (component-level pieces) | Complete, authoritative |
 | `src/content/docs/` | The public site [darwin-protocol.org](https://darwin-protocol.org) (Astro + Starlight), which renders the spec for members, researchers and builders | Scaffolded; most `specification/` pages are still stubs awaiting migration from `spec/` |
 | `analysis/` | The audits the spec is revised from — one card per axiom, refutations and defences, and the synthesis that ratified each change | Open to contributors |
 
 Everything derives from `spec/PROTOCOL.md`. Start there (§1 The Name → §2 The Problem → §3 The Three Inversions), then `spec/CONSTITUTION.md` for the formal axioms and proofs.
 
-The axiom set is at v13. It is the output of `analysis/axiom-stress/SYNTHESIS.md` — an adversarial audit that attempted to derive each active axiom from the others, then refuted and defended every verdict. Thirteen active axioms became ten: A10 demoted to vocabulary, A15 and A16 demoted to conformance requirements on the matching and settlement components, and every surviving axiom restated.
+The axiom set is at v14. It is the output of `analysis/axiom-stress/SYNTHESIS.md` — an adversarial audit that attempted to derive each active axiom from the others, then refuted and defended every verdict. Thirteen active axioms became ten at v13: A10 demoted to vocabulary, A15 and A16 demoted to conformance requirements on the matching and settlement components, and every surviving axiom restated. v14 adopts A17 (attestation without custody) in restated form, taking the set to **11 active axioms (v14)**.
 
 ## Why open
 

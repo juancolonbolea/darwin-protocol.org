@@ -3,8 +3,8 @@ pass: 1 — axiom stress test
 spec_commit: 6f8ea84
 date: 2026-08-28
 method: 13 adversarial derivation attempts (one per active axiom) → 6 refutation/defence checks → one reduce
-result: 13 active axioms → 10 proposed; 3 demoted to vocabulary or component spec; 7 restated; 0 unchanged
-status: PROPOSAL — awaiting maintainer ratification before any change to spec/
+result: 13 active axioms → 10 proposed; 3 demoted to vocabulary or component spec; 7 restated; 0 unchanged. v14 adopts A17 (attestation without custody), restated to its custody-independence core — 11 active
+status: RATIFIED 2026-08-28 — v13 applied to spec/ (decisions Q1–Q5 as recommended); v14 adopts A17
 ---
 
 # Axiom stress test — synthesis
@@ -90,4 +90,10 @@ These are visible only across cards; no single audit could see them.
 - **The open-source posture**: this file is the first artefact contributors should attack. The v13 set is a proposal, not a decree; the cards show the reasoning and the places it might be wrong.
 - **Lean 4 (C-05)**: formalise the v13 candidate, not v12 — formalising a set known to contain three analytic axioms wastes the compiler.
 
-Cards: `A1.md` … `A16.md`; refutations and defences: `verify/`.
+Cards: `A1.md` … `A17.md`; refutations and defences: `verify/`.
+
+---
+
+## Addendum — v14 (A17 adopted)
+
+*28 August 2026.* A17 stood in the maintainers' canonical draft of the constitution but had never reached the published export, so pass 1 stress-tested thirteen axioms where the working set was in fact fourteen. It was put through the identical method — one adversarial derivation attempt, then the hidden-assumption, load and recommendation passes — and returned UNDERSPECIFIED at high confidence: path presence is a scope clause A2 should carry, while custody-independence is irreducible, since P0–P6 contain no possession predicate and A9 reaches conduct rather than possession. It was adopted at v14 in its restated form, the irreducible claim alone — *attestation and custody are separable: certifying an economic loop requires observational access to its events, anchored against a reference the protocol does not control, and no proprietary interest in the assets moved* — which generalises A9's arm's-length principle from the venue to the whole money loop. Adoption carries three results with it: T62 (Regulatory Surface), T63 (Settlement) with its two corollaries, and F11 (Anchor Compromise), the failure theorem the card asked for. The active set is now eleven axioms; the card is `A17.md`.

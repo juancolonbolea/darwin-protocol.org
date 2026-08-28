@@ -5,6 +5,7 @@ status: ACTIVE
 version: 2.1
 date: 2026-04-19
 v13_note: "v13 (28 Aug 2026) — axiom set reduced to 10 active. A10 becomes vocabulary (trust-flow), its reinvestment content carried by A5; A15 and A16 become conformance requirements of the matching and settlement components. Source: analysis/axiom-stress/SYNTHESIS.md."
+v14_note: "v14 (28 Aug 2026) — axiom set at 11 active. A17 (attestation without custody) adopted in restated form: attestation and custody are separable — certifying an economic loop requires observational access to its events, anchored against a reference the protocol does not control, and no proprietary interest in the assets moved. Generalises A9's arm's-length principle from the venue to the whole money loop; force C. Adds T62 (regulatory surface), T63 (settlement, with T63.1 and T63.2) and F11 (anchor compromise). Source: analysis/axiom-stress/SYNTHESIS.md."
 owns: |
   The governing synthesis. Why the protocol exists. The name derivation.
   P0 (Information Asymmetry). Five evolutionary forces (V/S/I/P + Conservation).
@@ -22,7 +23,7 @@ audience_routing:
   users: "[[DEVELOP]] §2-§4 only"
   prospects: "Here §1-§3 only"
 primitives_defined: [P0, P1, P2, P3, P4, P5, P6]
-formal_validation: "[[CONSTITUTION]] — 10 active axioms (v13), 71 theorems (61 + 10 failure), 1 lemma, 21 proofs"
+formal_validation: "[[CONSTITUTION]] — 11 active axioms (v14), 74 theorems (63 + 11 failure), 1 lemma, 21 proofs"
 depends_on: null
 cross_refs: [DEVELOP, REWARD, INDX, CONSTITUTION, VOCABULARY, SETTLEMENT-ARCHITECTURE]
 spine: "[[INDX_FUNNEL]] — the causal chain as member journey. This atom governs WHY the spine exists (P0, P6)."
@@ -133,7 +134,7 @@ The Darwinex protocol applies the identical structure to financial markets:
 | **S** (Selection) | Spatial: community | REWARD | How the environment selects, matches, allocates based on fitness — the intent inversion makes selection honest | ★ | A4, A8, A14 | Visa | F4: Noise — variation without direction |
 | **I** (Inheritance) | Temporal: compounds | INDX | How trust compounds and passes to the next generation — the data inversion makes inheritance open | — (the centre) | A5, T56 | Berkshire | F1: Amnesia — each generation starts at zero |
 | **P** (Propagation) | Spatial: society | — | How trust attracts confidence from outside — proof propagates, capital follows. **Operationally: liquidity funnel from core (densest matching, sharpest insight) outward to the frontier, where prospects graduate into active savers, borrowers, insight-providers and insight-seekers. Trust-gradient diffusion across humanity; terminates when every person is a participant.** | X | A7, T9 | F1 (DtS) | F2: Stagnation — internal ceiling |
-| **C** (Conservation) | Normative: preserves fitness function | — | Merit — not extraction — determines outcomes forever. The Purpose Lock. | — (governs from outside) | A1 (negation), A9 | Patagonia | Extraction — compounding serves the wrong people |
+| **C** (Conservation) | Normative: preserves fitness function | — | Merit — not extraction — determines outcomes forever. The Purpose Lock. | — (governs from outside) | A1 (negation), A9, A17 | Patagonia | Extraction — compounding serves the wrong people |
 
 And **e^X** = evolution itself — the exponential of iterated V→S→I→P cycles. Not a metaphor. The same mathematical structure. Compounding fitness in biology, compounding trust in finance.
 
@@ -180,7 +181,7 @@ The same V→S→I→P pattern operates at every layer:
 
 > **Conservation (C)** governs all columns. P6 is the gravity that keeps every row aligned to merit, not extraction. The Purpose Lock sits above the four operational forces like a constitution above the legislature.
 
-Every concept in the knowledge base — 7 primitives, 10 active axioms, 71 theorems, 5 forces, 4 atoms, electrons, satellites, 3 circles, 3 inversions, 5 funnel stages — is V→S→I→P at a different zoom level. One idea. The name was always the blueprint.
+Every concept in the knowledge base — 7 primitives, 11 active axioms, 74 theorems, 5 forces, 4 atoms, electrons, satellites, 3 circles, 3 inversions, 5 funnel stages — is V→S→I→P at a different zoom level. One idea. The name was always the blueprint.
 
 ### Self-similarity across time scales (16 Apr — protocol spec validation)
 
@@ -599,7 +600,7 @@ Undefined terms. Accepted without proof. Each genuinely irreducible. Ordered by 
 
 **P6 is the framework's value root.** Every downstream conclusion — routing legitimacy (P0 resolution), INDX scoring, the 15/85/75 irreplaceability quantum, Open Trust's self-evolution toward disclosure, T42 as falsifiability criterion — is conditional on P6. Rejecting P6 rejects the framework. This is a strength once made visible: the framework does not smuggle values. V/S/I/P operate as descriptive evolutionary forces wherever selection pressure exists; C/P6 is the single chosen fitness function that makes the protocol's conclusions *ought-statements* rather than mere observations. See [[CONSTITUTION]] §0 (Value-Rootedness).
 
-**Formal definitions, the 10 active axioms (v13), 71 theorems, and 21 proofs:** [[CONSTITUTION]]. **Force-axiom mapping:** V←A1,A2,A3,A13 / S←A4,A8,A14 / I←A5,T56 / P←A7,T9 / C←A1(negation),A9,P6.
+**Formal definitions, the 11 active axioms (v14), 74 theorems, and 21 proofs:** [[CONSTITUTION]]. **Force-axiom mapping:** V←A1,A2,A3,A13 / S←A4,A8,A14 / I←A5,T56 / P←A7,T9 / C←A1(negation),A9,A17,P6.
 
 ---
 

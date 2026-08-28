@@ -18,12 +18,14 @@ But this section is here. Because transparency is not optional.
 The DARWIN Protocol is formally specified as:
 
 - **7 irreducible primitives** (P0–P6) — the foundational terms that cannot be decomposed further; the site presents them under eight public labels, mapped on the [Primitives](/specification/primitives/) page
-- **10 active axioms** (of A1–A16; three absorbed into others, three demoted) — the propositions the protocol assumes to be true (3 existential + 7 structural)
-- **71 derived theorems** — 61 positive claims and 10 failure theorems that follow logically from the axioms, plus one lemma, **L1 (Matching Density)**, which carries the scaling in membership that A4 implies without asserting
+- **11 active axioms (v14)** (of A1–A17; three absorbed into others, three demoted) — the propositions the protocol assumes to be true (3 existential + 8 structural)
+- **74 derived theorems** — 63 positive claims and 11 failure theorems that follow logically from the axioms, plus one lemma, **L1 (Matching Density)**, which carries the scaling in membership that A4 implies without asserting
 - **21 formal proofs** — written derivations of the load-bearing results
 - **2 empirical anchors** — the two places the specification reaches outside itself: **E1** (T42, external validation — the falsifiability condition) and **E2** (A1, access dominance — the motivating condition), each with a stated measurement and falsifier
 
-The axiom set is at v13, the output of an adversarial audit of every axiom — one derivation attempt each, then refutation and defence — recorded in `analysis/axiom-stress/SYNTHESIS.md` in the repository. Thirteen active axioms were reduced to ten: A10 became vocabulary, and A15 and A16 became conformance requirements on the matching and settlement components. The same revision added L1, the anchor E2, and a tenth failure theorem — **F10 (Surplus Not Retained)**, what happens when rescued surplus is rebated or held idle instead of redeployed.
+The axiom set is the output of an adversarial audit of every axiom — one derivation attempt each, then refutation and defence — recorded in `analysis/axiom-stress/SYNTHESIS.md` in the repository. At v13 thirteen active axioms were reduced to ten: A10 became vocabulary, and A15 and A16 became conformance requirements on the matching and settlement components. That revision added L1, the anchor E2, and a tenth failure theorem — **F10 (Surplus Not Retained)**, what happens when rescued surplus is rebated or held idle instead of redeployed.
+
+The set is at **v14** as of the current revision, which adopts one further axiom: **A17 (Attestation Without Custody)** — attestation and custody are separable, so certifying an economic loop needs observational access to its events, an anchor the protocol does not control, and no proprietary interest in the assets moved. It generalises A9's arm's-length principle from the venue to the whole money loop, and brings T62 (Regulatory Surface), T63 (Settlement) and an eleventh failure theorem, **F11 (Anchor Compromise)**, with it.
 
 The target is for the full logical chain to be compiler-verified in **Lean 4** — a proof assistant used in academic mathematics and formal verification. If an axiom changes, dependent theorems break, and the compiler catches it. The Lean formalisation is an open community component; see [Lean 4 Formalization](/specification/lean4/) for status.
 
@@ -56,10 +58,10 @@ The irreducible terms that form the vocabulary of the protocol. Each primitive h
 The foundational propositions, organized into two groups:
 
 - **Existential axioms (A1-A3)** — Why the protocol must exist. The market failures it addresses.
-- **Structural axioms (A4-A14)** — How the protocol operates. The rules it follows.
+- **Structural axioms (A4-A17)** — How the protocol operates. The rules it follows.
 
 ### Theorems
-71 derived claims plus the lemma L1, grouped by theme:
+74 derived claims plus the lemma L1, grouped by theme:
 
 - **Core Flywheel (L1, T1-T4)** — The density lemma and the basic growth engine
 - **Exponential (T5-T10)** — Why growth compounds
@@ -67,8 +69,8 @@ The foundational propositions, organized into two groups:
 - **S-Curve (T15-T17)** — The lifecycle dynamics
 - **Extraction (T18-T22)** — Why value capture is impossible
 - **Structural (T23-T28)** — Governance and long-term stability
-- **Extended (T29-T64)** — Transition, certification, information architecture, monetary architecture
-- **Failure Theorems (F1-F10)** — What breaks the flywheel, and the four Named Principles
+- **Extended (T29-T64)** — Transition, certification, information architecture, custody and settlement, monetary architecture
+- **Failure Theorems (F1-F11)** — What breaks the flywheel, and the four Named Principles
 
 ### Proofs
 21 written proofs, plus the two empirical anchors (E1 and E2) that carry the framework's contact with reality. Six proofs are rendered as pages — the exponential growth proof, the extraction impossibility proof, the S-curve, the community-beats-market proof, the dataset vehicle and the linear-network decomposition; the rest are indexed on the Proofs overview.

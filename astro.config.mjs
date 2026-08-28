@@ -79,6 +79,7 @@ export default defineConfig({
                     { label: 'A14 — Power Inversion', slug: 'specification/axioms/structural/a14-power-inversion' },
                     { label: 'A15 — Intent Conservation', slug: 'specification/axioms/structural/a15-intent-conservation' },
                     { label: 'A16 — Atomic Cycle', slug: 'specification/axioms/structural/a16-atomic-cycle' },
+                    { label: 'A17 — Attestation Without Custody', slug: 'specification/axioms/structural/a17-attestation-without-custody' },
                   ],
                 },
               ],
@@ -94,7 +95,7 @@ export default defineConfig({
                 { label: 'Extraction (T18-T22)', slug: 'specification/theorems/extraction' },
                 { label: 'Structural (T23-T28)', slug: 'specification/theorems/structural' },
                 { label: 'Extended (T29-T64)', slug: 'specification/theorems/extended' },
-                { label: 'Failure Theorems (F1-F10)', slug: 'specification/theorems/failure' },
+                { label: 'Failure Theorems (F1-F11)', slug: 'specification/theorems/failure' },
               ],
             },
             {
