@@ -14,4 +14,4 @@ Every card records the `spec/` commit it was written against. A card against a s
 
 ## Status (28-Aug-2026)
 
-Pass 1 complete and ratified (v13 applied to `spec/`). Pass 2 complete (`components/ARCHITECTURE.md`). Pass 3 complete (`SEQUENCE.md`). Rulings Q6–Q9 in ARCHITECTURE §5 await the maintainer.
+Pass 1 complete and ratified (v13 applied to `spec/`). Pass 2 complete (`components/ARCHITECTURE.md`). Pass 3 complete (`SEQUENCE.md`). Rulings Q6–Q9 decided (ARCHITECTURE §5).

@@ -73,14 +73,14 @@ Four clauses were claimed by more than one card. None is a conflict; each is one
 | **Take-rate ceiling** — realised take ≤ ceiling, excess reinjected in-cycle | 4 (publishes) | 6 (reads; premium split must reconcile) |
 | **Uniform terms** — one contract, one entry-cost vector, no term indexed to certified quality (A3) | 8 (every entry point) | 6 (tier table), 1 (one parameter set), 5 (eligibility on estimates only) |
 
-## 5. Rulings needed from the maintainer (Q6–Q9)
+## 5. Maintainer rulings (Q6–Q9) — decided 2026-08-28
 
-| # | Question raised by the cards | Recommendation |
+| # | Question raised by the cards | Ruling |
 |---|---|---|
-| Q6 | Options Layer: cheaper premia for pre-selected members is pricing indexed to certified quality, which v13 A3 forbids. | Rule that **eligibility thresholds on certified estimates are permitted; price differentiation among eligible members is not.** This matches component 5's rule 3 and makes 6's requirement 1 testable. Amend the tier tables accordingly. |
-| Q7 | Dataset: "non-portable, protocol-owned" is never reconciled with member ownership before attestation; the ambiguity decides who sets the disclosure boundary. | Rule that **raw records are member-owned until attested; attested records and derivatives are protocol-governed commons.** The member sets their disclosure level; the protocol sets the floor. |
-| Q8 | Prediction Market: component or product? | **Product.** Keep the wire to allocation cut until calibration is demonstrated and the F7 reflexivity bound is specified. |
-| Q9 | Trust Signal: current practice is systematic selection with discretionary weighting, which contradicts the no-discretion invariant of the flagship stranger-buildable component. | **End discretionary weighting**: publish a deterministic composition rule. An INDX that a stranger cannot replay cannot carry the open-source claim. |
+| Q6 | Options Layer: may premia be cheaper for pre-selected members? | **No.** Terms are not indexed to certified quality (A3): one tier table and one price per tier for every eligible member. Eligibility itself is unaffected — A3 constrains the venue's terms, not who enters. Component 6 requirement 1 is therefore strict; the tier tables must be reconciled to one price per tier. |
+| Q7 | Dataset: who owns a record, and who sets the disclosure boundary? | **Raw records are member-owned until attested; attested records and their derivatives are a protocol-governed commons.** The member elects a disclosure level above a floor; the protocol sets the floor. Resolves the "non-portable, protocol-owned" ambiguity in favour of the Open Trust reading. |
+| Q8 | Prediction Market: component or product? | **Product**, built on 5 + 6. Its price may not feed composition or sizing until calibration is demonstrated and the F7 reflexivity bound is specified. |
+| Q9 | Trust Signal: end discretionary weighting? | **Yes, by re-framing the role.** Composing INDX is a *processor member's* contribution performed under published rules — a function any processor member could run and any reader can replay — not an operator's prerogative. Today's discretionary weighting is a transitional processor practice; the published deterministic rule (M5) replaces it. Component 5's no-discretion invariant stands. |
 
 ## 6. What only the maintainers can supply
 
