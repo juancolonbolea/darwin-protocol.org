@@ -1,32 +1,20 @@
 ---
 title: "A10 — Trust Flow"
-description: "Trust-flow is confidence-loaded allocation — allocating trust stock confident it yields further trust at rate ≥ e. Not a metric, an act."
+description: "Demoted in v13 — trust-flow is a definition, and its reinvestment content is carried by A5."
 ---
 
-## Statement
+**Status: demoted in v13.**
 
-Trust-flow is confidence-loaded allocation: allocating trust stock (P3) with the confidence that it will yield further trust at a rate at least equal to $e$. This is not a measurement taken after the fact — it is the act of allocation itself.
+Trust-flow is vocabulary, not an axiom. The term is defined in the protocol glossary; the reinvestment claim it used to carry — that accrued trust is redeployed rather than left inert — is [A5 (Retention)](/specification/axioms/structural/a5-surplus-compounds/). The Propagation force is powered by [A7](/specification/axioms/structural/a7-double-recurrence/) plus T9, the same shape as Inheritance being A5 plus T56.
 
-## Grounded in
+## Statement (v12)
 
-P3 (Trust) + P2 (Confidence). A10 is what happens at the junction of the two: trust doesn't just sit as a stock, it gets deployed, and that deployment carries a forward-looking confidence claim.
+Trust-flow is confidence-loaded allocation: allocating trust stock (P3) with the confidence that it will yield further trust at a rate at least equal to $e$. This is not a measurement taken after the fact — it is the act of allocation itself. Grounded in P3 (Trust) + P2 (Confidence).
 
-## Circle
+## Why it was demoted
 
-X→e∩X — confidence flowing back into the overlap of credibility and confidence.
+The axiom stress test found A10 to be a definition of a term plus a claim A5 already makes. What A10 asserted about the *act* of allocation is the operational content of "trust-flow" as a word; what it asserted about redeployment is A5's retention claim under another name. Neither half is an independent proposition, and no theorem needs A10 once T9 is sourced from A5.
 
-## Why it is an axiom
+One residue was identified and deliberately not promoted: *accrued trust stock is redeployable as allocative capital*. It is irreducible and currently unstated, but no proof requires it once the Proof 9 and T35 typing is repaired — the proofs consume A5's realised quantity, not A10's believed lower bound. It is revisited only if a derivation then fails.
 
-A10 could look like a restatement of P2's definition (confidence as a forward-looking bet on P1). It is not: P2 defines confidence as a primitive relationship between capital and certified credibility in general. A10 makes the separate claim that trust-flow specifically — the deployment of *accumulated trust stock*, not merely capital — is itself an act of confidence-loaded allocation, and that this act is what "trust-flow" means operationally. That trust *behaves* this way, rather than sitting inert once accrued, is a structural claim about the system's dynamics that has to be posited rather than derived from P2 or P3 alone.
-
-## What it explains
-
-A10 grounds T9 (trust-flow is the reinvestment act, with A5) and is a direct input to T58 (Open-Trust ↔ INDX Duality), where the Capital disclosure axis is paired with the Capacity scoring dimension via A7+A10. It sits alongside A7 as the pair that powers Propagation.
-
-## Force mapping
-
-A10 powers **P (Propagation)**, alongside A7 — trust-flow *is* the mechanism by which proof outside the immediate circle converts into new confidence. Without a functioning P, the system hits an internal ceiling: F2 (β-Collapse).
-
-## Economic precedent
-
-No Nobel cross-check is named directly for A10 in the Constitution.
+Full reasoning: `analysis/axiom-stress/SYNTHESIS.md` in the repository.

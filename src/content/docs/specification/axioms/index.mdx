@@ -1,40 +1,42 @@
 ---
 title: "Axioms"
-description: "16 numbered propositions, 13 active, grounding the DARWIN Protocol in the seven primitives."
+description: "16 numbered propositions, 10 active, grounding the DARWIN Protocol in the seven primitives."
 ---
 
-An axiom here is a claim the Constitution accepts without proof and cannot derive from any other axiom or from a prior theorem. Each is grounded in one or more of the seven primitives (P0–P6). Theorems build on axioms; axioms do not build on each other. Independence is not a formality — it is checked. If an axiom's content turns out to be a consequence of another axiom plus existing theorems, it is demoted and its number is marked absorbed. Three numbers in this list carry that mark: A6, A11, A12.
+An axiom here is a claim the Constitution accepts without proof and cannot derive from any other axiom or from a prior theorem. Each is grounded in one or more of the seven primitives (P0–P6). Theorems build on axioms; axioms do not build on each other. Independence is not a formality — it is checked. A number leaves the active set in one of two ways: **absorbed**, when its content turns out to be a consequence of another axiom plus existing theorems, or **demoted**, when its content is a definition, a governance parameter, or an implementation property rather than a proposition. Six numbers carry one of those marks: A6, A11 and A12 absorbed; A10, A15 and A16 demoted.
 
-Sixteen numbers have been used. Thirteen are active. The gaps are load-bearing, not gaps to be filled — they are the record of the Constitution correcting itself.
+Sixteen numbers have been used. Ten are active. The gaps are load-bearing, not gaps to be filled — they are the record of the Constitution correcting itself.
+
+The v13 set is the output of an adversarial audit of every active axiom, one derivation attempt per axiom, recorded in `analysis/axiom-stress/SYNTHESIS.md` in the repository. Every surviving axiom was restated: the recurring defect was not redundancy but bundling — a primitive restated, a mechanism clause, a governance parameter, and one irreducible claim, fused under a single number. The restatements keep the irreducible claim and move the rest to where it can be tested or configured.
 
 ## Existential vs. structural
 
 The axioms split into two groups by what question they answer.
 
-**Existential axioms (A1–A3)** answer *why the system exists*. They describe the world without the protocol: capital and reward are allocated by access rather than contribution, and the two things that would fix this — certifying merit, offering the same terms to everyone — are both achievable.
+**Existential axioms (A1–A3)** answer *why the system exists*. They describe the world without the protocol: capital and reward are allocated by access rather than contribution, and the two things that would fix this — estimating merit, offering the same terms to everyone — are both achievable.
 
-**Structural axioms (A4–A16)** answer *how the system works*. They describe the machinery once it exists: how matching removes friction, how surplus compounds, how standardisation makes capital allocation rational, how the venue is constrained against extracting from its own members, and how the ★-center pump conserves intent and commits atomically.
+**Structural axioms (A4–A14)** answer *how the system works*. They describe the machinery once it exists: how matching removes friction, how surplus is retained and compounds, how estimates become commensurable, how the venue is constrained against taking the other side of its own members' flow, and what standing members hold in it.
 
 ## The sixteen numbers
 
 | # | Axiom | Status | Statement |
 |---|-------|--------|-----------|
-| [A1](/specification/axioms/existential/a1-rigged-by-access/) | Rigged by Access | Active | Markets are decided by access, not merit. |
-| [A2](/specification/axioms/existential/a2-merit-visible/) | Merit Visible | Active | Merit can be certified. |
-| [A3](/specification/axioms/existential/a3-fair-terms/) | Fair Terms | Active | Fair terms make self-selection total. |
-| [A4](/specification/axioms/structural/a4-matching/) | Matching | Active | Matching eliminates friction across five dimensions. |
-| [A5](/specification/axioms/structural/a5-surplus-compounds/) | Surplus Compounds | Active | Surplus reinvested compounds trust via three vectors. |
+| [A1](/specification/axioms/existential/a1-rigged-by-access/) | Rigged by Access | Active | Where asymmetry is structural, allocation converges on access, and the advantage is self-reproducing. |
+| [A2](/specification/axioms/existential/a2-merit-visible/) | Merit Visible | Active | A protocol-computable estimator of one agent's contribution exists. |
+| [A3](/specification/axioms/existential/a3-fair-terms/) | Fair Terms | Active | One contract, offered to every prospective provider. |
+| [A4](/specification/axioms/structural/a4-matching/) | Matching | Active | Matching removes friction at a cost below the friction removed, up to a per-dimension capacity. |
+| [A5](/specification/axioms/structural/a5-surplus-compounds/) | Surplus Compounds | Active | Rescued surplus is retained and redeployed into trust-minting capacity. |
 | [A6](/specification/axioms/structural/a6-collective-credibility/) | Collective Credibility | Absorbed → A7 | Collective credibility attracts confidence. |
-| [A7](/specification/axioms/structural/a7-double-recurrence/) | Double Recurrence | Active (β-only) | Trust begets confidence. |
-| [A8](/specification/axioms/structural/a8-standardisation/) | Standardisation | Active | Investability requires independent, algorithmic standardisation. |
-| [A9](/specification/axioms/structural/a9-no-extraction/) | No Extraction | Active | No private extraction inside the venue. |
-| [A10](/specification/axioms/structural/a10-trust-flow/) | Trust Flow | Active | Trust-flow is confidence-loaded allocation. |
+| [A7](/specification/axioms/structural/a7-double-recurrence/) | Double Recurrence | Active (β-only) | β > 0 — outsiders observe collective proof and allocate capital. |
+| [A8](/specification/axioms/structural/a8-standardisation/) | Standardisation | Active | Per-agent estimates admit a common ordering across heterogeneous agents. |
+| [A9](/specification/axioms/structural/a9-no-extraction/) | No Extraction | Active | No party, the operator included, may take the other side of member flow. |
+| [A10](/specification/axioms/structural/a10-trust-flow/) | Trust Flow | Demoted (v13) | Vocabulary. The reinvestment content is A5; Propagation is A7 + T9. |
 | [A11](/specification/axioms/structural/a11-three-vectors/) | Three Vectors | Absorbed → A5 | Confidence reinvests into three vectors. |
 | [A12](/specification/axioms/structural/a12-three-party-split/) | Three-Party Split | Absorbed → A11+A5 | The three-party split is a confidence allocation. |
-| [A13](/specification/axioms/structural/a13-transparency/) | Transparency Inversion | Active | Results public, IP encrypted, process proprietary. |
-| [A14](/specification/axioms/structural/a14-power-inversion/) | Power Inversion | Active | Individuals at the table, not on the menu. |
-| [A15](/specification/axioms/structural/a15-intent-conservation/) | Intent Conservation | Active | Aggregate risk-adjusted intent is conserved across the pump's transforms. |
-| [A16](/specification/axioms/structural/a16-atomic-cycle/) | Atomic Cycle | Active | Each pump cycle commits as one atomic transaction or not at all. |
+| [A13](/specification/axioms/structural/a13-transparency/) | Transparency Inversion | Active | Certified results public and un-gated; IP encrypted; live process private. |
+| [A14](/specification/axioms/structural/a14-power-inversion/) | Power Inversion | Active | Members hold governance standing and the residual claim on the venue. |
+| [A15](/specification/axioms/structural/a15-intent-conservation/) | Intent Conservation | Demoted (v13) | Netting and anti-differencing — a matching/settlement conformance requirement. |
+| [A16](/specification/axioms/structural/a16-atomic-cycle/) | Atomic Cycle | Demoted (v13) | Atomic per-cycle commit — a matching/settlement conformance requirement. |
 
 ## Force-axiom mapping
 
@@ -42,12 +44,12 @@ The existential/structural split above is the *logical* view — why an axiom ex
 
 | Force | Axioms | Governs | Without it |
 |---|---|---|---|
-| **V** — Variation | A1, A2, A3, A13 | Create the conditions for edge to exist: open access, certify merit, self-select, publish. | F5 — Stagnation: nothing to select from |
-| **S** — Selection | A4, A8, A9, A14, A15, A16 | Let merit determine allocation: match, standardise, protect intent, invert power, conserve intent through the pump, commit atomically. | F4 — ★-Collapse: variation without direction |
-| **I** — Inheritance | A5, T56 | Compound trust across cycles: reinvest surplus, and — via the theorem T56 — let trust beget edge through the aggregated dataset. | F1 — α-Collapse: each cycle starts at zero |
-| **P** — Propagation | A7, A10 | Attract confidence from outside: proof compounds into capital. | F2 — β-Collapse: an internal ceiling |
-| **C** — Conservation | A1 (negation), P6 | Preserve the fitness function: merit, not extraction, determines outcomes. | Extraction — compounding serves the wrong people |
+| **V** — Variation | A1, A2, A3, A13 | Create the conditions for edge to exist: open access, estimate merit, offer one contract, publish. | F5 — Stagnation: nothing to select from |
+| **S** — Selection | A4, A8, A14 | Let merit determine allocation: match, place estimates on one ordering, seat members with standing. | F4 — ★-Collapse: variation without direction |
+| **I** — Inheritance | A5, T56 | Compound trust across cycles: retain surplus, and — via the theorem T56 — let trust beget edge through the aggregated dataset. | F1 — α-Collapse: each cycle starts at zero |
+| **P** — Propagation | A7, T9 | Attract confidence from outside: proof compounds into capital. | F2 — β-Collapse: an internal ceiling |
+| **C** — Conservation | A1 (negation), A9, P6 | Preserve the fitness function: merit, not extraction, determines outcomes. | Extraction — compounding serves the wrong people |
 
-Both views coexist. Nothing here is metaphorical: the same sixteen numbers are simply read two ways — by what they claim (existential/structural) and by what they power (V/S/I/P/C).
+Both views coexist. Nothing here is metaphorical: the same numbers are simply read two ways — by what they claim (existential/structural) and by what they power (V/S/I/P/C).
 
 Formal grounding, dependency graph, and the full theorem list: [`spec/CONSTITUTION.md`](https://github.com/juancolonbolea/darwin-protocol.org/blob/main/spec/CONSTITUTION.md) §II–III.

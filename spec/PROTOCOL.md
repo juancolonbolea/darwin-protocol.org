@@ -4,6 +4,7 @@ language: dual
 status: ACTIVE
 version: 2.1
 date: 2026-04-19
+v13_note: "v13 (28 Aug 2026) — axiom set reduced to 10 active. A10 becomes vocabulary (trust-flow), its reinvestment content carried by A5; A15 and A16 become conformance requirements of the matching and settlement components. Source: analysis/axiom-stress/SYNTHESIS.md."
 owns: |
   The governing synthesis. Why the protocol exists. The name derivation.
   P0 (Information Asymmetry). Five evolutionary forces (V/S/I/P + Conservation).
@@ -21,7 +22,7 @@ audience_routing:
   users: "[[DEVELOP]] §2-§4 only"
   prospects: "Here §1-§3 only"
 primitives_defined: [P0, P1, P2, P3, P4, P5, P6]
-formal_validation: "[[CONSTITUTION]] — 11 axioms, 68 theorems (59 + 9 failure), 21 proofs"
+formal_validation: "[[CONSTITUTION]] — 10 active axioms (v13), 71 theorems (61 + 10 failure), 1 lemma, 21 proofs"
 depends_on: null
 cross_refs: [DEVELOP, REWARD, INDX, CONSTITUTION, VOCABULARY, SETTLEMENT-ARCHITECTURE]
 spine: "[[INDX_FUNNEL]] — the causal chain as member journey. This atom governs WHY the spine exists (P0, P6)."
@@ -129,10 +130,10 @@ The Darwinex protocol applies the identical structure to financial markets:
 |---|---|---|---|---|---|---|---|
 | **Laws of nature** | Meta | PROTOCOL | Why selection is possible — P0 creates selection pressure, P6 is the law of natural selection | Meta | (all) | — | — |
 | **V** (Variation) | Spatial: individual | DEVELOP | How new edge arises, diversifies, is measured — the credibility inversion makes variation visible | e | A1, A2, A3, A13 | Linux | F5: Dead — nothing to select from |
-| **S** (Selection) | Spatial: community | REWARD | How the environment selects, matches, allocates based on fitness — the intent inversion makes selection honest | ★ | A4, A8, A9, A14 | Visa | F4: Noise — variation without direction |
+| **S** (Selection) | Spatial: community | REWARD | How the environment selects, matches, allocates based on fitness — the intent inversion makes selection honest | ★ | A4, A8, A14 | Visa | F4: Noise — variation without direction |
 | **I** (Inheritance) | Temporal: compounds | INDX | How trust compounds and passes to the next generation — the data inversion makes inheritance open | — (the centre) | A5, T56 | Berkshire | F1: Amnesia — each generation starts at zero |
-| **P** (Propagation) | Spatial: society | — | How trust attracts confidence from outside — proof propagates, capital follows. **Operationally: liquidity funnel from core (densest matching, sharpest insight) outward to the frontier, where prospects graduate into active savers, borrowers, insight-providers and insight-seekers. Trust-gradient diffusion across humanity; terminates when every person is a participant.** | X | A7, A10 | F1 (DtS) | F2: Stagnation — internal ceiling |
-| **C** (Conservation) | Normative: preserves fitness function | — | Merit — not extraction — determines outcomes forever. The Purpose Lock. | — (governs from outside) | A1 (negation) | Patagonia | Extraction — compounding serves the wrong people |
+| **P** (Propagation) | Spatial: society | — | How trust attracts confidence from outside — proof propagates, capital follows. **Operationally: liquidity funnel from core (densest matching, sharpest insight) outward to the frontier, where prospects graduate into active savers, borrowers, insight-providers and insight-seekers. Trust-gradient diffusion across humanity; terminates when every person is a participant.** | X | A7, T9 | F1 (DtS) | F2: Stagnation — internal ceiling |
+| **C** (Conservation) | Normative: preserves fitness function | — | Merit — not extraction — determines outcomes forever. The Purpose Lock. | — (governs from outside) | A1 (negation), A9 | Patagonia | Extraction — compounding serves the wrong people |
 
 And **e^X** = evolution itself — the exponential of iterated V→S→I→P cycles. Not a metaphor. The same mathematical structure. Compounding fitness in biology, compounding trust in finance.
 
@@ -149,12 +150,12 @@ This is not a hidden weakness. The framework does not smuggle values: it names o
 | Force | Axioms | Count | Maturity |
 |---|---|---|---|
 | **V** (Variation) | A1, A2, A3, A13 | 4 | Built (Phase 0) |
-| **S** (Selection) | A4, A8, A9, A14 | 4 | Built (Phase 0) |
+| **S** (Selection) | A4, A8, A14 | 3 | Built (Phase 0) |
 | **I** (Inheritance) | A5, T56 | 1 axiom + 1 theorem | Growth edge |
-| **P** (Propagation) | A7, A10 | 2 | Growth edge |
-| **C** (Conservation) | A1 (negation) + P6 (primitive) | 1 axiom | Purpose Lock |
+| **P** (Propagation) | A7, T9 | 1 axiom + 1 theorem | Growth edge |
+| **C** (Conservation) | A1 (negation), A9 + P6 (primitive) | 2 axioms + 1 primitive | Purpose Lock |
 
-V and S have 4 axioms each — the infrastructure is built. I and P have 2 each — the growth edge. This is what the cage blocked. The CIF transfer releases I and P. **A7 (β-only) powers Propagation; T56 bridges V/S→I.** A7 is the irreducible behavioural assumption — proven, comparable, transparent edge attracts capital. T56 (Trust-to-Edge Aggregation, specialising T47's G16 resolution) is the α-bridge: trust → flow → dataset → selection → aggregate edge. The double recurrence is now A7 (β) + T56 (α): one axiom, one theorem, each powering its own force. **A8 is the membrane** between internal forces (V/S/I) and external force (P): without standardisation, credibility cannot cross the boundary to attract confidence.
+V carries four axioms and S three — the infrastructure is built. I and P each rest on one axiom plus one theorem — the growth edge. This is what the cage blocked. The CIF transfer releases I and P. **A7 (β-only) powers Propagation with T9; T56 bridges V/S→I.** A7 is the irreducible behavioural assumption — proven, comparable, transparent edge attracts capital. T56 (Trust-to-Edge Aggregation, specialising T47's G16 resolution) is the α-bridge: trust → flow → dataset → selection → aggregate edge. The double recurrence is now A7 (β) + T56 (α): one axiom, one theorem, each powering its own force. **A8 is the membrane** between internal forces (V/S/I) and external force (P): without standardisation, credibility cannot cross the boundary to attract confidence.
 
 Formal definitions, dependency graph, cross-validation: [[CONSTITUTION]] §Force-Axiom Mapping.
 
@@ -179,7 +180,7 @@ The same V→S→I→P pattern operates at every layer:
 
 > **Conservation (C)** governs all columns. P6 is the gravity that keeps every row aligned to merit, not extraction. The Purpose Lock sits above the four operational forces like a constitution above the legislature.
 
-Every concept in the knowledge base — 7 primitives, 11 axioms, 68 theorems, 5 forces, 4 atoms, electrons, satellites, 3 circles, 3 inversions, 5 funnel stages — is V→S→I→P at a different zoom level. One idea. The name was always the blueprint.
+Every concept in the knowledge base — 7 primitives, 10 active axioms, 71 theorems, 5 forces, 4 atoms, electrons, satellites, 3 circles, 3 inversions, 5 funnel stages — is V→S→I→P at a different zoom level. One idea. The name was always the blueprint.
 
 ### Self-similarity across time scales (16 Apr — protocol spec validation)
 
@@ -598,7 +599,7 @@ Undefined terms. Accepted without proof. Each genuinely irreducible. Ordered by 
 
 **P6 is the framework's value root.** Every downstream conclusion — routing legitimacy (P0 resolution), INDX scoring, the 15/85/75 irreplaceability quantum, Open Trust's self-evolution toward disclosure, T42 as falsifiability criterion — is conditional on P6. Rejecting P6 rejects the framework. This is a strength once made visible: the framework does not smuggle values. V/S/I/P operate as descriptive evolutionary forces wherever selection pressure exists; C/P6 is the single chosen fitness function that makes the protocol's conclusions *ought-statements* rather than mere observations. See [[CONSTITUTION]] §0 (Value-Rootedness).
 
-**Formal definitions, axioms (11), theorems (68), and proofs (21):** [[CONSTITUTION]]. **Force-axiom mapping:** V←A1,A2,A3,A13 / S←A4,A8,A9,A14 / I←A5,T56 / P←A7,A10 / C←A1(negation),P6.
+**Formal definitions, the 10 active axioms (v13), 71 theorems, and 21 proofs:** [[CONSTITUTION]]. **Force-axiom mapping:** V←A1,A2,A3,A13 / S←A4,A8,A14 / I←A5,T56 / P←A7,T9 / C←A1(negation),A9,P6.
 
 ---
 
@@ -640,7 +641,7 @@ IMR is the single variable controlling the × → ^ transition. The prioritizati
 
 **Overflow is the scalar reclamation KPI.** Overflow = the measure of unreclaimed Main Street — residual unmatched flow leaking to Wall Street while IMR < 100%. As IMR → 1, overflow → 0: Main Street is reclaimed. Every strategic initiative ultimately lifts IMR, which shrinks overflow, which reclaims Main Street. Settlement decomposes the two force-pair terms into three settlement cycles (Overflow / INDX / DWX — see [[SETTLEMENT-ARCHITECTURE]] §2, §8). `INDX = e × X` (multiplicative token); `DWX = e^X` (exponential token at IMR → 1).
 
-**DWX→INDX injection operationalizes Term 1 (20 Apr).** The first term `(dC/dt) × K` is abstract until monetary policy activates it. Shareholders (DWX holders) inject reserves into the community by buying INDX — funding Source / Develop / Process vectors that generate new credibility. The injection rate IS the S-curve derivative: high when the system needs stimulus (linear phase), decreasing as trading profits dominate (exponential phase), at maintenance once DWX is fully valued (plateau). The injection floor is a governance parameter (Patagonia play); extraction is capped by DWX decay. Canonical: [[DARWIN_ECONOMY_V01]] §10, [[satellites/SETTLEMENT-ARCHITECTURE]] §6 (DWX→INDX injection — monetary policy). The name Darwinex = DARWIN ∘ EX = develop-then-compound (see [[DARWIN_ECONOMY_V01]] §10.0). Stock/flow frame: X = trust stock, INDX = trust flow, DWX = platform-equity stock compounding as e^X. Conserved invariant across the pump: aggregate intent (see [[CONSTITUTION]] A15). DWX↔INDX is a bidirectional burn-and-mint boundary: members graduate up (merit-driven), shareholders inject down (policy-driven). See [[DARWIN_ECONOMY_V01]] §10.2 three-stakeholder partition.
+**DWX→INDX injection operationalizes Term 1 (20 Apr).** The first term `(dC/dt) × K` is abstract until monetary policy activates it. Shareholders (DWX holders) inject reserves into the community by buying INDX — funding Source / Develop / Process vectors that generate new credibility. The injection rate IS the S-curve derivative: high when the system needs stimulus (linear phase), decreasing as trading profits dominate (exponential phase), at maintenance once DWX is fully valued (plateau). The injection floor is a governance parameter (Patagonia play); extraction is capped by DWX decay. Canonical: [[DARWIN_ECONOMY_V01]] §10, [[satellites/SETTLEMENT-ARCHITECTURE]] §6 (DWX→INDX injection — monetary policy). The name Darwinex = DARWIN ∘ EX = develop-then-compound (see [[DARWIN_ECONOMY_V01]] §10.0). Stock/flow frame: X = trust stock, INDX = trust flow, DWX = platform-equity stock compounding as e^X. Conserved invariant across the pump: aggregate intent — netting and anti-differencing are conformance requirements of the matching and settlement components, following from A9 + A4 (see [[CONSTITUTION]]). DWX↔INDX is a bidirectional burn-and-mint boundary: members graduate up (merit-driven), shareholders inject down (policy-driven). See [[DARWIN_ECONOMY_V01]] §10.2 three-stakeholder partition.
 
 ### §6.1 The Matching Engine as Two-Stroke Extraction Pump
 
@@ -674,7 +675,7 @@ The IMR-split above reads overflow as **leakage**: spread paid to Wall Street, a
 
 Formal coupling: [[CONSTITUTION]] Proof 14 corollary (overflow's role as validator + sensor + A9 footprint + Stroke 2 of the extraction pump).
 
-**Double-entry INDX accounting (v12).** The pump's atomic cycle commits a double-entry ledger posting: ±ΔINDX per provider per cycle, with external market as bilateral oracle (T42 bilateral extension). Mint on positive certification; destroy on negative certification. Cashout is a third path (voluntary extraction) per [[DARWIN_ECONOMY_V01]] §10.2. Atomicity (A16) is what makes the triple-entry well-defined — the cycle commits as one operation or not at all; partial commits are structurally impossible. **v12.1:** INDX mint has three sources, not one — market-minted (bilateral T42), policy-minted (shareholder injection burn-and-mint), peer-credited (TBD). Destruction: loss-cert, cashout, graduation-up. See [[DARWIN_ECONOMY_V01]] §10.2.
+**Double-entry INDX accounting (v12).** The pump's atomic cycle commits a double-entry ledger posting: ±ΔINDX per provider per cycle, with external market as bilateral oracle (T42 bilateral extension). Mint on positive certification; destroy on negative certification. Cashout is a third path (voluntary extraction) per [[DARWIN_ECONOMY_V01]] §10.2. Atomic per-cycle commit is a conformance requirement on the matching and settlement components: each cycle's postings SHALL commit atomically, and no partial commit is externally visible. That requirement is what makes the double-entry well-defined; the netting it settles follows from A9 + A4 as ordinary balanced bookkeeping. **v12.1:** INDX mint has three sources, not one — market-minted (bilateral T42), policy-minted (shareholder injection burn-and-mint), peer-credited (TBD). Destruction: loss-cert, cashout, graduation-up. See [[DARWIN_ECONOMY_V01]] §10.2.
 
 ---
 
@@ -782,7 +783,7 @@ This is why **Open Trust is the operational interface to V→S→I→P** (T57, [
 | **Timing** | **I** (Inheritance) | When signals are shared | Real-time > T+1 > T+5 > never. Real-time disclosure = α-loop iterates at tick speed |
 | **Capital** | **P** (Propagation) | Skin in the game | Cash self-investment in own DARWIN (maximum disclosure) → Booster (leveraged, limited) → none. Skin-in-game propagates β externally |
 
-**The four-axis gradient is isomorphic to the V/S/I/P basis.** Data ↔ V (disclosed signals = additions to the variation pool, via A13+P5). Noise ↔ S (ε clarity = selection sharpness, via A8+T18). Timing ↔ I (real-time disclosure = α compounding cadence, via A5+T56). Capital ↔ P (skin-in-the-game = external proof propagating β, via A7+A10). Open Trust is not a scalar multiplier — it is the operational interface to the evolutionary engine. Aggregate force imbalance ⇒ disclosure-axis imbalance (diagnostic corollary of T57).
+**The four-axis gradient is isomorphic to the V/S/I/P basis.** Data ↔ V (disclosed signals = additions to the variation pool, via A13+P5). Noise ↔ S (ε clarity = selection sharpness, via A8+T18). Timing ↔ I (real-time disclosure = α compounding cadence, via A5+T56). Capital ↔ P (skin-in-the-game = external proof propagating β, via A7+T9). Open Trust is not a scalar multiplier — it is the operational interface to the evolutionary engine. Aggregate force imbalance ⇒ disclosure-axis imbalance (diagnostic corollary of T57).
 
 **Privacy is a redistribution choice.** More disclosure → larger share of network surplus. Less disclosure → smaller share. Not a tax — a choice about how much of the collective upside you opt into.
 
@@ -811,9 +812,9 @@ Formal statement and proof: [[CONSTITUTION]] §III (T57) and §IV (Proof 18).
 | Force | Disclosure axis (input) | INDX dimension (output) | Prices (axioms) |
 |---|---|---|---|
 | **V** (Variation) | Data | **Originality (O)** | A1, A2, A3, A13 — novelty surfaced |
-| **S** (Selection) | Noise | **Performance (P)** | A4, A8, A9, A14 — selected edge |
+| **S** (Selection) | Noise | **Performance (P)** | A4, A8, A14 — selected edge |
 | **I** (Inheritance) | Timing | **Persistence (Per)** | A5, T56 — edge inherited across cycles |
-| **P** (Propagation) | Capital | **Capacity (Cap)** | A7, A10 — capital absorbed |
+| **P** (Propagation) | Capital | **Capacity (Cap)** | A7, T9 — capital absorbed |
 
 **The closed control loop.** Member chooses disclosure vector *d* → Risk Engine gates → Φ(O, P, Per, Cap) scores → capital ΔC flows to high-INDX strategies → rational member re-chooses *d*. Under monotone Risk Engine and power-weighted Φ, T60 establishes maximum disclosure (subject to privacy-as-redistribution) as the unique Bellman attractor. This is the formal content of the claim that the protocol **evolves toward openness by economics**: the control loop's fixed point, not rhetoric.
 
@@ -894,7 +895,7 @@ Each file's frontmatter carries `protocol_layer:` and `protocol_piece:` for mach
 ### Structural Notes
 
 **1. Cross-cutting spines.** Three files serve all four pieces — they are the connective tissue that makes the matrix a living system, not 12 disconnected boxes:
-- [[CONSTITUTION]] distributes axioms across pieces (V axioms→Meritocracy, S axioms→Economy, I axioms→Method, C axiom→Protocol)
+- [[CONSTITUTION]] distributes axioms across pieces (V axioms→Meritocracy, S axioms→Economy, I axioms→Method, C axioms→Protocol)
 - [[SETTLEMENT-ARCHITECTURE]] enacts all four pieces per cycle (conserves merit, selects earners, compounds value, proves routing)
 - [[INDX_FUNNEL]] is the member journey through all four pieces (Prospect→User→Member→Owner = Method→Meritocracy→Economy→Protocol)
 
@@ -922,6 +923,8 @@ Nine protocol components from [[260415-darwin-protocol-org-spec]], cross-referen
 | 7 | **Prediction Market** | — | — | — | **MISSING** |
 | 8 | **Open Protocol Layer** | INDX §1, PROTOCOL §10 | OPEN-SOURCE-STRATEGY, PROTOCOL-NETWORK | PHENOTYPE--open-trust-roadmap, --open-trust-dashboard (scaffold), --sourcing-rails, --processor-members, NICHE--referral-mechanics | Partial |
 
+**The demoted mechanism clauses live here.** CCP mechanics, netting and anti-differencing, atomic per-cycle commit, algorithmic determinism, and the "two destinations" rule are not axioms — they are conformance requirements assigned to component 3 (Matching Engine) and component 4 (Settlement Layer) in the component decomposition.
+
 Component 5b is the X-side substrate (raw ticks, fills, quotes — member-owned before attestation); Component 5 is the Y-side output (the minted, attested signal). P5 in the primitive sequence maps 1:1 to 5b. Without 5b, e^X collapses to e×X (INDX §9).
 
 ### Charlie — The Protocol's Expression Layer
@@ -944,5 +947,5 @@ Charlie is not a protocol component. It is the expression layer — the function
 - [[REWARD]] — Community / ★ / Intent Inversion. How matching works, surplus is allocated, intent is protected.
 - [[INDX]] — Social / X / Data Inversion. How trust compounds externally. The master equation. The endgame.
 - [[SETTLEMENT-ARCHITECTURE]] — Operational layer: three settlements (Overflow/INDX/DWX), two functions, five roles, Visa isomorphism, credibility-optimal-IMR (70–85%) mission measure, 15/85/75 irreplaceability quantum. The per-cycle enactment of P3+P4+P6.
-- [[CONSTITUTION]] — Formal validation: 11 axioms, 68 theorems (59 + 9 failure), 21 proofs, dependency graph, force-axiom mapping.
+- [[CONSTITUTION]] — Formal validation: 10 active axioms (v13), 71 theorems (61 + 10 failure), 1 lemma, 21 proofs, dependency graph, force-axiom mapping.
 - [[VOCABULARY]] — Canonical definitions and glossary.

@@ -18,9 +18,11 @@ But this section is here. Because transparency is not optional.
 The DARWIN Protocol is formally specified as:
 
 - **7 irreducible primitives** (P0–P6) — the foundational terms that cannot be decomposed further; the site presents them under eight public labels, mapped on the [Primitives](/specification/primitives/) page
-- **13 active axioms** (of A1–A16; three absorbed into others) — the propositions the protocol assumes to be true (3 existential + 10 structural)
-- **70 derived theorems** — 61 positive claims and 9 failure theorems that follow logically from the axioms
+- **10 active axioms** (of A1–A16; three absorbed into others, three demoted) — the propositions the protocol assumes to be true (3 existential + 7 structural)
+- **71 derived theorems** — 61 positive claims and 10 failure theorems that follow logically from the axioms, plus one lemma
 - **21 formal proofs** — written derivations of the load-bearing results
+
+The axiom set is at v13, the output of an adversarial audit of every axiom — one derivation attempt each, then refutation and defence — recorded in `analysis/axiom-stress/SYNTHESIS.md` in the repository. Thirteen active axioms were reduced to ten: A10 became vocabulary, and A15 and A16 became conformance requirements on the matching and settlement components.
 
 The target is for the full logical chain to be compiler-verified in **Lean 4** — a proof assistant used in academic mathematics and formal verification. If an axiom changes, dependent theorems break, and the compiler catches it. The Lean formalisation is an open community component; see [Lean 4 Formalization](/specification/lean4/) for status.
 
@@ -56,7 +58,7 @@ The foundational propositions, organized into two groups:
 - **Structural axioms (A4-A14)** — How the protocol operates. The rules it follows.
 
 ### Theorems
-70 derived claims, grouped by theme:
+71 derived claims, grouped by theme:
 
 - **Core Flywheel (T1-T4)** — The basic growth engine
 - **Exponential (T5-T10)** — Why growth compounds
@@ -65,7 +67,7 @@ The foundational propositions, organized into two groups:
 - **Extraction (T18-T22)** — Why value capture is impossible
 - **Structural (T23-T28)** — Governance and long-term stability
 - **Extended (T29-T64)** — Transition, certification, information architecture, monetary architecture
-- **Failure Theorems (F1-F9)** — What breaks the flywheel, and the four Named Principles
+- **Failure Theorems (F1-F10)** — What breaks the flywheel, and the four Named Principles
 
 ### Proofs
 21 written proofs. Six are rendered as pages — the exponential growth proof, the extraction impossibility proof, the S-curve, the community-beats-market proof, the dataset vehicle and the linear-network decomposition; the rest are indexed on the Proofs overview.

@@ -1,34 +1,20 @@
 ---
 title: "A16 — Atomic Cycle"
-description: "Each processing cycle in the ★-center pump is one atomic transaction — signal to ±ΔINDX — that commits fully or not at all."
+description: "Demoted in v13 — atomic per-cycle commit is a settlement component conformance requirement, not an axiom."
 ---
 
-## Statement
+**Status: demoted in v13.**
 
-Each processing cycle in the ★-center pump is one atomic transaction: signal ingested → normalise → match → size → abstract → route → certify → $\pm\Delta\text{INDX}$ posted per provider. The cycle commits as a single operation or not at all; partial commits are structurally impossible.
+Atomic commit is an implementation property. It lives in the component specification as a conformance requirement on the matching and settlement components: *each cycle's postings SHALL commit atomically; no partial commit is externally visible.*
 
-Atomicity is what enables double-entry INDX accounting without reconciliation gaps, and what makes the routing graph update per-cycle rather than per-tick. Without it, per-provider attribution breaks down and double-entry accounting collapses — there would be no well-defined moment at which a ledger entry is either fully posted or fully absent.
+## Statement (v12)
 
-## Grounded in
+Each processing cycle in the ★-center pump is one atomic transaction: signal ingested → normalise → match → size → abstract → route → certify → $\pm\Delta\text{INDX}$ posted per provider. The cycle commits as a single operation or not at all; partial commits are structurally impossible. Grounded in A15 (Intent Conservation) + T42 (External Validation).
 
-[A15](/specification/axioms/structural/a15-intent-conservation/) (Intent Conservation) + T42 (External Validation). A15 supplies the conserved quantity that the cycle is a unit of; T42 supplies the certification event — external market validation — that triggers the commit.
+## Why it was demoted
 
-## Circle
+A16 was the only axiom in the set grounded on a theorem — T42 — which inverts the dependency order the axiom layer is supposed to hold. It was also cited by no theorem, so nothing downstream loses a premise when it is removed.
 
-★ pump — the same internal layer as A15, one step further: A15 says what is conserved through the pump; A16 says at what granularity the conservation is enforced and settled.
+What it describes is a transactional property of the pump: real, required, and testable, but a specification a component must satisfy rather than a proposition the constitution assumes. Stated as a conformance requirement it becomes something an implementation can be checked against, which is what an implementation property should be.
 
-## Why it is an axiom
-
-A16 does not follow from A15 alone. A15 establishes that aggregate intent is conserved *across* the pump's transforms; it says nothing about whether that conservation is enforced continuously, in batches of arbitrary size, or as indivisible units. A16 makes the separate, structural claim that the unit of enforcement is the *cycle* — and that within a cycle, commitment is all-or-nothing. A system could satisfy A15 (the conserved quantity survives the transforms in aggregate, eventually) while still allowing partial, torn commits mid-cycle that make per-provider attribution ambiguous at any given instant. A16 rules that out independently. It also could not be derived from T42 alone, since external validation establishes *that* certification happens, not the transactional granularity at which internal state changes when it does.
-
-## What it explains
-
-A16, together with A15 and T5 ($e^X$ is algebraically literal), grounds T64 (the Patience Lever): because commitment is atomic per cycle, lengthening the batch window is a lever on the internal match rate rather than a source of reconciliation risk — there is no partially-committed intermediate state a longer window could leave exposed. Atomicity is also the structural precondition the Stock-Flow Conservation named principle depends on: triple-entry journaling (mint / loss-destroy / cashout-destroy) requires that each entry correspond to a fully-committed cycle, not a fragment of one.
-
-## Force mapping
-
-Like A15, A16 was added in v12 and does not appear in the earlier prose Force-Axiom Mapping table, but the formal dependency graph places it under **S (Selection)**, alongside A4, A8, A9, and A15 — atomicity is part of what makes the pump's output usable as a clean allocation signal. Without it, F4 (★-Collapse) risk rises: a venue whose internal commits can tear loses the ability to guarantee that what it reports as matched, sized, and certified is what actually happened.
-
-## Economic precedent
-
-No Nobel cross-check is named for A16 in the Constitution — it is closer to a database-systems property (atomicity, in the ACID sense) applied to a settlement pump than to a named market-design result.
+Full reasoning: `analysis/axiom-stress/SYNTHESIS.md` in the repository.

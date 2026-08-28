@@ -1,17 +1,19 @@
 ---
 title: "A3 — Fair Terms"
-description: "Same deal for everyone. Fee gates tourists, publication gates frauds — self-selection replaces gatekeeping."
+description: "One contract, offered to every prospective provider — uniformity constrains the venue, not the population."
 ---
 
 ## Statement
 
-Same deal for everyone. Fee gates tourists. Publication gates frauds. What remains after both filters: developing traders.
+One contract, offered to every prospective provider. Entry is not gated by negotiated terms, discretionary underwriting, capital minimum or prior standing, and terms are not indexed to certified quality. Uniformity constrains the venue; it asserts nothing about who enters.
 
-A3 is Rothschild-Stiglitz screening applied to a trading venue. Uniform terms are not naivete — they are mechanism design. The same contract creates *differential* incentives: skilled traders find participation profitable ($E[\text{allocation}] - \text{signal\_cost} > \text{outside\_option}$); tourists find it unprofitable (poor results plus fee plus exposure exceeds zero allocation). Self-selection happens without the platform ever needing to observe quality ex ante. The four signal-cost dimensions — time, fee, drawdown, publication — each satisfy Spence's single-crossing condition: cost of signaling is strictly decreasing in quality ($dc/d\theta < 0$).
+## v13 note
+
+The statement now constrains the venue rather than predicting the population. The screening claim — that uniform terms produce a separating equilibrium — is demoted into T53, and the "totality" of self-selection is dropped, because it was a prediction about who enters rather than a rule about what is offered. The entry-cost vector (time, fee, drawdown, publication) becomes a governance parameter, bounded below by fraud deterrence and above by variation supply. Source: the axiom stress test, `analysis/axiom-stress/SYNTHESIS.md` in the repository.
 
 ## Grounded in
 
-P6 (Merit) + P1 (Credibility). P1 is what the terms select for; P6 is why uniformity rather than negotiated or tiered terms is the correct design.
+P6 (Merit) + A1. P6 is why uniformity, rather than negotiated or tiered terms, is the correct design. A1 is the condition uniformity answers: access-gated entry is precisely the mechanism by which access substitutes for contribution.
 
 ## Circle
 
@@ -19,11 +21,11 @@ The e edge — A3 is the gate at the boundary of the credibility circle, decidin
 
 ## Why it is an axiom
 
-A3 could look derivable from A1+A2 — "if merit can be certified, just offer everyone the same terms and let certification sort them out." But that skips the actual claim: A3 asserts that *uniformity itself* is the screening mechanism, prior to and independent of any certification event. The self-selection happens at the point of entry, before a single trade is certified. This is a distinct structural commitment — a system could certify merit (A2) and still gate entry by negotiated terms, discretionary underwriting, or capital minimums. A3 rules that out. It is not implied by A1 or A2; it is a separate design axiom about how access itself is structured.
+A3 could look derivable from A1+A2 — "if merit can be certified, just offer everyone the same terms and let certification sort them out." But that skips the actual claim: A3 constrains what the venue may offer, prior to and independent of any certification event. A system could certify merit (A2) and still gate entry by negotiated terms, discretionary underwriting, capital minimums, or terms indexed to certified quality. A3 rules all of that out. It is not implied by A1 or A2; it is a separate design axiom about how access itself is structured.
 
 ## What it explains
 
-A3 grounds T53 (Market Existence — Akerlof/Spence) alongside P0, P1, A2, and A13, and feeds T42/T47 through A13's dependence chain. It is also one of the axioms F5 (Stagnation) names directly: if A3 is "over-optimised" — barriers raised until self-selection excludes all but incumbents — variation dries up and A1 (access, not merit) reasserts itself inside the protocol.
+A3 grounds T53 (Market Existence — Akerlof/Spence), which now carries the screening argument itself, alongside P0, P1, A2, and A13, and feeds T42/T47 through A13's dependence chain. It is also one of the axioms F5 (Stagnation) names directly: if A3 is "over-optimised" — barriers raised until self-selection excludes all but incumbents — variation dries up and A1 (access, not merit) reasserts itself inside the protocol.
 
 ## Force mapping
 

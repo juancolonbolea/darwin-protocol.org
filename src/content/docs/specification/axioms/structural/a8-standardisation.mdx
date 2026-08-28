@@ -1,23 +1,19 @@
 ---
 title: "A8 — Independent Standardisation"
-description: "Credibility can only attract confidence when expressed as a comparable instrument, manufactured by a trusted, independent, algorithmic process."
+description: "Per-agent estimates of contribution admit a common ordering across heterogeneous agents — commensurability is not implied by validity."
 ---
 
 ## Statement
 
-Credibility (P1) can only attract confidence (P2) when expressed as a comparable instrument, manufactured by a trusted, independent process. Read as an information translator: A8 converts quality information — raw edge, idiosyncratic, incomparable — into allocation information: comparable, investable, rational. Without A8, quality information exists but cannot be acted on. Confidence is zero identically.
+Per-agent estimates admit a common ordering across heterogeneous agents. Not implied by validity.
 
-Three structural features make this work:
+## v13 note
 
-1. **The CCP faces investors.** Darwinex is the centralised counterparty — the investor trusts the institution, not the trader. This is a trust architecture, not a marketing claim.
-2. **Arm's length from providers.** The risk engine operates independently of the signal provider. A trader cannot game the manufacturing of their own instrument.
-3. **Algorithmic, not discretionary.** A deterministic process — normalisation, engine-generated trades at fixed intervals, VaR scaling to a fixed benchmark. Every adjustment is auditable; no human judgment sits in the loop.
-
-Together these three features build the comparison surface: any certified instrument can be evaluated against any other. A8's credibility rests on [A9](/specification/axioms/structural/a9-no-extraction/) — if the venue's integrity fails, the standardiser is biased, A8 loses trust, and the β-loop collapses to zero.
+The statement is now the cross-agent claim alone: estimates of individual contribution can be placed on one ordering across heterogeneous agents, which validity (A2) does not imply. The three structural features that used to sit inside the statement move out — the CCP arrangement and arm's-length independence become a corollary of A9 plus P6, and algorithmic determinism becomes a governance parameter of the risk engine rather than an axiom clause. The restatement also requires stripping the enabling clause ("without comparability, K = 0") from Confidence (spec P2), which was making A8 analytic. Source: the axiom stress test, `analysis/axiom-stress/SYNTHESIS.md` in the repository.
 
 ## Grounded in
 
-P1 (Credibility) + P2 (Confidence) + P4 (Matching) + A9 (No Extraction). A8 sits between P1 and P2 as the membrane that makes the transition between them rational, and depends on A9 for its own integrity.
+P1 (Credibility) + P2 (Confidence) + A2. P1 and P2 are the two sides A8 orders between; A2 supplies the per-agent estimates the common ordering is defined over. Commensurability across agents is not implied by validity for one agent — that gap is the whole of the claim.
 
 ## Circle
 
@@ -25,7 +21,7 @@ e→X membrane — A8 is not a circle but the translator between the credibility
 
 ## Why it is an axiom
 
-A8 was demoted once (to a theorem, T5, in an earlier version) and then restored with different content — which is itself evidence of the independence check working as designed. The restored claim is not that $e^X$ is algebraically literal (that later became a separate theorem) but that *investability itself has a precondition*: capital cannot rationally allocate to an idiosyncratic, incomparable signal, no matter how well-certified. This is not derivable from A2 (merit can be certified) — A2 establishes that quality can be measured; A8 makes the separate claim that measurement alone is insufficient, and that a further translation step — standardisation into a common, algorithmically-produced comparison surface — is required before confidence can rationally form. Nothing about certification implies comparability.
+A8 was demoted once (to a theorem, T5, in an earlier version) and then restored with different content — which is itself evidence of the independence check working as designed. The restored claim is not that $e^X$ is algebraically literal (that later became a separate theorem) but that *commensurability has to be posited*: capital cannot rationally allocate across an idiosyncratic, incomparable set of signals, however well each one is estimated. This is not derivable from A2 — A2 establishes that one agent's contribution can be estimated; A8 makes the separate claim that those estimates admit a common ordering across heterogeneous agents. Nothing about validity for one agent implies commensurability across many.
 
 ## What it explains
 
@@ -33,7 +29,7 @@ A8 grounds T6 (the dataset serves both the edge loop and the risk engine's train
 
 ## Force mapping
 
-A8 powers **S (Selection)**, alongside A4, A9, and A14. The Constitution separately describes A8 as **the membrane** between the internal forces (V/S/I) and the external force (P): without standardisation, credibility cannot cross the boundary to attract confidence, and $K = 0$.
+A8 powers **S (Selection)**, alongside A4 and A14. The Constitution separately describes A8 as **the membrane** between the internal forces (V/S/I) and the external force (P): without standardisation, credibility cannot cross the boundary to attract confidence, and $K = 0$.
 
 ## Economic precedent
 

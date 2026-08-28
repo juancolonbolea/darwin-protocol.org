@@ -13,7 +13,9 @@ This page carries spec primitive P2, not P3. Site numbering places Confidence th
 
 Confidence is bestowed by allocating capital to certified credibility. It is forward-looking — a bet placed on observed P1 performance, not a settlement of past performance. Confidence is **given, not taken**: capital chooses to back a Quote, and once given, it must be honoured by the protocol's execution.
 
-**Enabling condition.** Confidence is only rational when certified edge is expressed as a comparable instrument — risk-normalised at a uniform VaR standard, so a cautious trader and an aggressive trader are judged on skill, not leverage. Without that standardisation, comparability collapses and confidence is identically zero: $K = 0$.
+## v13 note
+
+The enabling clause — that without comparability confidence is identically zero — is removed from this definition: comparability is A8's claim, not part of the primitive, and leaving it here made A8 analytic. Source: the axiom stress test, `analysis/axiom-stress/SYNTHESIS.md` in the repository.
 
 ## Type
 
@@ -25,7 +27,7 @@ Flow → Stock. Confidence begins as a flow (capital being allocated) and accumu
 
 ## Irreducibility test
 
-Confidence cannot be derived from credibility alone. Credibility (P1) is proof of skill; it says nothing about whether anyone acts on it. Confidence requires two things credibility cannot supply by itself: an external act of trust, and an investable comparison surface that makes one Quote weighable against another. Skill without a market willing to back it stays a private fact, not confidence.
+Confidence cannot be derived from credibility alone. Credibility (P1) is proof of skill; it says nothing about whether anyone acts on it. Confidence requires something credibility cannot supply by itself: an external act — someone choosing to place capital behind the Quote. Skill without a market willing to back it stays a private fact, not confidence.
 
 ## Grounding
 

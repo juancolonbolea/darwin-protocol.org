@@ -1,17 +1,19 @@
 ---
 title: "A2 — Merit Visible"
-description: "The protocol certifies contribution at every touchpoint — independently measured, publicly attested, externally validated."
+description: "A protocol-computable estimator of contribution exists — separating it from luck, beta and access at finite sample."
 ---
 
 ## Statement
 
-The protocol certifies contribution at every touchpoint — independently measured, publicly attested, and externally validated by the market, attributed across the full value chain. The Quote is one instance; INDX attribution is the general case.
+A protocol-computable estimator of one agent's contribution exists, separating it from luck, beta and access at finite sample, and informative when the agent knows it is computed.
 
-Certification runs both directions. To capital: "this edge is proven." To edge: "this protocol enforces fair measurement and reward." The certification pipeline includes manufacturing — the risk engine ([A8](/specification/axioms/structural/a8-standardisation/)) transforms raw strategy into a standardised, investable instrument before certification is meaningful. Certifying without standardising first would be grading incomparable exams.
+## v13 note
+
+The statement is now the per-agent validity core alone: an estimator exists, it separates contribution from luck, beta and access at finite sample, and it stays informative when the agent knows it is being computed. "Externally validated by the market" is deleted — T42 proves external validation, and keeping it inside the axiom made T42 analytic. The restatement requires the matching repair at the primitive layer: "certified by the protocol" is stripped from Edge (spec P1), because that clause was doing the axiom's work. Source: the axiom stress test, `analysis/axiom-stress/SYNTHESIS.md` in the repository.
 
 ## Grounded in
 
-P1 (Credibility) + P6 (Merit). P1 supplies the mechanism — edge is earned and accumulated in a record. P6 supplies the mandate — that record should be the thing reward tracks.
+P1 (Credibility) + P6 (Merit). P1 supplies the record the estimator computes over — edge earned and accumulated. P6 supplies the mandate that this record, rather than access, is what reward should track.
 
 ## Circle
 
